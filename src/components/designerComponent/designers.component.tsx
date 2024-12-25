@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 import GradientTextComponent from "../GradientTextComponent/GradientText.component";
 import SparklesComponent from "../sparklesComponent/sparkles.component";
 import { useCursor } from "@/context/CursorContext";
-import { ShootingStarsComponent } from "../ShootingStarsComponent/ShootingStars.component";
-
-
+ 
 export default function DesignersComponent() {
   const { textEnter, textLeave } = useCursor();
 

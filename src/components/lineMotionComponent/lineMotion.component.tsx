@@ -8,7 +8,6 @@ import LineMotion from "../../../public/LineMotion";
 export default function LineMotionComponent() {
   return (
     <Canvas>
-      <ambientLight />
       <OrbitControls enableRotate={false} enableZoom={false} />
       <Suspense fallback={null}>
         {/* main 3d model */}

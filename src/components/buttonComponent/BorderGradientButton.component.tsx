@@ -2,7 +2,7 @@
 import React from "react";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { FaSquareArrowUpRight } from "react-icons/fa6";
-import Link from "next/link";
+ 
 
 export function BorderGradientButton() {
   return (
