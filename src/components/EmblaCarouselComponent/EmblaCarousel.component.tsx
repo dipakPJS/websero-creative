@@ -1,25 +1,21 @@
-"use client"
 import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import { EmblaProvider}  from "../context/EmblaContext"
-
+import { EmblaProvider } from "../../context/EmblaContext";
 
 import "./embla.styles.css";
- 
+import Link from "next/link";
 
-import data from "@/data/WorkData.json";
+import data from "../../data/WorkData.json";
 import Image from "next/image";
 
 import { CgArrowsExpandUpRight } from "react-icons/cg";
 import EmblaControls from "./EmblaControls.component";
 
-
 type PropType = {
   options?: EmblaOptionsType;
 };
-
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { options } = props;
@@ -27,14 +23,15 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   return (
     <EmblaProvider emblaApi={emblaApi}>
-      <section
-       
-      className="embla">
+      <section className="embla">
         <EmblaControls />
-        <div className="embla__viewport bg-[blue]" ref={emblaRef}>
+        <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
             {data.map((item, idx) => (
-              <div className="embla__slide flex-none w-full lg:w-30 md:w-3/4 sm:w-3/4" key={idx}>
+              <div
+                className="embla__slide flex-none w-full lg:w-30 md:w-3/4 sm:w-3/4"
+                key={idx}
+              >
                 <div className="relative group rounded-[50px] overflow-hidden">
                   <Image
                     src={item.image}
@@ -55,9 +52,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                     </button>
                   </a>
                 </div>
-                 <div className="text-left ">
-                  <p className="text-3xl font-iceBerg font-extrabold py-5 pl-3">{item.title}</p>
-                 </div>
+                <div className="text-left ">
+                  <p className="text-3xl font-iceBerg font-extrabold py-5 pl-3">
+                    {item.title}
+                  </p>
+                </div>
                 <div className="tags flex flex-wrap gap-2 mt-5">
                   {item.tags.map((tag, idx) => (
                     <span

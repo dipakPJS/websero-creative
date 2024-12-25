@@ -1,8 +1,7 @@
-"use client"
+"use client";
 import { EmblaOptionsType } from "embla-carousel";
 
-import EmblaCarousel from "./EmblaCarousel.component";
- 
+import EmblaCarousel from "./EmblaCarouselComponent/EmblaCarousel.component";
 
 const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
 
@@ -14,7 +13,7 @@ const WorkComponent: React.FC = () => {
     >
       {/* Carousel starts */}
       <div className="w-full  h-full">
-        <EmblaCarousel options={OPTIONS}/>
+        <EmblaCarousel options={OPTIONS} />
       </div>
       {/* Carousel ends */}
     </div>
