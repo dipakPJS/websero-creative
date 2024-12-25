@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FullPageNav from "@/components/Navbar.component";
+import { CursorProvider } from "@/context/CursorContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +30,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="min-h-screen relative">
+          <CursorProvider>
+
          <FullPageNav />
         {children}
+          </CursorProvider>
         </div>
       </body>
     </html>
