@@ -1,3 +1,12 @@
+import LogoComponent from "@/components/Logo.Component";
+
+ 
+
 export default function Home() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div className="min-h-screen bg-gray-500">
+    <p>hi this is dipak</p>
+    <LogoComponent />
+    </div>
+  );
 }
