@@ -1,7 +1,7 @@
 import React from "react";
 import { FlipWords } from "./ui/flip-words";
 
-export function FlipWordsDemo() {
+export function FlipWordsComponent() {
   const words = ["better", "cute", "beautiful", "modern"];
 
   return (
