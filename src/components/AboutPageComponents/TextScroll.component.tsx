@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { useCursor } from "@/context/CursorContext";
-import { ShootingStarsComponent } from "../ShootingStarsComponent/ShootingStars.component";
+
 
 export default function TextScrollComponent() {
   const { textEnter, textLeave } = useCursor();
