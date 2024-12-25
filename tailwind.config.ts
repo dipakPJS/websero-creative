@@ -15,6 +15,12 @@ module.exports = {
   darkMode: ["class", "class"],
   theme: {
     extend: {
+      fontFamily: {
+        audioWide: "'Audiowide', serif",
+        hubballi: "'Hubballi', serif",
+        eagleLake: "'Eagle Lake', serif",
+        iceBerg: "'Iceberg', sans-serif",
+      },
       animation: {
         first: "moveVertical 30s ease infinite",
         second: "moveInCircle 20s reverse infinite",
