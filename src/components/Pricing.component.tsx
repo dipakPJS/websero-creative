@@ -5,9 +5,9 @@ import PricingFilterComponent from "./PricingFilters.component";
 
 export default function PricingComponent() {
   return (
-    <div className=" w-full min-h-[100vh]">
+    <div className=" w-full min-h-screen">
       
-      <div className="z-10 h-full w-full relative pt-[50px] pb-[100px] bg-green-800">
+      <div className="z-10 h-full w-full relative p-[50px]">
 
       <motion.p
         variants={fadeIn("right", 0.1)}

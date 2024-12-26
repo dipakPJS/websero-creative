@@ -79,7 +79,7 @@ const FullPageNav: React.FC = () => {
             animate="visible"
             exit="exit"
             variants={navVariants}
-            className="fixed inset-0 z-[350] bg-[#f702ff1e] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[20px]"
+            className="fixed inset-0 z-[350] bg-[#00000062] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[20px]"
           >
             <div className="logo p-5 w-full">
               <Link href={"/"}  onClick={handleLinkClick}>
@@ -116,7 +116,7 @@ const FullPageNav: React.FC = () => {
                           label === "Home" ? "/" : `/${label.toLowerCase()}`
                         }
                         onClick={handleLinkClick}
-                        className=" text-2xl cursor-pointer sm:text-3xl md:text-4xl lg:text-5xl font-eagleLake text-white hover:text-purple-700"
+                        className=" text-2xl cursor-pointer sm:text-3xl md:text-4xl lg:text-5xl font-eagleLake text-slate-300 hover:text-purple-700"
                       >
                         {label}
                       </Link>

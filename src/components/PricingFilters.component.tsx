@@ -1,9 +1,9 @@
-"use client"
+"use client";
+
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import pricingData from "../data/PricingData.json"; 
-import GlareCardComponent from "./GlareCard.component";
- 
+import pricingData from "../data/PricingData.json";
+import PricingCardComponent from "./PricingCard.component";
 
 const PricingFilterComponent: React.FC = () => {
   const [activeLevel, setActiveLevel] = useState<
@@ -16,12 +16,10 @@ const PricingFilterComponent: React.FC = () => {
     setActiveLevel(level);
   };
 
-  // Filter the imported data based on the selected level
   const filteredPackages = pricingData.filter(
     (pkg) => pkg.level === activeLevel
   );
 
-  // Variants for animation of cards
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
     show: (index: number) => ({
@@ -37,7 +35,7 @@ const PricingFilterComponent: React.FC = () => {
   };
 
   return (
-    <div className="p-5 w-full ">
+    <div className="p-5 w-full">
       {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-4">
         {["Basic", "Content-Focused", "Custom", "Enterprise"].map((level) => (
@@ -61,7 +59,7 @@ const PricingFilterComponent: React.FC = () => {
 
       {/* Pricing Cards */}
       <motion.div
-        className="mt-[50px] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-10 md-1:gap-y-10 md:gap-y-10 lg:gap-10 lg:px-10 min-h-screen bg-[red]"
+        className="mt-[50px] pt-[50px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 lg:gap-10 lg:px-10 min-h-[30rem]"
         initial="hidden"
         animate="show"
         exit="hidden"
@@ -76,18 +74,16 @@ const PricingFilterComponent: React.FC = () => {
               exit="exit"
               custom={index}
             >
-
-              <GlareCardComponent
-               key={pkg.id}
-               id={pkg.id}
-               title={pkg.title}
-               price={pkg.price}
-               description={pkg.description}
-               pages={pkg.pages}
-               duration={pkg.duration}
-               additional={pkg.additional}
+              <PricingCardComponent
+                key={pkg.id}
+                id={pkg.id}
+                title={pkg.title}
+                price={pkg.price}
+                description={pkg.description}
+                pages={pkg.pages}
+                duration={pkg.duration}
+                additional={pkg.additional}
               />
-            
             </motion.div>
           ))}
         </AnimatePresence>
