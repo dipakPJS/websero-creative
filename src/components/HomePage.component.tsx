@@ -1,6 +1,6 @@
 "use client"
 import "./HomePageComponent.styles.css";
-// import LineMotionComponent from "./LineMotion.component";
+ 
 import ScrollDownLottieComponent from "./ScrollDownLottie.component";
 import VerticalText from "./VerticalText.component";
 import IntroComponent from "./Intro.component";
