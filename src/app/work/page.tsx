@@ -1,6 +1,6 @@
-import FooterComponent from "@/components/footerComponent/footer.component";
-import { ShootingStarsComponent } from "@/components/ShootingStarsComponent/ShootingStars.component";
-import WorkPageComponent from "@/components/WorkPageComponents/WorkPage.component";
+import { ShootingStarsComponent } from "@/components/ShootingStars.component";
+import WorkPageComponent from "@/components/WorkPage.component";
+import FooterComponent from "@/components/Footer.component";
 
 export default function WorkPage() {
   return (
