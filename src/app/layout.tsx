@@ -8,6 +8,9 @@ import MouseCursorComponent from "@/components/MouseCursor.component";
 import BackgroundAudioComponent from "@/components/BackgroundAudio.component";
 import LogoComponent from "@/components/Logo.Component";
 
+// react-lenis 
+// import { ReactLenis } from "@/utils/lenis";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -30,9 +33,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      {/* <ReactLenis root> */}
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        >
         <div className="min-h-screen relative">
           <CursorProvider>
             <AudioProvider>
@@ -45,6 +50,7 @@ export default function RootLayout({
           </CursorProvider>
         </div>
       </body>
+        {/* </ReactLenis> */}
     </html>
   );
 }

@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import pricingData from "../data/PricingData.json"; 
-import { GlowingStarsCardBackgroundComponent } from "./GlowingStarsCardBackground.component";
+import GlareCardComponent from "./GlareCard.component";
+ 
 
 const PricingFilterComponent: React.FC = () => {
   const [activeLevel, setActiveLevel] = useState<
@@ -60,7 +61,7 @@ const PricingFilterComponent: React.FC = () => {
 
       {/* Pricing Cards */}
       <motion.div
-        className="mt-[50px] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 md:gap-5 sm:gap-2 lg:px-10 min-h-screen"
+        className="mt-[50px] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 gap-y-10 md-1:gap-y-10 md:gap-y-10 lg:gap-10 lg:px-10 min-h-screen bg-[red]"
         initial="hidden"
         animate="show"
         exit="hidden"
@@ -75,26 +76,18 @@ const PricingFilterComponent: React.FC = () => {
               exit="exit"
               custom={index}
             >
-              {/* <CardSpotLightComponent
-                key={pkg.id}
-                id={pkg.id}
-                title={pkg.title}
-                price={pkg.price}
-                description={pkg.description}
-                pages={pkg.pages}
-                duration={pkg.duration}
-                additional={pkg.additional}
-              /> */}
-              <GlowingStarsCardBackgroundComponent 
-              key={pkg.id}
-                id={pkg.id}
-                title={pkg.title}
-                price={pkg.price}
-                description={pkg.description}
-                pages={pkg.pages}
-                duration={pkg.duration}
-                additional={pkg.additional}
+
+              <GlareCardComponent
+               key={pkg.id}
+               id={pkg.id}
+               title={pkg.title}
+               price={pkg.price}
+               description={pkg.description}
+               pages={pkg.pages}
+               duration={pkg.duration}
+               additional={pkg.additional}
               />
+            
             </motion.div>
           ))}
         </AnimatePresence>

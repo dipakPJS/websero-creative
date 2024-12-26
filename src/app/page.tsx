@@ -27,7 +27,7 @@ export default function Home() {
     <DesignersComponent />
     <AchievementsComponent />
     <PricingComponent />
-    <AnimatedTestimonialsComponent bgColor="black" />
+    <AnimatedTestimonialsComponent bgColor="transparent" />
     <ContactGradientComponent />
     <FooterComponent />
    </div>

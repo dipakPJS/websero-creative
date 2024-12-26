@@ -7,7 +7,7 @@ export default function PricingComponent() {
   return (
     <div className=" w-full min-h-[100vh]">
       
-      <div className="z-10 h-full w-full relative py-[50px]">
+      <div className="z-10 h-full w-full relative pt-[50px] pb-[100px] bg-green-800">
 
       <motion.p
         variants={fadeIn("right", 0.1)}

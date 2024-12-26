@@ -13,7 +13,9 @@ interface AnimData {
 export function AnimatedTestimonialsComponent({bgColor}: AnimData) {
  
   return (
-    <div className="px-10 min-h-[100vh] flex flex-col gap-y-[50px]" style={{backgroundColor: bgColor}}>
+    <div className = "px-10 min-h-[100vh] flex items-center justify-center" style={{backgroundColor: bgColor}}>
+
+    <div className="h-auto w-full flex flex-col gap-y-[50px]" >
       <div className="z-10 relative">
 
          <motion.p
@@ -22,10 +24,11 @@ export function AnimatedTestimonialsComponent({bgColor}: AnimData) {
         whileInView="show"
         viewport={{ once: false, amount: 0.2 }}
         className="font-audioWide text-center font-bold text-white text-2xl sm:text-3xl md-1:text-3xl md:text-4xl lg-1:text-5xl lg:text-6xl uppercase"
-      >
+        >
         What clients <GradientTextComponent span={true} texts="say!" />
       </motion.p>
        <AnimatedTestimonials testimonials={TestimonialData} />
+        </div>
         </div>
     </div>
   )
