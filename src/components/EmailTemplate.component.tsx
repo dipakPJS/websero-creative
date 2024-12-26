@@ -19,10 +19,10 @@ export const EmailTemplateComponent: React.FC<EmailTemplateProps> = ({
       className="email-template-component"
       style={{
         textAlign: "left",
-        padding: "20px",
-        backgroundColor: "black",
-        borderRadius: "50px",
-        border: "10px groove blue",
+        padding: "20px 50px",
+        backgroundColor: "white",
+        borderRadius: "30px",
+        border: "5px groove white",
         fontFamily: "Roboto, sans-serif",
         color: "white",
       }}
@@ -32,7 +32,7 @@ export const EmailTemplateComponent: React.FC<EmailTemplateProps> = ({
           fontSize: "30px",
           padding: "20px",
           fontFamily: "Poppins, sans-serif",
-          color: "white",
+          color: "black",
         }}
       >
         You just received a new email from websero agency website!
@@ -46,17 +46,17 @@ export const EmailTemplateComponent: React.FC<EmailTemplateProps> = ({
         }}
       >
         <p>
-          User Name: <span style={{ color: "#fff200" }}>{userName}</span>
+          User Name: <span style={{ color: "gray" }}>{userName}</span>
         </p>
         <p>
-          Email: <span style={{ color: "#fff200" }}>{email}</span>
+          Email: <span style={{ color: "gray" }}>{email}</span>
         </p>
         <p>
-          Project Type: <span style={{ color: "#fff200" }}>{projectType}</span>
+          Project Type: <span style={{ color: "gray" }}>{projectType}</span>
         </p>
         <p>
           Project Budget:{" "}
-          <span style={{ color: "#fff200" }}>{projectBudget}</span>
+          <span style={{ color: "gray" }}>{projectBudget}</span>
         </p>
       </div>
     </div>
