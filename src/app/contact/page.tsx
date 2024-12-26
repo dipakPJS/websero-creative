@@ -1,6 +1,6 @@
 "use client";
 
-import MainContactFormComponent from "@/components/MainContactForm.component";
+import MainContactFormComponent from "@/components/ContactForm/MainContactForm.component";
 import FooterComponent from "@/components/Footer.component";
 import { ShootingStarsComponent } from "@/components/ShootingStars.component";
 

@@ -3,14 +3,17 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useCursor } from "@/context/CursorContext";
-import GradientTextComponent from "./GradientText.component";
+import GradientTextComponent from "../GradientText.component";
 
-import ProjectSelect from "@/data/ProjectSelect.json";
-import BudgetSelect from "@/data/BudgetData.json";
+import ProjectSelect from "../../data/ProjectSelect.json";
+import BudgetSelect from "../../data/BudgetData.json";
+
+// emailjs
+import emailjs from "@emailjs/browser";
 
 // toasts
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const fadeInDirections = {
   bottom: { initial: { opacity: 0, y: 50 }, animate: { opacity: 1, y: 0 } },
@@ -33,45 +36,48 @@ export default function MainContactFormComponent() {
     setFormData({ ...formData, [name]: value });
   };
 
-//   const sendToServer = async (data: any) => {
-//     try {
-//       const response = await fetch("/api/send", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(data),
-//       });
+  const sendToServer = async (data: any) => {
 
-//       if (!response.ok) {
-//         throw new Error("Failed to send email");
-//       }
+    const {userName, email, projectType, projectBudget} = data;
 
-//       console.log("Email successfully sent:", data);
-//       toast.success("Form submitted successfully!", {
-//         style: {
-//           background: "linear-gradient(to top right, #6c5ce7, #be2edd, purple, #e84393)",
-//           color: "white",
-//           zIndex: 9999,
-//         },
-//       });
+    const templateParams = {
+      user_name: userName,
+      user_email: email,
+      project_type: projectType,
+      project_budget: projectBudget
+    }
 
-//       // reseting the form
-//       setSelectedProject("");
-//       setSelectedBudget("");
-//       setFormData({ username: "", email: "" });
+    try {
+     
+     emailjs.send("service_j0wsyv7", "template_ey83cxl",
+      templateParams,
+     "6F4QeXqxKpnQfhzEz"
+     )
 
-//     } catch (error) {
-//       alert(`Error: ${error}`);
-//       toast.error("Error in resend API", {
-//         style: {
-//           background: "linear-gradient(to top right, red, orange, black)",
-//           color: "white",
-//           zIndex: 9999,
-//         },
-//       });
-//     }
-//   };
+      console.log("Email successfully sent:", data);
+      toast.success("Form submitted successfully!", {
+        style: {
+          background: "linear-gradient(to top right, blue, purple, red)",
+          color: "white",
+          zIndex: 9999,
+        },
+      });
+
+      // reseting the form
+      setSelectedProject("");
+      setSelectedBudget("");
+      setFormData({ username: "", email: "" });
+    } catch (error) {
+      alert(`Error: ${error}`);
+      toast.error("Error in resend API", {
+        style: {
+          background: "linear-gradient(to top right, red, orange, black)",
+          color: "white",
+          zIndex: 9999,
+        },
+      });
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -95,13 +101,13 @@ export default function MainContactFormComponent() {
       projectBudget: selectedBudget, // Match API key
     };
 
-    // sendToServer(payload);
-    console.log(payload);
+    sendToServer(payload);
+    
   };
 
   return (
     <div className="min-h-[100vh] relative z-10  w-full h-full pb-[200px]">
-      <ToastContainer  position="top-center"/>
+      <ToastContainer position="top-center" />
       <div className="main-form text-center h-full w-full px-8 lg:px-16 flex flex-col lg:flex-row justify-between items-start gap-[50px] lg:gap-[100px] pt-[50px] lg:pt-[130px]">
         <div className="texts text-left text-white max-w-lg pt-[200px]">
           <motion.h1
