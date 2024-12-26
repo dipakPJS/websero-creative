@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import FullPageNav from "@/components/Navbar.component";
 import { CursorProvider } from "@/context/CursorContext";
+import { AudioProvider } from "@/context/AudioContext";
+import MouseCursorComponent from "@/components/MouseCursor.component";
+import BackgroundAudioComponent from "@/components/BackgroundAudio.component";
+import LogoComponent from "@/components/Logo.Component";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +35,13 @@ export default function RootLayout({
       >
         <div className="min-h-screen relative">
           <CursorProvider>
-
-         <FullPageNav />
-        {children}
+            <AudioProvider>
+              <MouseCursorComponent />
+              <BackgroundAudioComponent />
+              <LogoComponent />
+              <FullPageNav />
+              {children}
+            </AudioProvider>
           </CursorProvider>
         </div>
       </body>
