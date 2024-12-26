@@ -1,8 +1,8 @@
 "use client";
 
-import MainContactFormComponent from "@/components/ContactPageComponent/MainContactForm.component";
-import FooterComponent from "@/components/footerComponent/footer.component";
-import { ShootingStarsComponent } from "@/components/ShootingStarsComponent/ShootingStars.component";
+import MainContactFormComponent from "@/components/MainContactForm.component";
+import FooterComponent from "@/components/Footer.component";
+import { ShootingStarsComponent } from "@/components/ShootingStars.component";
 
 export default function ContactPage() {
   return (

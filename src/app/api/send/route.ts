@@ -1,30 +1,30 @@
 
-import { EmailTemplateComponent } from '../../../components/EmailTemplateComponent/EmailTemplate.component';
-import { Resend } from 'resend';
+// import { EmailTemplateComponent } from '../../../components/EmailTemplate.component';
+// import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: Request): Promise<Response> {
+// export async function POST(req: Request): Promise<Response> {
 
-    const body = await req.json();
+//     const body = await req.json();
 
-  try {
-    const { data, error } = await resend.emails.send({
-      from: 'Websero <onboarding@resend.dev>',
-      to: ['webserocreations@gmail.com'],
-      subject: `Email from ${body.userName}`,
-      react: EmailTemplateComponent({ userName: body.userName || "empty", email: body.email || "empty", projectType: body.projectType || "empty", projectBudget: body.projectBudget || "empty" }),
-    });
+//   try {
+//     const { data, error } = await resend.emails.send({
+//       from: 'Websero <onboarding@resend.dev>',
+//       to: ['webserocreations@gmail.com'],
+//       subject: `Email from ${body.userName}`,
+//       react: EmailTemplateComponent({ userName: body.userName || "empty", email: body.email || "empty", projectType: body.projectType || "empty", projectBudget: body.projectBudget || "empty" }),
+//     });
 
-    if (error) {
-      return Response.json({ error }, { status: 500 });
-    }
+//     if (error) {
+//       return Response.json({ error }, { status: 500 });
+//     }
 
-    return Response.json(data);
-  } catch (error) {
-    return Response.json({ error }, { status: 500 });
-  }
-}
+//     return Response.json(data);
+//   } catch (error) {
+//     return Response.json({ error }, { status: 500 });
+//   }
+// }
 
 
 
