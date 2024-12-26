@@ -1,14 +1,14 @@
 "use client";
 
-import ServicesListComponent from "@/components/servicesComponent/servicesList.component"; 
-import ServiceIndustriesComponent from "@/components/servicesComponent/serviceIndustries.component";
-import { ShootingStarsComponent } from "@/components/ShootingStarsComponent/ShootingStars.component";
-import ServiceBookingComponent from "@/components/servicesComponent/serviceBooking.component";
-import { AnimatedTestimonialsComponent } from "@/components/TestimonalComponent/Testimonal.component";
-import WorkflowComponent from "@/components/servicesComponent/Workflow.component";
-import ContactGradientComponent from "@/components/contactGradientComponent/contactGradient.component";
-import FooterComponent from "@/components/footerComponent/footer.component";
-import ServiceIntroComponent from "@/components/servicesComponent/ServiceIntro.component";
+import ServicesListComponent from "@/components/ServicesList.component"; 
+import ServiceIndustriesComponent from "@/components/ServiceIndustries.component";
+import { ShootingStarsComponent } from "@/components/ShootingStars.component";
+import ServiceBookingComponent from "@/components/ServicesBooking.component";
+import { AnimatedTestimonialsComponent } from "@/components/AnimatedTestimonials.component";
+import WorkflowComponent from "@/components/WorkFlow.component";
+import ContactGradientComponent from "@/components/ContactGradient.component";
+import FooterComponent from "@/components/Footer.component";
+import ServiceIntroComponent from "@/components/ServiceIntro.component";
  
 
 export default function ServicesPage() {
