@@ -6,14 +6,28 @@ import {
   GlowingStarsTitle,
 } from "./ui/glowing-stars";
 
-export function GlowingStarsCardBackgroundComponent() {
+interface Prices {
+    id: number;
+    title: string;
+    price: string;
+    description: string;
+    pages: string;
+    duration: string;
+    additional: string[];
+  }
+  
+
+export function GlowingStarsCardBackgroundComponent(items: Prices) {
+
+    const { title, description, price, pages, duration, additional } = items;
+
   return (
-    <div className="flex py-20 items-center justify-center antialiased">
+    <div className="min-h-[4orem] flex py-20 items-center justify-center antialiased relative">
       <GlowingStarsBackgroundCard>
-        <GlowingStarsTitle>Next.js 14</GlowingStarsTitle>
+        <GlowingStarsTitle>{title}</GlowingStarsTitle>
         <div className="flex justify-between items-end">
           <GlowingStarsDescription>
-            The power of full-stack to the frontend. Read the release notes.
+           {description}
           </GlowingStarsDescription>
           <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
             <Icon />

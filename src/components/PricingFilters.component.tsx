@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// import { CardSpotLightComponent } from "../cardSpotLightComponent/CardSpotLight.component";
 import pricingData from "../data/PricingData.json"; 
+import { GlowingStarsCardBackgroundComponent } from "./GlowingStarsCardBackground.component";
 
 const PricingFilterComponent: React.FC = () => {
   const [activeLevel, setActiveLevel] = useState<
@@ -85,6 +85,16 @@ const PricingFilterComponent: React.FC = () => {
                 duration={pkg.duration}
                 additional={pkg.additional}
               /> */}
+              <GlowingStarsCardBackgroundComponent 
+              key={pkg.id}
+                id={pkg.id}
+                title={pkg.title}
+                price={pkg.price}
+                description={pkg.description}
+                pages={pkg.pages}
+                duration={pkg.duration}
+                additional={pkg.additional}
+              />
             </motion.div>
           ))}
         </AnimatePresence>
