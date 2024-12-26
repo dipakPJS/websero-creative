@@ -89,6 +89,7 @@ const FullPageNav: React.FC = () => {
                 width={100}
                 src={"/images/logo.png"}
                 className="mx-auto h-[70px] lg:h-[100px] w-auto"
+                priority={true}
                 />
                 </Link>
             </div>

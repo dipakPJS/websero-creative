@@ -96,6 +96,7 @@ export default function MainContactFormComponent() {
     };
 
     // sendToServer(payload);
+    console.log(payload);
   };
 
   return (
