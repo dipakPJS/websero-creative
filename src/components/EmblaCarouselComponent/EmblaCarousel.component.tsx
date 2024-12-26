@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { EmblaProvider } from "../../context/EmblaContext";
 
 import "./embla.styles.css";
-import Link from "next/link";
+ 
 
 import data from "../../data/WorkData.json";
 import Image from "next/image";

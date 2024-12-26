@@ -1,59 +1,92 @@
 "use client";
+
 import Image from "next/image";
-import React from "react";
 import { WobbleCard } from "./ui/wobble-card";
+
 
 export function WobbleCardComponent() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:px-10 md:px-10 sm:px-10 mx-auto w-full px-10">
       <WobbleCard
-        containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]"
+        containerClassName="col-span-1 lg:col-span-2 h-full bg-green-900 min-h-[500px] lg:min-h-[400px]"
         className=""
       >
-        <div className="max-w-xs">
-          <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-            Gippity AI powers the entire universe
+        <div className="absolute max-w-lg z-10">
+          <h2 className="text-left text-balance uppercase text-base md:text-3xl lg-1:text-4xl lg:text-5xl font-audioWide font-semibold tracking-[-0.015em] text-white">
+           20+ Successfully Finished Products
           </h2>
-          <p className="mt-4 text-left  text-base/6 text-neutral-200">
-            With over 100,000 mothly active bot users, Gippity AI is the most
-            popular AI platform for developers.
+          <p className="mt-4 text-left  leading-6 text-neutral-200 text-2xl font-bold">
+          Beyond numbers, our track record of over 20+ successful projects speaks to
+           our commitment to turning clients' dreams into digital realities
           </p>
         </div>
         <Image
-          src="/linear.webp"
-          width={500}
-          height={500}
+          src="/images/delivery.png"
+          width={400}
+          height={400}
           alt="linear demo image"
-          className="absolute -right-4 lg:-right-[40%] grayscale filter -bottom-10 object-contain rounded-2xl"
+          className="absolute z-0 -right-2 lg:-right-[10%] grayscale filter  -bottom-1 object-contain rounded-2xl"
         />
       </WobbleCard>
-      <WobbleCard containerClassName="col-span-1 min-h-[300px]">
-        <h2 className="max-w-80  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-          No shirt, no shoes, no weapons.
-        </h2>
-        <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-          If someone yells “stop!”, goes limp, or taps out, the fight is over.
-        </p>
-      </WobbleCard>
-      <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
-        <div className="max-w-sm">
-          <h2 className="max-w-sm md:max-w-lg  text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-            Signup for blazing-fast cutting-edge state of the art Gippity AI
-            wrapper today!
+      
+      <WobbleCard containerClassName=" col-span-1 bg-purple-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+        <div className="absolute z-10 max-w-sm">
+          <h2 className="max-w-sm md:max-w-lg font-audioWide  text-left text-balance text-base  md:text-2xl lg-1:text-4xl lg:text-5xl font-semibold tracking-[-0.015em] text-white">
+          2+ years of experience
           </h2>
-          <p className="mt-4 max-w-[26rem] text-left  text-base/6 text-neutral-200">
-            With over 100,000 mothly active bot users, Gippity AI is the most
-            popular AI platform for developers.
+          <p className="mt-4 max-w-[26rem] text-left text-2xl leading-6 text-neutral-200 font-bold">
+          These 2 years of growth embody our unwavering commitment to progress, creativity,
+          and the art of making ideas flourish. It's a testament to our ever-evolving journey at Ministry
           </p>
         </div>
         <Image
-          src="/linear.webp"
-          width={500}
-          height={500}
+          src="/images/reputation.png"
+          width={250}
+          height={250}
           alt="linear demo image"
-          className="absolute -right-10 md:-right-[40%] lg:-right-[20%] -bottom-10 object-contain rounded-2xl"
+          className="absolute z-0 -right-10  md:-right-[40%] lg:-right-[10%] grayscale -bottom-10 object-contain rounded-2xl"
         />
       </WobbleCard>
+
+      <WobbleCard containerClassName=" col-span-1 min-h-[300px] bg-yellow-800 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+        <div className="absolute z-10 max-w-sm">
+          <h2 className="max-w-sm md:max-w-lg font-audioWide  text-left text-balance text-base  md:text-2xl lg-1:text-4xl lg:text-5xl font-semibold tracking-[-0.015em] text-white">
+           50+ Case Studies
+          </h2>
+          <p className="mt-4 max-w-[26rem] text-left text-2xl leading-6 text-neutral-200 font-bold">
+          "We deliver custom web solutions, with 50+ case studies showcasing our commitment to elevating businesses online."
+          </p>
+        </div>
+        <Image
+          src="/images/analysis.png"
+          width={250}
+          height={250}
+          alt="linear demo image"
+          className="absolute z-0 -right-10 md:-right-[10%] grayscale lg:-right-[0%] -bottom-10 object-contain rounded-2xl"
+        />
+      </WobbleCard>
+      <WobbleCard
+        containerClassName="  col-span-1 lg:col-span-2 h-full bg-orange-900 min-h-[500px] lg:min-h-[400px]"
+        className=""
+      >
+        <div className="absolute max-w-lg z-10">
+          <h2 className="text-left text-balance font-audioWide text-base  md:text-3xl lg-1:text-4xl lg:text-5xl font-semibold tracking-[-0.015em] text-white uppercase">
+          Good vibes only
+          </h2>
+          <p className="mt-4 text-left text-2xl leading-6 text-neutral-200 font-bold">
+          it's the foundation of our creative spirit. Join us in crafting positive
+           experiences and spreading the endless chill through every project we touch
+          </p>
+        </div>
+        <Image
+          src="/images/vibes.png"
+          width={400}
+          height={400}
+          alt="linear demo image"
+          className="absolute z-0 -right-4 lg:-right-[10%] grayscale filter -bottom-10 object-contain rounded-2xl"
+        />
+      </WobbleCard>
+     
     </div>
   );
 }

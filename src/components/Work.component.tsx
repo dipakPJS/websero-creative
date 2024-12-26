@@ -8,7 +8,7 @@ const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true };
 const WorkComponent: React.FC = () => {
   return (
     <div
-      className="relative w-full min-h-[100vh] flex justify-center items-center py-100px bg-[green]"
+      className="relative w-full min-h-[100vh] flex justify-center items-center py-100px"
       id="work"
     >
       {/* Carousel starts */}
