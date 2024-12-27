@@ -78,7 +78,7 @@ export default function DesignersComponent() {
           variants={descriptionVariants}
           >
           By connecting deep analysis, strong technical skills and design
-          background with clear communication & responsiveness we're creating
+          background with clear communication & responsiveness we&apos;re creating
           unique projects with a pinch of good vibes
         </motion.p>
       </motion.div>

@@ -1,7 +1,7 @@
 import GradientTextComponent from "./GradientText.component";
 
 interface Prices {
-    id: number;
+  
     title: string;
     price: string;
     description: string;
@@ -11,7 +11,7 @@ interface Prices {
   }
   
   export default function PricingCardComponent(items: Prices) {
-    const { id, title, price, description, pages, duration, additional } = items;
+    const { title, price, description, pages, duration, additional } = items;
   
     return (
       <div className="min-h-[35rem] text-balance border rounded-[20px] p-4 bg-transparent transform duration-700 ease-in-out hover:scale-105">

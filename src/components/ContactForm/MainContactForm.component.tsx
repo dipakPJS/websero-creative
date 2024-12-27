@@ -126,7 +126,7 @@ export default function MainContactFormComponent() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-3 text-xl lg:text-2xl"
           >
-            Let's collaborate & make good things together.
+            Let&apos;s collaborate & make good things together.
           </motion.p>
         </div>
 

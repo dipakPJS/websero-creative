@@ -76,7 +76,6 @@ const PricingFilterComponent: React.FC = () => {
             >
               <PricingCardComponent
                 key={pkg.id}
-                id={pkg.id}
                 title={pkg.title}
                 price={pkg.price}
                 description={pkg.description}

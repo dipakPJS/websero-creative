@@ -91,7 +91,6 @@ export const Cover = ({
           key={index}
           hovered={hovered}
           duration={Math.random() * 2 + 1}
-          delay={Math.random() * 2 + 1}
           width={containerWidth}
           style={{
             top: `${position}px`,

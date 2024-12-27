@@ -123,7 +123,7 @@ export default function FooterComponent() {
           >
             <div className="w-full flex items-center">
               <p className="text-white text-[200px] md:text-[250px] lg:text-[300px] font-iceBerg uppercase px-5">
-                Let's make your vision a reality{" "}
+                Let&apos;s make your vision a reality{" "}
                 <sub>
                   <GradientTextComponent span={true} texts="*" />
                 </sub>

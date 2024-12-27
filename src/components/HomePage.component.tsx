@@ -12,7 +12,7 @@ import { fadeIn } from "@/utils/variants";
 import { useCursor } from "@/context/CursorContext";
 import { ShootingStarsComponent } from "./ShootingStars.component";
 import SphereLottieComponent from "./SphereLottie.component";
-import { useEffect } from "react";
+ 
  
  
 
