@@ -16,7 +16,7 @@ export default function LogoComponent() {
          priority={true}
          
          />
-         <p className="text-white text-xl lg-1:text-2xl lg:text-2xl font-bold">Websero <GradientTextComponent texts="Creative" span={true} classNames="text-xl lg-1:text-2xl lg:text-3xl " /> </p>
+         <p className="text-white font-audioWide text-sm lg-1:text-lg lg:text-lg font-bold">Websero <GradientTextComponent texts="Creative" span={true} /> </p>
         </Link>
          
        </div>
