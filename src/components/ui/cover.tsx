@@ -143,14 +143,14 @@ export const Cover = ({
 
 export const Beam = ({
   className,
-  delay,
+ 
   duration,
   hovered,
   width = 600,
   ...svgProps
 }: {
   className?: string;
-  delay?: number;
+ 
   duration?: number;
   hovered?: boolean;
   width?: number;
@@ -193,8 +193,7 @@ export const Beam = ({
             duration: hovered ? 0.5 : duration ?? 2,
             ease: "linear",
             repeat: Infinity,
-            delay: hovered ? Math.random() * (1 - 0.2) + 0.2 : 0,
-            repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : delay ?? 1,
+         
           }}
         >
           <stop stopColor="#2EB9DF" stopOpacity="0" />
@@ -208,10 +207,10 @@ export const Beam = ({
 
 export const CircleIcon = ({
   className,
-  delay,
+ 
 }: {
   className?: string;
-  delay?: number;
+ 
 }) => {
   return (
     <div

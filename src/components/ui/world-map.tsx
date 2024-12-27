@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion } from "motion/react";
 import DottedMap from "dotted-map";
 import Image from "next/image";
-import { useTheme } from "next-themes";
+ 
 
 interface MapProps {
   dots?: Array<{

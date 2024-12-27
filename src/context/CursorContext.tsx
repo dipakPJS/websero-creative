@@ -1,13 +1,23 @@
-"use client"
+"use client";
 
 import React, { createContext, useState, ReactNode, useContext } from 'react';
+
+interface Variant {
+  height: number;
+  width: number;
+  transition: {
+    type: string;
+    stiffness: number;
+    damping: number;
+  };
+}
 
 interface CursorContextType {
   cursorVariant: string;
   setCursorVariant: (newValue: string) => void;
   textEnter: () => void;
   textLeave: () => void;
-  variants: Record<string, any>;
+  variants: Record<string, Variant>;
 }
 
 const CursorContext = createContext<CursorContextType | undefined>(undefined);
@@ -19,7 +29,7 @@ interface MyProviderProps {
 export const CursorProvider: React.FC<MyProviderProps> = ({ children }) => {
   const [cursorVariant, setCursorVariant] = useState<string>("default");
 
-  const variants = {
+  const variants: Record<string, Variant> = {
     default: {
       height: 30,
       width: 30,
