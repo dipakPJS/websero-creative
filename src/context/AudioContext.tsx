@@ -27,7 +27,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         fadeAudio(true); // Fade in the audio
         setIsPlaying(true);
       }
-    }, 2000);
+    }, 5000);
 
     return () => clearTimeout(autoPlayTimeout); // Cleanup timeout
   }, []);
