@@ -1,11 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useCallback,
-} from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 
 interface StarProps {
   x: number;
@@ -34,7 +29,6 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 }) => {
   const [stars, setStars] = useState<StarProps[]>([]);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
 
   const generateStars = useCallback(
     (width: number, height: number): StarProps[] => {
@@ -81,13 +75,14 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     updateStars();
 
     const resizeObserver = new ResizeObserver(updateStars);
-    if (canvasRef.current) {
-      resizeObserver.observe(canvasRef.current);
+    const currentCanvas = canvasRef.current; // Copy the current canvas ref
+    if (currentCanvas) {
+      resizeObserver.observe(currentCanvas);
     }
 
     return () => {
-      if (canvasRef.current) {
-        resizeObserver.unobserve(canvasRef.current);
+      if (currentCanvas) {
+        resizeObserver.unobserve(currentCanvas); // Use the copied value
       }
     };
   }, [
@@ -107,9 +102,11 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     if (!ctx) return;
 
     let animationFrameId: number;
+    const currentCanvas = canvas; // Copy the canvas ref for consistent cleanup
 
     const render = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      if (!currentCanvas) return; // Ensure the canvas is still valid
+      ctx.clearRect(0, 0, currentCanvas.width, currentCanvas.height);
       stars.forEach((star) => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);

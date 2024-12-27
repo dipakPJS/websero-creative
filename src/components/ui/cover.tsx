@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useId, useState } from "react";
+import React, { useEffect, useId, useState, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import { SparklesCore } from "@/components/ui/sparkles";
 
@@ -13,32 +12,44 @@ export const Cover = ({
   className?: string;
 }) => {
   const [hovered, setHovered] = useState(false);
-
   const ref = useRef<HTMLDivElement>(null);
 
   const [containerWidth, setContainerWidth] = useState(0);
   const [beamPositions, setBeamPositions] = useState<number[]>([]);
 
   useEffect(() => {
-    if (ref.current) {
-      setContainerWidth(ref.current?.clientWidth ?? 0);
+    const updateDimensions = () => {
+      if (ref.current) {
+        const containerWidth = ref.current.clientWidth ?? 0;
+        const containerHeight = ref.current.clientHeight ?? 0;
+        setContainerWidth(containerWidth);
 
-      const height = ref.current?.clientHeight ?? 0;
-      const numberOfBeams = Math.floor(height / 10); // Adjust the divisor to control the spacing
-      const positions = Array.from(
-        { length: numberOfBeams },
-        (_, i) => (i + 1) * (height / (numberOfBeams + 1))
-      );
-      setBeamPositions(positions);
-    }
-  }, [ref.current]);
+        const numberOfBeams = Math.floor(containerHeight / 10); // Adjust the divisor to control spacing
+        const positions = Array.from(
+          { length: numberOfBeams },
+          (_, i) => (i + 1) * (containerHeight / (numberOfBeams + 1))
+        );
+        setBeamPositions(positions);
+      }
+    };
+
+    // Call on initial render
+    updateDimensions();
+
+    // Optional: Update on window resize
+    window.addEventListener("resize", updateDimensions);
+
+    return () => {
+      window.removeEventListener("resize", updateDimensions);
+    };
+  }, []); // Removed ref.current from dependencies
 
   return (
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       ref={ref}
-      className="relative hover:bg-black bg-[#f702ff1e] mt-[-10px] overflow-hidden shadow-custom backdrop-blur-20  group/cover inline-block px-[50px]  transition duration-200 rounded-tr-[50px] rounded-2xl rounded-bl-[50px]"
+      className="relative hover:bg-black bg-[#f702ff1e] mt-[-10px] overflow-hidden shadow-custom backdrop-blur-20 group/cover inline-block px-[50px] transition duration-200 rounded-tr-[50px] rounded-2xl rounded-bl-[50px]"
     >
       <AnimatePresence>
         {hovered && (
@@ -130,27 +141,24 @@ export const Cover = ({
           },
         }}
         className={cn(
-          " inline-block text-slate-200  relative z-20  transition duration-300",
+          "inline-block text-slate-200 relative z-20 transition duration-300",
           className
         )}
       >
         {children}
       </motion.span>
-       
     </div>
   );
 };
 
 export const Beam = ({
   className,
- 
   duration,
   hovered,
   width = 600,
   ...svgProps
 }: {
   className?: string;
- 
   duration?: number;
   hovered?: boolean;
   width?: number;
@@ -193,7 +201,6 @@ export const Beam = ({
             duration: hovered ? 0.5 : duration ?? 2,
             ease: "linear",
             repeat: Infinity,
-         
           }}
         >
           <stop stopColor="#2EB9DF" stopOpacity="0" />
@@ -207,15 +214,13 @@ export const Beam = ({
 
 export const CircleIcon = ({
   className,
- 
 }: {
   className?: string;
- 
 }) => {
   return (
     <div
       className={cn(
-        `pointer-events-none animate-pulse group-hover/cover:hidden group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-white`,
+        "pointer-events-none animate-pulse group-hover/cover:hidden group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-white",
         className
       )}
     ></div>
