@@ -12,7 +12,8 @@ const AudioContext = createContext<AudioContextType | undefined>(undefined);
 export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const fadeDuration = 1000; // Duration for fade in/out (in ms)
+  const fadeDuration = 500; // Duration for fade in/out (in ms)
+  const [isUserInteracted, setIsUserInteracted] = useState(false);
 
   useEffect(() => {
     const audio = new Audio("/music/audio.mp3");
@@ -20,16 +21,17 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     audio.loop = true;
     audioRef.current = audio;
 
-    // Automatically play audio after 2 seconds
-    const autoPlayTimeout = setTimeout(() => {
-      if (audioRef.current) {
-        audioRef.current.play();
-        fadeAudio(true); // Fade in the audio
-        setIsPlaying(true);
-      }
-    }, 5000);
+    // Add event listener for user interaction
+    const handleUserInteraction = () => {
+      setIsUserInteracted(true);
+      document.removeEventListener("click", handleUserInteraction);
+    };
 
-    return () => clearTimeout(autoPlayTimeout); // Cleanup timeout
+    document.addEventListener("click", handleUserInteraction);
+
+    return () => {
+      document.removeEventListener("click", handleUserInteraction);
+    };
   }, []);
 
   const fadeAudio = (fadeIn: boolean) => {
@@ -56,12 +58,31 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (isPlaying) {
         fadeAudio(false); // Fade out and stop
       } else {
-        audio.play();
+        audio.play().catch((error) => {
+          console.error("Error playing audio:", error);
+        });
         fadeAudio(true); // Fade in and play
       }
       setIsPlaying(!isPlaying);
     }
   };
+
+  useEffect(() => {
+    if (isUserInteracted) {
+      // Automatically play audio after 5 seconds of user interaction
+      const autoPlayTimeout = setTimeout(() => {
+        if (audioRef.current) {
+          audioRef.current.play().catch((error) => {
+            console.error("Error playing audio:", error);
+          });
+          fadeAudio(true); // Fade in the audio
+          setIsPlaying(true);
+        }
+      }, 1000);
+
+      return () => clearTimeout(autoPlayTimeout);
+    }
+  }, [isUserInteracted]);
 
   return (
     <AudioContext.Provider value={{ isPlaying, togglePlay }}>
