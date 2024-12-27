@@ -36,7 +36,14 @@ export default function MainContactFormComponent() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const sendToServer = async (data: any) => {
+  interface FormData {
+    userName: string;
+    email: string;
+    projectType: string;
+    projectBudget: string;
+  }
+
+  const sendToServer = async (data: FormData) => {
 
     const {userName, email, projectType, projectBudget} = data;
 
@@ -54,7 +61,7 @@ export default function MainContactFormComponent() {
      "6F4QeXqxKpnQfhzEz"
      )
 
-      console.log("Email successfully sent:", data);
+ 
       toast.success("Form submitted successfully!", {
         style: {
           background: "linear-gradient(to top right, blue, purple, red)",

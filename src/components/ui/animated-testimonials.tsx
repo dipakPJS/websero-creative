@@ -3,7 +3,7 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 
 type Testimonial = {
   quote: string;
@@ -13,7 +13,7 @@ type Testimonial = {
 };
 export const AnimatedTestimonials = ({
   testimonials,
-  autoplay = false,
+ 
 }: {
   testimonials: Testimonial[];
   autoplay?: boolean;
@@ -31,14 +31,7 @@ export const AnimatedTestimonials = ({
   const isActive = (index: number) => {
     return index === active;
   };
-
-  useEffect(() => {
-    if (autoplay) {
-      const interval = setInterval(handleNext, 5000);
-      return () => clearInterval(interval);
-    }
-  }, [autoplay]);
-
+ 
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
   };
