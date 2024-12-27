@@ -32,7 +32,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                 className="embla__slide flex-none w-full lg:w-30 md:w-3/4 sm:w-3/4"
                 key={idx}
               >
-                <div className="relative group rounded-[50px] overflow-hidden">
+                <div className="relative group rounded-[50px] overflow-hidden"
+                 >
                   <Image
                     src={item.image}
                     alt={item.title}

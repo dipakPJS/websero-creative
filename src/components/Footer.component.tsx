@@ -110,7 +110,7 @@ export default function FooterComponent() {
             </div>
           </div>
         </div>
-        
+        <div className="w-full h-[25vh] md:h-[30vh] lg:h-[40vh] items-center border-y-[0.5px] border-y-white">
           <Marquee
             speed={300}
             autoFill={true}
@@ -121,8 +121,8 @@ export default function FooterComponent() {
             gradientWidth={300}
             className="h-full w-full"
           >
-            <div className=" flex items-center">
-              <p className="text-white text-[150px] md:text-[180px] lg:text-[200px] font-iceBerg uppercase px-5 border-y-[1px] border-y-white">
+            <div className="w-full flex items-center">
+              <p className="text-white text-[200px] md:text-[250px] lg:text-[300px] font-iceBerg uppercase px-5">
                 Let's make your vision a reality{" "}
                 <sub>
                   <GradientTextComponent span={true} texts="*" />
@@ -130,11 +130,11 @@ export default function FooterComponent() {
               </p>
             </div>
           </Marquee>
-    
+        </div>
         <div className="w-full min-h-[50px] grid-cols-2 grid mt-2 pt-3 px-5 lg:px-[100px] md:px-[100px] sm:px-[100px]">
           <div className="w-full mt-5">
             <p className="text-gray-200 text-[16px] font-bold">
-              &copy; {DATE}, Wesero{" "}
+              &copy; {DATE}, Websero{" "}
               <GradientTextComponent span={true} texts="Creative." /> All
               Rights Reserved.
             </p>

@@ -8,6 +8,14 @@ import { PrevButton, NextButton } from "./EmblaCarouselArrowButtons.component";
 import { useEmblaContext } from "../../context/EmblaContext";
 import Link from "next/link";
 
+// Variants for motion
+const fadeInDirections = {
+  top: { initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 } },
+  bottom: { initial: { opacity: 0, y: 50 }, animate: { opacity: 1, y: 0 } },
+  left: { initial: { opacity: 0, x: -50 }, animate: { opacity: 1, x: 0 } },
+  right: { initial: { opacity: 0, x: 50 }, animate: { opacity: 1, x: 0 } },
+};
+
 const EmblaControls: React.FC = () => {
   const {
     prevBtnDisabled,
@@ -20,10 +28,10 @@ const EmblaControls: React.FC = () => {
     <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row justify-center sm:justify-between md:justify-between lg:justify-between pr-2 md:pr-[100px] lg-1:pr-[100px] lg:pr-[100px] items-end ">
       <div className="work w-full text-center">
         <motion.p
-          variants={fadeIn("up", 0.2)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.4 }}
+          initial={fadeInDirections.bottom.initial}
+          whileInView={fadeInDirections.bottom.animate}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="font-bold font-audioWide text-[120px] sm:text-[150px] md:text-[200px] lg-1:text-[250px] lg:text-[350px] work-font text-black"
         >
           Work
