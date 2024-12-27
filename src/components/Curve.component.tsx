@@ -1,3 +1,4 @@
+"use client"
 export default function CurveComponent() {
     return (
         <div className="curve z-[2] overflow-hidden pb-10">
