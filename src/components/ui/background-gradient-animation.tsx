@@ -34,13 +34,13 @@ export const BackgroundGradientAnimation = ({
   containerClassName?: string;
 }) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
+  const animationRef = useRef<number | null>(null); // Ref to track animation frame
 
   const [curX, setCurX] = useState(0);
   const [curY, setCurY] = useState(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
 
-  // Memoize gradient and color values to prevent changes between renders
   const gradientValues = useMemo(
     () => ({
       gradientBackgroundStart,
@@ -88,19 +88,28 @@ export const BackgroundGradientAnimation = ({
   }, [gradientValues]);
 
   useEffect(() => {
-    function move() {
+    const move = () => {
       if (!interactiveRef.current) {
         return;
       }
+
       setCurX((c) => c + (tgX - c) / 20);
       setCurY((c) => c + (tgY - c) / 20);
       interactiveRef.current.style.transform = `translate(${Math.round(
         curX
       )}px, ${Math.round(curY)}px)`;
-    }
 
-    move();
-  }, [tgX, tgY]);
+      animationRef.current = requestAnimationFrame(move);
+    };
+
+    animationRef.current = requestAnimationFrame(move);
+
+    return () => {
+      if (animationRef.current !== null) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [tgX, tgY, curX, curY]);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (interactiveRef.current) {
