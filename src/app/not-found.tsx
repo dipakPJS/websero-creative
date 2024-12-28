@@ -1,8 +1,6 @@
 "use client";
 
  
-import Link from 'next/link';
-
 // loading lottie with no ssr issues
 
 import dynamic from "next/dynamic";
