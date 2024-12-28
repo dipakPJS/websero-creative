@@ -1,5 +1,5 @@
 "use client"
-import ServiceTitleComponent from "./ServiceTitle.component";
+ 
 import { useCursor } from "@/context/CursorContext";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/variants";
@@ -45,8 +45,7 @@ export default function ServiceIntroComponent() {
           viewport={{ once: false, amount: 0.2 }}
           className="flex-1 relative h-64 md:h-[300px] lg:h-[400px]"
         >
-          {/* Service Title Component */}
-          <ServiceTitleComponent />
+        
           {/* Lottie Animation */}
           <div className="w-[80%] h-auto">
             <MarketingAnimation />
