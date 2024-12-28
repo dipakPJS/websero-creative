@@ -21,17 +21,21 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     audio.loop = true;
     audioRef.current = audio;
 
-    // Add event listener for user interaction
-    const handleUserInteraction = () => {
-      setIsUserInteracted(true);
-      document.removeEventListener("click", handleUserInteraction);
-    };
+    // Check if `document` is defined (only in the browser)
+    if (typeof document !== "undefined") {
+      // Add event listener for user interaction
+      const handleUserInteraction = () => {
+        setIsUserInteracted(true);
+        document.removeEventListener("click", handleUserInteraction);
+      };
 
-    document.addEventListener("click", handleUserInteraction);
+      document.addEventListener("click", handleUserInteraction);
 
-    return () => {
-      document.removeEventListener("click", handleUserInteraction);
-    };
+      // Cleanup listener on unmount
+      return () => {
+        document.removeEventListener("click", handleUserInteraction);
+      };
+    }
   }, []);
 
   const fadeAudio = (fadeIn: boolean) => {
