@@ -13,7 +13,7 @@ const BackgroundAnimation = dynamic(() => import("./LottieFileComponents/Backgro
 
 export default function ContactGradientComponent() {
   return (
-    <div className=" h-[42rem] w-full overflow-hidden relative">
+    <div className=" h-[25rem] sm:h-[25rem] md:h-[30rem] lg:h-[42rem] w-full overflow-hidden relative">
 
      <div className="absolute h-full w-full z-10 bg-[#00000021] backdrop-blur-20">
  <div className="py-[50px] h-full w-full">
