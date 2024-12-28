@@ -1,10 +1,15 @@
 "use client"
 import ServiceTitleComponent from "./ServiceTitle.component";
-import Lottie from "lottie-react";
-import CircleLottie from "../../public/lottie/circlelottie.json";
 import { useCursor } from "@/context/CursorContext";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/variants";
+
+// loading lottie with no ssr issues
+
+import dynamic from "next/dynamic";
+
+const MarketingAnimation = dynamic(() => import("./LottieFileComponents/MarketingLottie.component"), { ssr: false });
+
 
 export default function ServiceIntroComponent() {
   const { textEnter, textLeave } = useCursor();
@@ -43,7 +48,9 @@ export default function ServiceIntroComponent() {
           {/* Service Title Component */}
           <ServiceTitleComponent />
           {/* Lottie Animation */}
-          <Lottie animationData={CircleLottie} className="h-full w-full" />
+          <div className="w-[80%] h-auto">
+            <MarketingAnimation />
+          </div>
         </motion.div>
       </div>
     </div>

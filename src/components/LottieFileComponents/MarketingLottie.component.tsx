@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from "../../../public/lottie/circlelottie.json";
+import animationData from "../../../public/lottie/marketing.json";
 
 const lottieOptions = {
   loop: true,
@@ -10,6 +10,6 @@ const lottieOptions = {
   },
 };
 
-const CircleLottie: React.FC = () => <Lottie options={lottieOptions} />;
+const MarketingLottie: React.FC = () => <Lottie options={lottieOptions} />;
 
-export default CircleLottie;
+export default MarketingLottie;

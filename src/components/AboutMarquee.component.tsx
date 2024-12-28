@@ -1,9 +1,14 @@
 "use client";
-import Lottie from "lottie-react";
+ 
 import Marquee from "react-fast-marquee";
-
-import RingLottie from "../../public/lottie/ring.json";
 import GradientTextComponent from "./GradientText.component";
+
+// loading lottie with no ssr issues
+
+import dynamic from "next/dynamic";
+
+const RingAnimation = dynamic(() => import("./LottieFileComponents/RingLottie.component"), { ssr: false });
+
 
 export default function AboutMarqueeComponent() {
   return (
@@ -23,10 +28,9 @@ export default function AboutMarqueeComponent() {
         <p className="text-white text-[150px] font-iceBerg uppercase px-10 border border-white rounded-[200px]">
          <GradientTextComponent texts=" What are we here for?" span={true} />
         </p>
-        <Lottie
-            animationData={RingLottie}
-            className="h-[300px] w-[300px]"
-            />
+        <div className="h-[300px] w-[300px]">
+        <RingAnimation />
+        </div>
       </div>
     </Marquee>
             </div>
