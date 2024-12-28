@@ -47,7 +47,7 @@ export default function ServiceIntroComponent() {
         >
         
           {/* Lottie Animation */}
-          <div className="w-[80%] h-auto">
+          <div className="w-full h-auto">
             <MarketingAnimation />
           </div>
         </motion.div>
