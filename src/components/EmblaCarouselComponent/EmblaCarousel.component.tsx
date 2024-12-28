@@ -21,16 +21,19 @@ type PropType = {
   options?: EmblaOptionsType;
 };
 
+// Type for the autoplay plugin
+type AutoplayPluginType = ReturnType<typeof import("embla-carousel-autoplay").default>;
+
 const EmblaCarousel: React.FC<PropType> = ({ options }) => {
-  const [Autoplay, setAutoplay] = useState<any>(null); // State to hold Autoplay
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, Autoplay ? [Autoplay()] : []);
+  const [Autoplay, setAutoplay] = useState<AutoplayPluginType | null>(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, Autoplay ? [Autoplay] : []);
 
   useEffect(() => {
     // Dynamically import Autoplay only on the client side
     (async () => {
       if (typeof window !== "undefined") {
         const { default: autoplay } = await import("embla-carousel-autoplay");
-        setAutoplay(() => autoplay);
+        setAutoplay(autoplay());
       }
     })();
   }, []);
