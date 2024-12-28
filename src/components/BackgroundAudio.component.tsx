@@ -1,6 +1,5 @@
 "use client";
 
-import soundWave from "../../public/lottie/wavy.json";
 import { IoVolumeMute } from "react-icons/io5";
 import { useAudio } from "../context/AudioContext";
 
