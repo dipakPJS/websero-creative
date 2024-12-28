@@ -33,7 +33,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     // Automatically attempt to play audio after 2 seconds
     const autoPlayTimeout = setTimeout(() => {
       playAudio();
-    }, 2000);
+    }, 5000);
 
     return () => {
       clearTimeout(autoPlayTimeout); // Cleanup timeout
