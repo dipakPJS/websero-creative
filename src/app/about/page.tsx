@@ -5,7 +5,7 @@ import AboutMarqueeComponent from "@/components/AboutMarquee.component";
 import TextScrollComponent from "@/components/TextScroll.component";
 import ContactGradientComponent from "@/components/ContactGradient.component";
 import FooterComponent from "@/components/Footer.component";
-// import { ShootingStarsComponent } from "@/components/ShootingStars.component";
+import { ShootingStarsComponent } from "@/components/ShootingStars.component";
 import { AnimatedTestimonialsComponent } from "@/components/AnimatedTestimonials.component";
 import AboutIntroParaComponent from "@/components/AboutIntroPara.component";
 import AboutInfoTextHorizontalScrollComponent from "@/components/AboutInfoHorizontalScroll.component";
@@ -17,7 +17,7 @@ export default function AboutPage() {
       <AboutIntroComponent />
       <div className="relative">
         <div className="absolute inset-0">
-          {/* <ShootingStarsComponent /> */}
+          <ShootingStarsComponent />
         </div>
         <TextScrollComponent />
         <AboutIntroParaComponent />

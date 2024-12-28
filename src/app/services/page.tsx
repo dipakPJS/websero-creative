@@ -2,7 +2,7 @@
 
 import ServicesListComponent from "@/components/ServicesList.component"; 
 import ServiceIndustriesComponent from "@/components/ServiceIndustries.component";
-// import { ShootingStarsComponent } from "@/components/ShootingStars.component";
+import { ShootingStarsComponent } from "@/components/ShootingStars.component";
 import ServiceBookingComponent from "@/components/ServicesBooking.component";
 import { AnimatedTestimonialsComponent } from "@/components/AnimatedTestimonials.component";
 import WorkflowComponent from "@/components/WorkFlow.component";
@@ -18,7 +18,7 @@ export default function ServicesPage() {
     <div className="min-h-screen w-full bg-black text-white relative">
       {/* shooting stars component */}
       <div className="absolute inset-0">
-          {/* <ShootingStarsComponent /> */}
+          <ShootingStarsComponent />
         </div>
 
       {/* Services Intro Section */}

@@ -1,4 +1,4 @@
-// import { ShootingStarsComponent } from "@/components/ShootingStars.component";
+import { ShootingStarsComponent } from "@/components/ShootingStars.component";
 import WorkPageComponent from "@/components/WorkPage.component";
 import FooterComponent from "@/components/Footer.component";
 
@@ -7,7 +7,7 @@ export default function WorkPage() {
     <>
       <div className="relative">
         <div className="absolute inset-0">
-          {/* <ShootingStarsComponent /> */}
+          <ShootingStarsComponent />
         </div>
         {/* Work Page Content */}
         <WorkPageComponent />

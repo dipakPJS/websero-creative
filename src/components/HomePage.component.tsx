@@ -10,7 +10,7 @@ import FeatureTextComponent from "./FeatureText.component";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/variants";
 import { useCursor } from "@/context/CursorContext";
-// import { ShootingStarsComponent } from "./ShootingStars.component";
+import { ShootingStarsComponent } from "./ShootingStars.component";
 import SphereLottieComponent from "./SphereLottie.component";
  
  
@@ -25,7 +25,7 @@ export default function HomePageComponent() {
       <div onMouseEnter={textLeave} className="homepage relative h-[110vh]">
         {/* homepage first starts */}
         <div className="homepage-first absolute h-full w-full">
-          {/* <ShootingStarsComponent /> */}
+          <ShootingStarsComponent />
         </div>
         {/* homepage first ends */}
 

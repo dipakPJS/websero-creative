@@ -9,7 +9,7 @@ export default function ContactPage() {
     <>
       <div className="relative">
         <div className="absolute inset-0">
-          {/* <ShootingStarsComponent /> */}
+          <ShootingStarsComponent />
         </div>
         <MainContactFormComponent />
         <FooterComponent />

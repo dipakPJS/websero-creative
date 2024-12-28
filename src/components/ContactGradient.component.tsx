@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/variants";
 import Lottie from "lottie-react";
 import BackgroundLottie from "../../public/lottie/background.json";
-// import { CoverComponent } from "./Cover.component";
+import { CoverComponent } from "./Cover.component";
 
 export default function ContactGradientComponent() {
   return (
@@ -24,7 +24,7 @@ export default function ContactGradientComponent() {
         </motion.p>
       </div>
   <div className="h-full w-full flex items-start justify-center text-center">
-  {/* <CoverComponent /> */}
+  <CoverComponent />
   </div>
  </div>
      </div>
