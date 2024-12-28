@@ -14,20 +14,24 @@ export const Cover = ({
   const [hovered, setHovered] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  const [containerWidth, setContainerWidth] = useState(0);
+  const [containerDimensions, setContainerDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
   const [beamPositions, setBeamPositions] = useState<number[]>([]);
 
   useEffect(() => {
     const updateDimensions = () => {
       if (ref.current) {
-        const containerWidth = ref.current.clientWidth ?? 0;
-        const containerHeight = ref.current.clientHeight ?? 0;
-        setContainerWidth(containerWidth);
+        const width = ref.current.clientWidth ?? 0;
+        const height = ref.current.clientHeight ?? 0;
 
-        const numberOfBeams = Math.floor(containerHeight / 10); // Adjust the divisor to control spacing
+        setContainerDimensions({ width, height });
+
+        const numberOfBeams = Math.floor(height / 10); // Adjust the divisor to control spacing
         const positions = Array.from(
           { length: numberOfBeams },
-          (_, i) => (i + 1) * (containerHeight / (numberOfBeams + 1))
+          (_, i) => (i + 1) * (height / (numberOfBeams + 1))
         );
         setBeamPositions(positions);
       }
@@ -36,13 +40,17 @@ export const Cover = ({
     // Call on initial render
     updateDimensions();
 
-    // Optional: Update on window resize
-    window.addEventListener("resize", updateDimensions);
+    // Update on window resize
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", updateDimensions);
+    }
 
     return () => {
-      window.removeEventListener("resize", updateDimensions);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", updateDimensions);
+      }
     };
-  }, []); // Removed ref.current from dependencies
+  }, []);
 
   return (
     <div
@@ -102,7 +110,7 @@ export const Cover = ({
           key={index}
           hovered={hovered}
           duration={Math.random() * 2 + 1}
-          width={containerWidth}
+          width={containerDimensions.width}
           style={{
             top: `${position}px`,
           }}
@@ -179,24 +187,13 @@ export const Beam = ({
         d={`M0 0.5H${width ?? "600"}`}
         stroke={`url(#svgGradient-${id})`}
       />
-
       <defs>
         <motion.linearGradient
           id={`svgGradient-${id}`}
           key={String(hovered)}
           gradientUnits="userSpaceOnUse"
-          initial={{
-            x1: "0%",
-            x2: hovered ? "-10%" : "-5%",
-            y1: 0,
-            y2: 0,
-          }}
-          animate={{
-            x1: "110%",
-            x2: hovered ? "100%" : "105%",
-            y1: 0,
-            y2: 0,
-          }}
+          initial={{ x1: "0%", x2: "-5%" }}
+          animate={{ x1: "110%", x2: "100%" }}
           transition={{
             duration: hovered ? 0.5 : duration ?? 2,
             ease: "linear",
@@ -212,11 +209,7 @@ export const Beam = ({
   );
 };
 
-export const CircleIcon = ({
-  className,
-}: {
-  className?: string;
-}) => {
+export const CircleIcon = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
