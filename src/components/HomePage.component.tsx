@@ -1,7 +1,6 @@
 "use client";
 import "./HomePageComponent.styles.css";
 
-import ScrollDownLottieComponent from "./ScrollDownLottie.component";
 import VerticalText from "./VerticalText.component";
 import IntroComponent from "./Intro.component";
 import CurveComponent from "./Curve.component";
@@ -11,8 +10,13 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/variants";
 import { useCursor } from "@/context/CursorContext";
 import { ShootingStarsComponent } from "./ShootingStars.component";
-import SphereLottieComponent from "./SphereLottie.component";
+
+ // loading lottie with no ssr issues
  
+ import dynamic from "next/dynamic";
+import ScrollDownLottieComponent from "./ScrollDownLottie.component";
+ 
+ const SphereAnimation = dynamic(() => import("./LottieFileComponents/SphereLottie.component"), { ssr: false });
  
  
 
@@ -32,7 +36,7 @@ export default function HomePageComponent() {
         {/* homepage second starts */}
         <div className=" z-[10] homepage-second absolute h-full w-full flex justify-center items-end lg:items-center">
           <div className=" h-[400px] w-[400px] sm:h-[500px] sm:w-[500px] md:h-[500px] md:w-[500px] lg-1:h-[500px] lg-1:w-[500px] lg:h-[500px] lg:w-[500px] transform rotate-[20deg]">
-            <SphereLottieComponent />
+            <SphereAnimation />
           </div>
         </div>
         {/* homepage second ends */}
@@ -51,7 +55,7 @@ export default function HomePageComponent() {
               </motion.div>
               <div className="h-full w-full relative ">
                 <FeatureTextComponent />
-                <ScrollDownLottieComponent />
+                 <ScrollDownLottieComponent />
               </div>
             </div>
           </div>

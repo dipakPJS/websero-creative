@@ -1,10 +1,15 @@
 "use client";
 
-import React from "react";
-import Lottie from "lottie-react";
 import soundWave from "../../public/lottie/wavy.json";
 import { IoVolumeMute } from "react-icons/io5";
 import { useAudio } from "../context/AudioContext";
+
+// loading lottie with no ssr issues
+
+import dynamic from "next/dynamic";
+
+const WavyAnimation = dynamic(() => import("./LottieFileComponents/WavyLottie.component"), { ssr: false });
+
 
 const BackgroundAudioComponent: React.FC = () => {
   const { isPlaying, togglePlay } = useAudio();
@@ -17,12 +22,7 @@ const BackgroundAudioComponent: React.FC = () => {
           onClick={togglePlay}
         >
           {isPlaying ? (
-            <Lottie
-              animationData={soundWave}
-              loop
-              autoplay
-              className="scale-[1]"
-            />
+        <WavyAnimation />
           ) : (
             <IoVolumeMute size={30} color="white" />
           )}

@@ -11,6 +11,7 @@ import ProcessComponent from "@/components/Process.component";
 import { ShootingStarsComponent } from "@/components/ShootingStars.component";
 import WorkComponent from "@/components/Work.component";
 
+ 
 
 export default function Home() {
   return (

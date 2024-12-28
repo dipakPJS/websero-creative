@@ -2,9 +2,14 @@
 
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/variants";
-import Lottie from "lottie-react";
-import BackgroundLottie from "../../public/lottie/background.json";
 import { CoverComponent } from "./Cover.component";
+
+// loading lottie with no ssr issues
+
+import dynamic from "next/dynamic";
+
+const BackgroundAnimation = dynamic(() => import("./LottieFileComponents/BackgroundLottie.component"), { ssr: false });
+
 
 export default function ContactGradientComponent() {
   return (
@@ -31,10 +36,7 @@ export default function ContactGradientComponent() {
 
       {/* lottie background */}
       <div className="absolute h-full w-full">
-        <Lottie
-        animationData={BackgroundLottie}
-        className="h-full w-full"
-        />
+        <BackgroundAnimation />
       </div>
     </div>
   );
