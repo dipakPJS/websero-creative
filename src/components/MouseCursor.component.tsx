@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useCursor } from "../context/CursorContext"; // Update path if necessary
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function MouseCursorComponent() {
   const { cursorVariant, variants } = useCursor();
@@ -15,6 +15,22 @@ export default function MouseCursorComponent() {
   const springX = useSpring(mouseX, { stiffness: 300, damping: 30 });
   const springY = useSpring(mouseY, { stiffness: 300, damping: 30 });
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if the device is mobile
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    };
+
+    handleResize(); // Run on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     const mouseMove = (e: MouseEvent) => {
       const variant = variants[cursorVariant];
@@ -24,12 +40,18 @@ export default function MouseCursorComponent() {
       mouseY.set(e.clientY - offset);
     };
 
-    window.addEventListener("mousemove", mouseMove);
+    if (!isMobile) {
+      window.addEventListener("mousemove", mouseMove);
+    }
 
     return () => {
       window.removeEventListener("mousemove", mouseMove);
     };
-  }, [cursorVariant, mouseX, mouseY, variants]);
+  }, [cursorVariant, mouseX, mouseY, variants, isMobile]);
+
+  if (isMobile) {
+    return null; // Hide the component on mobile
+  }
 
   return (
     <motion.div
