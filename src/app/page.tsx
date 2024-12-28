@@ -8,7 +8,7 @@ import HomePageComponent from "@/components/HomePage.component";
 import MainServicesComponent from "@/components/MainService.component";
 import PricingComponent from "@/components/Pricing.component";
 import ProcessComponent from "@/components/Process.component";
-import { ShootingStarsComponent } from "@/components/ShootingStars.component";
+// import { ShootingStarsComponent } from "@/components/ShootingStars.component";
 import WorkComponent from "@/components/Work.component";
 
 
@@ -22,7 +22,7 @@ export default function Home() {
    <BrandsComponent />
    <div className="relative">
     <div className="absolute inset-0">
-      <ShootingStarsComponent />
+      {/* <ShootingStarsComponent /> */}
     </div>
     <DesignersComponent />
     <AchievementsComponent />
