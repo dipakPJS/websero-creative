@@ -20,23 +20,34 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     audio.loop = true;
     audioRef.current = audio;
 
-    // Automatically play audio after 2 seconds
-    const autoPlayTimeout = setTimeout(() => {
-      if (audioRef.current) {
-        audioRef.current.play();
+    const playAudio = async () => {
+      try {
+        await audio.play();
         fadeAudio(true); // Fade in the audio
         setIsPlaying(true);
+      } catch (error) {
+        console.error("Audio playback failed:", error);
       }
+    };
+
+    // Automatically attempt to play audio after 2 seconds
+    const autoPlayTimeout = setTimeout(() => {
+      playAudio();
     }, 2000);
 
-    return () => clearTimeout(autoPlayTimeout); // Cleanup timeout
+    return () => {
+      clearTimeout(autoPlayTimeout); // Cleanup timeout
+      audioRef.current?.pause(); // Stop playback on unmount
+      audioRef.current = null; // Release audio reference
+    };
   }, []);
 
   const fadeAudio = (fadeIn: boolean) => {
     const audio = audioRef.current;
     if (audio) {
       const step = 0.01; // Step for volume adjustment
-      const interval = fadeDuration / (1.0 / step); // Divide fade duration into steps
+      const intervalTime = fadeDuration / (1.0 / step); // Time per step
+
       const fade = setInterval(() => {
         if (fadeIn && audio.volume < 1.0) {
           audio.volume = Math.min(audio.volume + step, 1.0); // Increase volume to 1.0
@@ -46,7 +57,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           clearInterval(fade);
           if (!fadeIn) audio.pause(); // Pause audio after fade out
         }
-      }, interval);
+      }, intervalTime);
     }
   };
 
@@ -56,7 +67,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (isPlaying) {
         fadeAudio(false); // Fade out and stop
       } else {
-        audio.play();
+        audio.play().catch((error) => console.error("Audio playback error:", error));
         fadeAudio(true); // Fade in and play
       }
       setIsPlaying(!isPlaying);
@@ -76,4 +87,4 @@ export const useAudio = () => {
     throw new Error("useAudio must be used within an AudioProvider");
   }
   return context;
-}; 
+};

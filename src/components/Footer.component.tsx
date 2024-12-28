@@ -23,9 +23,11 @@ export default function FooterComponent() {
           <div className="w-full flex flex-col gap-3 justify-around min-h-[18rem]">
             <Image
               src={"/images/logo.png"}
-              height={100}
-              width={100}
+              height={80}
+              width={80}
               alt="websero creatives"
+              onMouseEnter={textEnter}
+              onMouseLeave={textLeave}
             />
             <p className="text-left w-full ml-5 text-slate-200 font-eagleLake text-2xl sm:text-3xl md-1:text-5xl md:text-6xl lg-1:text-4xl lg:text-4xl font-extrabold">
               Thanks For ch<span className="text-purple-600">oooo</span>sing{" "}
