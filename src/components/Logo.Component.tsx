@@ -2,15 +2,14 @@
 import Image from "next/image"
 import GradientTextComponent from "./GradientText.component"
 import Link from "next/link"
-import { useCursor } from "@/context/CursorContext"
+ 
 
 export default function LogoComponent() {
-    const {textEnter, textLeave} = useCursor();
+ 
     return (
-        <div className="absolute top-5 flex justify-between items-center  pl-[50px] z-[500]">
+        <div className="absolute top-5 flex justify-between items-center  pl-[50px] z-[550]">
         <Link href={"/"} className="flex space-x-3 items-center"
-        onMouseEnter={textEnter}
-        onMouseLeave={textLeave}>
+         >
         <Image 
          src={"/images/logo.png"}
          height={70}

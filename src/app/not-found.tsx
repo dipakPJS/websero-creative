@@ -5,6 +5,7 @@
 
 import dynamic from "next/dynamic";
 import { ShootingStarsComponent } from '@/components/ShootingStars.component';
+import FullPageNav from "@/components/Navbar.component";
 
 const NotFoundAnimation = dynamic(() => import("../components/LottieFileComponents/NotFoundLottie.component"), { ssr: false });
 
@@ -14,6 +15,8 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-black text-white relative">
+      {/* fullpage navbar component */}
+      <FullPageNav />
       <div className="absolute inset-0">
         <ShootingStarsComponent />
       </div>
