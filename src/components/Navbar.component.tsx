@@ -52,7 +52,7 @@ const FullPageNav: React.FC = () => {
 
   return (
     <>
-    <div className="fixed top-0 left-0 w-[100vw] h-auto z-[500] flex justify-end p-5">
+    <div className="fixed top-0 left-0 w-[100vw] h-auto z-[700] flex justify-end p-5">
       
       <button
         onClick={() => setIsOpen(!isOpen)}
@@ -83,7 +83,7 @@ const FullPageNav: React.FC = () => {
           animate="visible"
           exit="exit"
           variants={navVariants}
-          className="fixed inset-0 z-[350] bg-[#00000062] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[20px]"
+          className="fixed inset-0 z-[600] bg-[#00000062] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[20px]"
           >
             <div className="logo p-5 w-full">
               <Link href={"/"}  onClick={handleLinkClick}>

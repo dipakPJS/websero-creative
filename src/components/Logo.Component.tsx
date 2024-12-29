@@ -7,7 +7,7 @@ import Link from "next/link"
 export default function LogoComponent() {
  
     return (
-        <div className="absolute top-5 flex justify-between items-center  pl-[50px] z-[550]">
+        <div className="absolute top-5 flex justify-between items-center  pl-[50px] z-[400]">
         <Link href={"/"} className="flex space-x-3 items-center"
          >
         <Image 

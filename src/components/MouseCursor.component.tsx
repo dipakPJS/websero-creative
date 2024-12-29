@@ -55,7 +55,7 @@ export default function MouseCursorComponent() {
 
   return (
     <motion.div
-      className="bg-white rounded-full fixed top-0 left-0 pointer-events-none z-[500] mix-blend-difference"
+      className="bg-white rounded-full fixed top-0 left-0 pointer-events-none z-[900] mix-blend-difference"
       animate={{
         height: variants[cursorVariant].height,
         width: variants[cursorVariant].width,
