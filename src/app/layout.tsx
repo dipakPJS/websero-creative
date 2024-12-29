@@ -39,12 +39,12 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <div className="min-h-screen relative">
+            <FullPageNav />
             <CursorProvider>
               <AudioProvider>
                 <MouseCursorComponent />
                 <BackgroundAudioComponent />
                 <LogoComponent />
-                <FullPageNav />
                 {children}
               </AudioProvider>
             </CursorProvider>
