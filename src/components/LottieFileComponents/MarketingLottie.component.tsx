@@ -10,6 +10,12 @@ const lottieOptions = {
   },
 };
 
-const MarketingLottie: React.FC = () => <Lottie options={lottieOptions} />;
+const MarketingLottie: React.FC = () =>(
+  <div style={{ pointerEvents: "none",
+    
+   }}>
+    <Lottie options={lottieOptions} />
+  </div>
+);
 
 export default MarketingLottie;

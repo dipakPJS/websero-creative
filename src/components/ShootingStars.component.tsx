@@ -5,7 +5,7 @@ import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 export function ShootingStarsComponent() {
   return (
-    <div className="h-full bg-black relative w-full">
+    <div className="h-[100%] bg-black relative w-[100%]">
       <ShootingStars />
       <StarsBackground />
     </div>

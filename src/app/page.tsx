@@ -15,7 +15,8 @@ import WorkComponent from "@/components/Work.component";
 
 export default function Home() {
   return (
-   <>
+    <div className="min-h-screen">
+
    <HomePageComponent />
    <WorkComponent />
    <MainServicesComponent />
@@ -31,7 +32,8 @@ export default function Home() {
     <AnimatedTestimonialsComponent bgColor="transparent" />
     <ContactGradientComponent />
     <FooterComponent />
+    </div>
    </div>
-   </>
+   
   );
 }

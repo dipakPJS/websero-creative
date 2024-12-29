@@ -7,7 +7,7 @@ import { fadeIn } from "@/utils/variants";
 
 export default function MainServicesComponent() {
   return (
-    <div className="w-full min-h-[100vh] p-4 flex justify-center items-center ">
+    <div className="w-full min-h-[100vh] p-4 flex justify-center items-center py-[100px]">
       <div className=" h-full w-[90%] lg-1:w-[95%] lg:w-[80%] flex flex-col justify-around  lg-1:flex-row lg:flex-row items-center">
         {/* experience text starts */}
         <motion.div 

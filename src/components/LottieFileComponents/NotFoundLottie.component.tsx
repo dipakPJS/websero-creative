@@ -10,6 +10,12 @@ const lottieOptions = {
   },
 };
 
-const ErrorLottie: React.FC = () => <Lottie options={lottieOptions} />;
+const ErrorLottie: React.FC = () => (
+  <div style={{ pointerEvents: "none",
+    
+   }}>
+    <Lottie options={lottieOptions} />
+  </div>
+);;
 
 export default ErrorLottie;

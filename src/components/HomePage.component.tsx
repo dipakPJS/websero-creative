@@ -55,8 +55,8 @@ export default function HomePageComponent() {
               </motion.div>
               <div className="h-full w-full relative ">
                 <FeatureTextComponent />
-                 <ScrollDownLottieComponent />
               </div>
+              <ScrollDownLottieComponent />
             </div>
           </div>
         </div>
