@@ -7,7 +7,7 @@ import { useCursor } from "@/context/CursorContext"
 export default function LogoComponent() {
     const {textEnter, textLeave} = useCursor();
     return (
-        <div className="absolute top-5 flex justify-between items-center  pl-[50px] z-[200]">
+        <div className="absolute top-5 flex justify-between items-center  pl-[50px] z-[500]">
         <Link href={"/"} className="flex space-x-3 items-center"
         onMouseEnter={textEnter}
         onMouseLeave={textLeave}>

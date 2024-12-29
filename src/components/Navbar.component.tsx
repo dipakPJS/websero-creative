@@ -52,11 +52,13 @@ const FullPageNav: React.FC = () => {
 
   return (
     <>
+    <div className="fixed top-0 left-0 w-[100vw] h-auto z-[500] flex justify-end p-5">
+      
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-5 right-5 sm:right-5 md:right-5 lg:right-5 z-[400] text-black text-sm md:text-xl lg:text-xl font-iceBerg mix-blend-hard-light bg-white font-extrabold focus:outline-none h-[60px] w-[60px] md:h-[70px] md:w-[70px] lg-1:h-[80px] lg-1:w-[80px] lg:h-[80px] lg:w-[80px] rounded-[50%] flex justify-center items-center"
+        className="text-black bg-white text-sm md:text-xl lg:text-xl font-iceBerg mix-blend-hard-light font-extrabold focus:outline-none h-[60px] w-[60px] md:h-[70px] md:w-[70px] lg-1:h-[80px] lg-1:w-[80px] lg:h-[80px] lg:w-[80px] rounded-[50%] flex justify-center items-center"
         style={{ boxShadow: "inset 0 0 5px 5px black" }}
-      >
+        >
         <AnimatePresence mode="wait">
           <motion.span
             key={isOpen ? "Close" : "Menu"}
@@ -66,20 +68,22 @@ const FullPageNav: React.FC = () => {
             exit="exit"
             transition={{ duration: 0.3 }}
             className="block"
-          >
+            >
             {isOpen ? "Close" : "Menu"}
           </motion.span>
         </AnimatePresence>
       </button>
+      </div>
+    
 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={navVariants}
-            className="fixed inset-0 z-[350] bg-[#00000062] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[20px]"
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={navVariants}
+          className="fixed inset-0 z-[350] bg-[#00000062] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[20px]"
           >
             <div className="logo p-5 w-full">
               <Link href={"/"}  onClick={handleLinkClick}>
@@ -104,13 +108,13 @@ const FullPageNav: React.FC = () => {
                 {["Home", "About", "Services", "Work", "Contact"].map(
                   (label, index) => (
                     <motion.div
-                      key={index}
-                      variants={linkVariants}
-                      className="duration-1000 ease-in-out"
-                      transition={{
-                        delay: index * 0.3, // Staggered delay based on the index
-                        duration: 0.1,
-                      }}
+                    key={index}
+                    variants={linkVariants}
+                    className="duration-1000 ease-in-out"
+                    transition={{
+                      delay: index * 0.3, // Staggered delay based on the index
+                      duration: 0.1,
+                    }}
                     >
                       <Link
                         href={
@@ -158,7 +162,8 @@ const FullPageNav: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+        </>
+   
   );
 };
 

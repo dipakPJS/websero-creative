@@ -9,13 +9,16 @@ import WorkflowComponent from "@/components/WorkFlow.component";
 import ContactGradientComponent from "@/components/ContactGradient.component";
 import FooterComponent from "@/components/Footer.component";
 import ServiceIntroComponent from "@/components/ServiceIntro.component";
+import FullPageNav from "@/components/Navbar.component";
  
 
 export default function ServicesPage() {
  
 
   return (
-    <div className="min-h-screen w-full bg-black text-white relative">
+    <div className="min-h-screen w-[100vw] bg-black text-white relative">
+      {/* full page nav */}
+      <FullPageNav />
       {/* shooting stars component */}
       <div className="absolute inset-0">
           <ShootingStarsComponent />

@@ -10,10 +10,14 @@ import { AnimatedTestimonialsComponent } from "@/components/AnimatedTestimonials
 import AboutIntroParaComponent from "@/components/AboutIntroPara.component";
 import AboutInfoTextHorizontalScrollComponent from "@/components/AboutInfoHorizontalScroll.component";
 import { WorldMapComponent } from "@/components/WorldMap.component";
+import FullPageNav from "@/components/Navbar.component";
 
 export default function AboutPage() {
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-[100vw] relative">
+     
+        <FullPageNav />
+      
       <AboutIntroComponent />
       <div className="relative">
         <div className="absolute inset-0">

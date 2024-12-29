@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import FullPageNav from "@/components/Navbar.component";
 import { CursorProvider } from "@/context/CursorContext";
 import { AudioProvider } from "@/context/AudioContext";
 import MouseCursorComponent from "@/components/MouseCursor.component";
@@ -37,11 +36,14 @@ export default function RootLayout({
       <ReactLenis root>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          style={{
+            overflowX: "hidden",
+          }}
         >
           <div className="min-h-screen relative">
-            <FullPageNav />
             <CursorProvider>
               <AudioProvider>
+           
                 <MouseCursorComponent />
                 <BackgroundAudioComponent />
                 <LogoComponent />
