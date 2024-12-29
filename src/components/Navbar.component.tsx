@@ -54,7 +54,7 @@ const FullPageNav: React.FC = () => {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-5 right-2 sm:right-3 md:right-4 lg:right-5 z-[400] text-black text-sm md:text-xl lg:text-xl font-iceBerg mix-blend-hard-light bg-white font-extrabold focus:outline-none h-[60px] w-[60px] md:h-[70px] md:w-[70px] lg-1:h-[80px] lg-1:w-[80px] lg:h-[80px] lg:w-[80px] rounded-[50%] flex justify-center items-center"
+        className="fixed top-5 right-5 sm:right-5 md:right-5 lg:right-5 z-[400] text-black text-sm md:text-xl lg:text-xl font-iceBerg mix-blend-hard-light bg-white font-extrabold focus:outline-none h-[60px] w-[60px] md:h-[70px] md:w-[70px] lg-1:h-[80px] lg-1:w-[80px] lg:h-[80px] lg:w-[80px] rounded-[50%] flex justify-center items-center"
         style={{ boxShadow: "inset 0 0 5px 5px black" }}
       >
         <AnimatePresence mode="wait">
