@@ -16,7 +16,7 @@ export default function ServicesPage() {
  
 
   return (
-    <div className="min-h-screen w-[100vw] bg-black text-white relative">
+    <div className="min-h-screen w-[100vw] bg-black text-white relative overflow-x-hidden">
       {/* full page nav */}
       <FullPageNav />
       {/* shooting stars component */}

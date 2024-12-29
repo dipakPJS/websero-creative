@@ -14,7 +14,7 @@ export default function NotFound() {
  
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white relative">
+    <div className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-x-hidden">
       {/* fullpage navbar component */}
       <FullPageNav />
       <div className="absolute inset-0">

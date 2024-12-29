@@ -7,7 +7,7 @@ import { ShootingStarsComponent } from "@/components/ShootingStars.component";
 
 export default function ContactPage() {
   return (
-    <div className="h-full w-[100vw] relative">
+    <div className="h-full w-[100vw] relative overflow-x-hidden">
       <FullPageNav />
       <div className="relative">
         <div className="absolute inset-0">

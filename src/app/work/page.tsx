@@ -6,7 +6,7 @@ import FullPageNav from "@/components/Navbar.component";
 export default function WorkPage() {
   return (
   
-      <div className="relative w-[100vw]">
+      <div className="relative w-[100vw] overflow-x-hidden">
         {/* fullpage navbar */}
         <FullPageNav />
         <div className="absolute inset-0">

@@ -56,8 +56,13 @@ export default function HomePageComponent() {
               <div className="h-full w-full relative ">
                 <FeatureTextComponent />
               </div>
-              <ScrollDownLottieComponent />
+           
             </div>
+            
+             <div className=" mt-10 sm:mt-10 md:mt-10 lg:mt-0 h-auto">
+             <ScrollDownLottieComponent />
+             </div>
+              
           </div>
         </div>
         {/* homepage third ends */}
