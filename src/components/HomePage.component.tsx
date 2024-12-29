@@ -57,11 +57,8 @@ export default function HomePageComponent() {
                 <FeatureTextComponent />
               </div>
            
-            </div>
-            
-             <div className=" mt-10 sm:mt-10 md:mt-10 lg:mt-0 h-auto">
-             <ScrollDownLottieComponent />
              </div>
+            
               
           </div>
         </div>
@@ -70,7 +67,11 @@ export default function HomePageComponent() {
         <div className="homepage-4th absolute h-full w-full z-10 ">
           <div className="h-full w-full relative">
             <VerticalText />
+            <div className="absolute top-[100%] md:top-[90%] lg:top-[73%] h-auto w-full flex lg:justify-end justify-center px-5">
+             <ScrollDownLottieComponent />
+             </div>
           </div>
+
         </div>
         {/* homepage 4th ends */}
       </div>

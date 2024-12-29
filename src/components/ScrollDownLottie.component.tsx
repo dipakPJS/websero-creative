@@ -11,10 +11,10 @@ const ScrollDownAnimation = dynamic(
 
 export default function ScrollDownLottieComponent() {
   return (
-    <div className="absolute cursor-pointer top-[75%] h-auto w-full flex justify-center md:justify-end lg:justify-end px-[50px]">
+   
       <a href="#work">
         <ScrollDownAnimation />
       </a>
-    </div>
+   
   );
 }
