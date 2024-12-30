@@ -26,7 +26,7 @@ export default function HomePageComponent() {
 
   return (
     <>
-      <div onMouseEnter={textLeave} className="homepage relative h-[110vh]">
+      <div onMouseEnter={textLeave} className="homepage relative min-h-[120vh] bg-black">
         {/* homepage first starts */}
         <div className="homepage-first absolute h-full w-full">
           <ShootingStarsComponent />
@@ -35,7 +35,7 @@ export default function HomePageComponent() {
 
         {/* homepage second starts */}
         <div className=" z-[10] homepage-second absolute h-full w-full flex justify-center items-end lg:items-center">
-          <div className=" h-[400px] w-[400px] sm:h-[500px] sm:w-[500px] md:h-[500px] md:w-[500px] lg-1:h-[500px] lg-1:w-[500px] lg:h-[500px] lg:w-[500px] transform rotate-[20deg]">
+          <div className=" h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px] lg-1:h-[500px] lg-1:w-[500px] lg:h-[500px] lg:w-[500px] transform rotate-[20deg]">
             <SphereAnimation />
           </div>
         </div>

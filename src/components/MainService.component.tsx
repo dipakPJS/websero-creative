@@ -7,15 +7,15 @@ import { fadeIn } from "@/utils/variants";
 
 export default function MainServicesComponent() {
   return (
-    <div className="w-full min-h-[100vh] p-4 flex justify-center items-center py-[100px]">
-      <div className=" h-full w-[90%] lg-1:w-[95%] lg:w-[80%] flex flex-col justify-around  lg-1:flex-row lg:flex-row items-center">
+    <div className="w-full min-h-[100vh] flex justify-center p-2 md:px-5 items-center py-[100px]">
+      <div className=" h-full w-full p-0 lg:px-[100px] flex flex-col justify-around md:flex-row lg:flex-row items-center">
         {/* experience text starts */}
         <motion.div 
          variants={fadeIn("right", 0.1)}
          initial="hidden"
          whileInView="show"
          viewport={{ once: false, amount: 0.2 }}
-        className="experiences w-[90%]">
+        className="experiences w-full">
           <p className="text-xl font-audioWide text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-blue-600 to-yellow-600 uppercase ">
             What we do
           </p>

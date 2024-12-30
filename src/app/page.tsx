@@ -23,7 +23,7 @@ export default function Home() {
    <MainServicesComponent />
    <ProcessComponent />
    <BrandsComponent />
-   <div className="relative">
+   <div className="relative bg-black">
     <div className="absolute inset-0">
       <ShootingStarsComponent />
     </div>

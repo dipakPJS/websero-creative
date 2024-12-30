@@ -6,14 +6,14 @@ import { MeteorsComponent } from "./Meteors.component";
 
 export default function ProcessComponent() {
   return (
-    <div className="w-full min-h-[120vh] py-[100px] flex flex-col items-center text-left ">
+    <div className="w-full min-h-[100vh] py-[100px] flex flex-col items-center text-left ">
       <div className="w-full">
         <motion.p
           variants={fadeIn("right", 0.1)}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.2 }}
-          className="font-audioWide pl-8 font-bold text-black text-4xl sm:text-4xl md-1:text-5xl md:text-6xl lg-1:text-7xl lg:text-8xl uppercase"
+          className="font-audioWide pl-4 lg:pl-8 font-bold text-black text-4xl sm:text-4xl md-1:text-5xl md:text-6xl lg-1:text-7xl lg:text-8xl uppercase"
         >
           Process
         </motion.p>
@@ -21,7 +21,7 @@ export default function ProcessComponent() {
 
       <br />
       <br />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg-1:grid-cols-3 lg:grid-cols-4 md:grid-cols-2 gap-y-10 p-10 gap-x-5 place-items-center w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-5 p-2 lg:p-10 place-items-center w-full">
         {ProcessData.map((item, index) => {
           return (
             <MeteorsComponent
