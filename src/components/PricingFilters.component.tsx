@@ -35,9 +35,9 @@ const PricingFilterComponent: React.FC = () => {
   };
 
   return (
-    <div className="p-5 w-full">
+    <div className="p-2 w-full">
       {/* Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-4">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-4 lg:gap-4">
         {["Basic", "Content-Focused", "Custom", "Enterprise"].map((level) => (
           <button
             key={level}
@@ -46,7 +46,7 @@ const PricingFilterComponent: React.FC = () => {
                 level as "Basic" | "Content-Focused" | "Custom" | "Enterprise"
               )
             }
-            className={`px-4 py-2 rounded-[50px] font-semibold transition-colors ${
+            className={`lg:px-4 md:px-2 px-2 py-2 rounded-[50px] lg:text-lg md:text-md text-xs font-semibold transition-colors ${
               activeLevel === level
                 ? "bg-purple-600 text-white"
                 : "bg-white text-black"
@@ -59,7 +59,7 @@ const PricingFilterComponent: React.FC = () => {
 
       {/* Pricing Cards */}
       <motion.div
-        className="mt-[50px] pt-[50px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8 lg:gap-10 lg:px-10 min-h-[30rem]"
+        className="mt-3 pt-[50px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 lg:px-10 min-h-[30rem]"
         initial="hidden"
         animate="show"
         exit="hidden"
