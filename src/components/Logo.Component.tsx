@@ -15,7 +15,7 @@ export default function LogoComponent() {
          height={70}
          width={70}
          alt="logo Image"
-         className=" h-[40px] sm:h-[50px] md:h-[60px] lg:h-[70px] w-auto"
+         className=" h-[30px] sm:h-[50px] md:h-[60px] lg:h-[70px] w-auto"
          priority={true}
          
          />

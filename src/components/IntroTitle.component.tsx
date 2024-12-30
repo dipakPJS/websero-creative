@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 
 import { useCursor } from "@/context/CursorContext";
+import GradientTextComponent from "./GradientText.component";
 
 // Variants for random fade directions
 const fadeInDirections = {
@@ -28,11 +29,11 @@ export default function IntroTitleComponent() {
           className="about-header h-full w-full flex justify-center items-center"
         >
           <h1
-            className="font-eagleLake text-2xl sm:text-2xl md:text-3xl lg-1:text-4xl lg:text-6xl w-[50%] text-center text-white"
+            className="font-eagleLake text-2xl sm:text-2xl md:text-3xl lg-1:text-4xl lg:text-6xl w-[60%] lg:w-[50%] text-center text-white"
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
           >
-            We are more than just a team
+          <GradientTextComponent span={true} texts="We are more than just a team" />
           </h1>
         </motion.div>
         <motion.p
@@ -67,7 +68,7 @@ export default function IntroTitleComponent() {
           whileInView={fadeInDirections.top.animate}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="absolute border border-purple-500 min-h-[120px] w-[350px] sm:w-[400px] md:w-[400px] lg:w-[500px] top-[70%] sm:top-[70%] md-1:top-[60%] md:top-[60%] lg-1:top-[60%] lg:top-[65%] p-5 right-[5%] bg-transparent  shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[10px] rounded-[50px]"
+          className="absolute border border-purple-500 min-h-[120px] w-[300px] sm:w-[400px] md:w-[400px] lg:w-[500px] top-[70%] sm:top-[70%] md-1:top-[60%] md:top-[60%] lg-1:top-[60%] lg:top-[65%] p-5 right-[5%] bg-transparent  shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[10px] rounded-[50px]"
         >
           <p className="text-sm md:text-lg lg:text-xl text-white">
             We are visionaries, because we see and understand. We are creators,

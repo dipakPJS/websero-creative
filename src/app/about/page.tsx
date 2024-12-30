@@ -14,15 +14,15 @@ import FullPageNav from "@/components/Navbar.component";
 
 export default function AboutPage() {
   return (
-    <div className="h-full w-[100vw] relative">
+    <div className="h-full w-[100vw] relative bg-black">
      
         <FullPageNav />
       
-      <AboutIntroComponent />
       <div className="relative">
         <div className="absolute inset-0">
           <ShootingStarsComponent />
         </div>
+      <AboutIntroComponent />
         <TextScrollComponent />
         <AboutIntroParaComponent />
         <AboutMarqueeComponent />

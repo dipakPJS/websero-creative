@@ -5,6 +5,7 @@ import VerticalText from "./VerticalText.component";
 import IntroComponent from "./Intro.component";
 import CurveComponent from "./Curve.component";
 import FeatureTextComponent from "./FeatureText.component";
+import dynamic from "next/dynamic";
 
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/variants";
@@ -13,7 +14,6 @@ import { ShootingStarsComponent } from "./ShootingStars.component";
 
  // loading lottie with no ssr issues
  
- import dynamic from "next/dynamic";
 import ScrollDownLottieComponent from "./ScrollDownLottie.component";
  
  const SphereAnimation = dynamic(() => import("./LottieFileComponents/SphereLottie.component"), { ssr: false });
@@ -35,7 +35,7 @@ export default function HomePageComponent() {
 
         {/* homepage second starts */}
         <div className=" z-[10] homepage-second absolute h-full w-full flex justify-center items-end lg:items-center">
-          <div className=" h-[250px] w-[250px] sm:h-[300px] sm:w-[300px] md:h-[400px] md:w-[400px] lg-1:h-[500px] lg-1:w-[500px] lg:h-[500px] lg:w-[500px] transform rotate-[20deg]">
+          <div className=" h-[250px] sm:h-[300px] md:h-[400px] lg-1:h-[500px] lg:h-[500px] w-auto">
             <SphereAnimation />
           </div>
         </div>

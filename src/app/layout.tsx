@@ -10,6 +10,7 @@ import LogoComponent from "@/components/Logo.Component";
 // react-lenis
 
 import { ReactLenis } from "@/utils/lenis";
+ 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,6 +47,7 @@ export default function RootLayout({
            
                 <MouseCursorComponent />
                 <BackgroundAudioComponent />
+              
                 <LogoComponent />
                 {children}
               </AudioProvider>

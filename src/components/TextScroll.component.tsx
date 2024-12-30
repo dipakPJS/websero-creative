@@ -37,11 +37,11 @@ export default function TextScrollComponent() {
 
   return (
 
-    <div ref={targetRef} className="h-[300vh] bg-black">
+    <div ref={targetRef} className="h-[300vh] hidden sm:block md:block lg:block">
 
       <div className="h-full w-full relative">
 
-        <div className="sticky top-0 h-screen flex items-center overflow-hidden rotate-[5deg] w-[150%]">
+        <div className="sticky top-0 h-screen flex items-center overflow-hidden rotate-[5deg] w-[100vw]">
 
           {/* First layer of text */}
 
@@ -63,7 +63,7 @@ export default function TextScrollComponent() {
 
                 key={index}
 
-                className=" text-[150px] lg-1:text-[180px] lg:text-[200px] font-audioWide text-transparent bg-clip-text bg-gradient-to-bl from-[blue]  via-[#ee00ff] to-[purple] bg-[length:200%] bg-left animate-gradient-x"
+                className=" text-[70px] lg-1:text-[180px] lg:text-[200px] font-audioWide text-transparent bg-clip-text bg-gradient-to-bl from-[blue]  via-[#ee00ff] to-[purple] bg-[length:200%] bg-left animate-gradient-x"
 
               >
 
@@ -95,7 +95,7 @@ export default function TextScrollComponent() {
 
                 key={index}
 
-                className=" text-[150px] lg-1:text-[180px] lg:text-[200px] font-audioWide text-transparent bg-clip-text bg-gradient-to-tr from-purple-700  via-[blue] to-pink-600 bg-[length:200%] bg-left animate-gradient-x"
+                className=" text-[70px] lg-1:text-[180px] lg:text-[200px] font-audioWide text-transparent bg-clip-text bg-gradient-to-tr from-purple-700  via-[blue] to-pink-600 bg-[length:200%] bg-left animate-gradient-x"
 
               >
 

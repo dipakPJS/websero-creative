@@ -1,6 +1,11 @@
 "use client";
 import IntroTitleComponent from "./IntroTitle.component";
-import VideoComponent from "./Video.component";
+import dynamic from "next/dynamic";
+
+ // loading lottie with no ssr issues
+ 
+ const AboutBackgroundAnimation = dynamic(() => import("./LottieFileComponents/AboutBackgroundLottie.component"), { ssr: false });
+ 
 
 
 export default function AboutIntroComponent() {
@@ -10,12 +15,10 @@ export default function AboutIntroComponent() {
     return (
         <div className=" bg-black flex items-center relative justify-center h-[110vh] w-full overflow-hidden px-0 lg:px-5 md:px-3 sm:px-3 py-2">
         
-        {/* Video Wrapper */}
-
-        <VideoComponent
-          videoUrl="/videos/hole.mp4"
-          classNames="absolute top-0 left-0 w-full h-full object-cover rounded-[50px]"
-        />
+      
+        <div className="w-full h-full absolute top-0 left-0">
+          <AboutBackgroundAnimation />
+        </div>
         
     <IntroTitleComponent />
         
