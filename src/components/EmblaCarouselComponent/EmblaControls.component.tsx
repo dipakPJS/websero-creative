@@ -25,7 +25,7 @@ const EmblaControls: React.FC = () => {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.4 }}
-            className="font-bold font-audioWide text-[120px] sm:text-[150px] md:text-[200px] lg-1:text-[250px] lg:text-[350px] work-font text-black"
+            className="font-bold font-audioWide text-[80px] sm:text-[120px] md:text-[140px] lg-1:text-[250px] lg:text-[350px] work-font text-black"
           >
             Work
           </motion.p>
