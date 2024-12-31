@@ -14,9 +14,9 @@ const fadeInDirections = {
 
 export default function WorkflowComponent() {
   return (
-    <div className="min-h-[120vh] w-full relative  flex flex-col items-start justify-start px-10 pb-[50px]">
+    <div className="min-h-[120vh] w-full relative  flex flex-col items-start justify-start px-2 md:px-5 lg:px-10 pb-[50px]">
       {/* Header Section */}
-      <div className="text-start p-6 h-auto w-full relative flex flex-col gap-5">
+      <div className="text-start p-3 h-auto w-full relative flex flex-col gap-5">
         <motion.h1
         initial={fadeInDirections.top.initial}
         whileInView={fadeInDirections.top.animate}
@@ -40,7 +40,7 @@ export default function WorkflowComponent() {
       </div>
 
       {/* Workflow Items Section */}
-      <div className="flex flex-wrap gap-6 w-full p-6 justify-center items-center">
+      <div className="flex flex-wrap gap-6 w-full justify-center items-center mt-[50px]">
         {WorkFlowData.map(({ id, title, description }, index) => (
           <div
             key={index}
