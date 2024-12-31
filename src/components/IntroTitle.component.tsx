@@ -33,7 +33,7 @@ export default function IntroTitleComponent() {
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
           >
-          <GradientTextComponent span={true} texts="We are more than just a team" />
+          We are more than just a team
           </h1>
         </motion.div>
         <motion.p

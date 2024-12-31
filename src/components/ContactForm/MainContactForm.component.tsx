@@ -14,8 +14,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const fadeInDirections = {
+  top: { initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 } },
   bottom: { initial: { opacity: 0, y: 50 }, animate: { opacity: 1, y: 0 } },
   left: { initial: { opacity: 0, x: -50 }, animate: { opacity: 1, x: 0 } },
+  right: { initial: { opacity: 0, x: 50 }, animate: { opacity: 1, x: 0 } },
 };
 
 export default function MainContactFormComponent() {
@@ -111,7 +113,7 @@ export default function MainContactFormComponent() {
   };
 
   return (
-    <div className="min-h-[100vh] relative z-10  w-full h-full pb-[200px]">
+    <div className="min-h-[100vh] relative z-10  w-full h-full pb-[50px]">
       <ToastContainer position="top-center" />
       <div className="main-form text-center h-full w-full px-8 lg:px-16 flex flex-col lg:flex-row justify-between items-start gap-[50px] lg:gap-[100px] pt-[50px] lg:pt-[130px]">
         <div className="texts text-left text-white max-w-lg pt-[200px]">
