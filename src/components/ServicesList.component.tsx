@@ -5,6 +5,14 @@ import { fadeIn } from "@/utils/variants";
 import ServiceParallaxComponent from "@/components/ServiceParallax.component";
 import ServiceData from "@/data/ServicePageData.json";
 
+// Variants for random fade directions
+const fadeInDirections = {
+  top: { initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 } },
+  bottom: { initial: { opacity: 0, y: 50 }, animate: { opacity: 1, y: 0 } },
+  left: { initial: { opacity: 0, x: -50 }, animate: { opacity: 1, x: 0 } },
+  right: { initial: { opacity: 0, x: 50 }, animate: { opacity: 1, x: 0 } },
+};
+
 export default function ServicesListComponent() {
   // Framer Motion hook for scroll progress
   const { scrollYProgress } = useScroll(); // Tracks vertical scroll position as 0 to 1
@@ -17,10 +25,10 @@ export default function ServicesListComponent() {
           <motion.div
             key={id}
             className="relative w-full md:w-[30rem] lg:w-[50rem] pt-[100px] px-2 sm:pt-[130px] mt:pt-[150px] lg:pt-[200px]"
-            variants={fadeIn("up", 0.1)}
-            initial="hidden"
-            whileInView="show"
+            initial={fadeInDirections.top.initial}
+            whileInView={fadeInDirections.top.animate}
             viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             style={{
               position: "sticky",
               top: "20px",  
