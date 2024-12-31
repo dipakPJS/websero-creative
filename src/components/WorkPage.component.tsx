@@ -118,7 +118,6 @@ const WorkPage: React.FC = () => {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    layout="responsive"
                     loading="lazy"
                     width={500}
                     height={300}

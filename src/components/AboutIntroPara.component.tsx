@@ -1,17 +1,53 @@
 "use client";
+import { useMemo } from "react";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/variants";
 import GradientTextComponent from "./GradientText.component";
 
+// Reusable animation variants
+const fadeInVariants = {
+  top: { initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 } },
+  bottom: { initial: { opacity: 0, y: 50 }, animate: { opacity: 1, y: 0 } },
+};
+
+// Shared motion props (memoized outside the component for better performance)
+const sharedMotionProps = {
+  viewport: { once: false, amount: 0.2 },
+  transition: { duration: 0.6 },
+};
+
 export default function AboutIntroParaComponent() {
+  // Memoize common properties for optimization
+  const blocks = useMemo(
+    () => [
+      {
+        key: "first",
+        text: `For us, it&lsquo;s all about creating meaningful experiences that
+          resonate with your audience and help your business grow. We make our
+          mark by creating unique branding, designing beautiful websites, and
+          boosting visibility through SEO and PPC strategies that drive real growth.`,
+        delay: 0.2,
+      },
+      {
+        key: "second",
+        text: `Our process begins with understanding your vision, goals, and
+          challenges. Whether you&lsquo;re a startup making your mark or an
+          established business expanding online, we dive deep into your needs.
+          Then, we craft a custom approach that combines creativity and
+          strategy to ensure your brand shines and your website excels.`,
+        delay: 0.4,
+      },
+    ],
+    []
+  );
+
   return (
-    <div className="min-h-[70vh] w-full px-2 lg:px-5 py-[50px] overflow-y-hidden relative flex flex-col justify-center items-center">
-      {/* title text */}
+    <div className="min-h-[70vh] relative w-full px-2 lg:px-5 py-[50px] overflow-y-hidden flex flex-col justify-center items-center">
+      {/* Title text */}
       <motion.p
-        variants={fadeIn("left", 0.1)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.2 }}
+        {...sharedMotionProps}
+        initial={fadeInVariants.top.initial}
+        whileInView={fadeInVariants.top.animate}
+        transition={{ ...sharedMotionProps.transition, delay: 0.1 }}
         className="w-full"
       >
         <GradientTextComponent
@@ -21,46 +57,23 @@ export default function AboutIntroParaComponent() {
         />
       </motion.p>
 
-<div className="flex justify-center flex-col md:flex-row lg:flex-row h-full w-full gap-10">
-
-      {/* First Block */}
-      <motion.div
-        variants={fadeIn("right", 0.1)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.2 }}
-        className="shadow-[0_0_20px_blue] w-full md:w-[500px] lg:w-[700px] h-auto text-balance p-5 border border-white rounded-[50px]"
-      >
-        <div className="  text-white text-base sm:text-lg md:text-xl lg:text-2xl font-eagleLake ">
-          <p>
-            For us, it&lsquo;s all about creating meaningful experiences that
-            resonate with your audience and help your business grow. We make our
-            mark by creating unique branding, designing beautiful websites, and
-            boosting visibility through SEO and PPC strategies that drive real
-            growth.
-          </p>
-        </div>
-      </motion.div>
-
-      {/* Second Block */}
-      <motion.div
-        variants={fadeIn("left", 0.1)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: false, amount: 0.2 }}
-        className="shadow-[0_0_20px_blue] w-full md:w-[500px] lg:w-[700px] h-auto text-balance p-5 border border-white rounded-[50px]"
-        >
-        <div className=" text-white text-base sm:text-lg md:text-xl lg:text-2xl font-eagleLake">
-          <p>
-            Our process begins with understanding your vision, goals, and
-            challenges. Whether you&lsquo;re a startup making your mark or an
-            established business expanding online, we dive deep into your needs.
-            Then, we craft a custom approach that combines creativity and
-            strategy to ensure your brand shines and your website excels.
-          </p>
-        </div>
-      </motion.div>
+      <div className="flex justify-center flex-col md:flex-row lg:flex-row h-full w-full gap-10">
+        {/* Render Blocks Dynamically */}
+        {blocks.map(({ key, text, delay }) => (
+          <motion.div
+            key={key}
+            {...sharedMotionProps}
+            initial={fadeInVariants.top.initial}
+            whileInView={fadeInVariants.top.animate}
+            transition={{ ...sharedMotionProps.transition, delay }}
+            className="shadow-[0_0_20px_blue] w-full md:w-[500px] lg:w-[700px] h-auto text-balance p-5 border border-white rounded-[50px]"
+          >
+            <div className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-eagleLake">
+              <p dangerouslySetInnerHTML={{ __html: text }} />
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </div>
-        </div>
   );
 }
