@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import AboutData from "@/data/AboutData.json";
+import GradientTextComponent from "./GradientText.component";
 
 export default function AboutInfoTextHorizontalScrollComponent() {
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -27,16 +28,16 @@ export default function AboutInfoTextHorizontalScrollComponent() {
               x,
               skewX: skew,
             }}
-            className="flex gap-x-[50px] transform"
+            className="flex gap-x-[50px]"
           >
             {AboutData.map(({ title, description }, index) => {
               return (
                 <div
                   key={index}
-                  className=" min-h-[100px] w-[350px] sm:w-[500px] md:w-[400px] lg:w-[500px] flex flex-col gap-y-5 p-10 rounded-[50px] border border-white bg-transparent transition duration-500 ease-in-out hover:scale-[1.1]"
+                  className=" min-h-[100px] w-[300px] sm:w-[350px] md:w-[400px] lg:w-[500px] flex flex-col gap-2 lg:gap-5 p-5 rounded-[50px] border border-white bg-transparent transition duration-500 ease-in-out hover:scale-[1.1]"
                 >
-                  <h3 className=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-eagleLake text-blue-600 w-full">
-                    {title}
+                  <h3 className=" text-lg sm:text-xl md:text-3xl lg:text-4xl font-eagleLake w-full">
+                   <GradientTextComponent span={true} texts={title} />
                   </h3>
                   <p className=" text-xl md:text-xl lg:text-2xl  text-gray-200">
                     {description}
