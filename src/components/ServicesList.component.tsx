@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { fadeIn } from "@/utils/variants";
 import ServiceParallaxComponent from "@/components/ServiceParallax.component";
 import ServiceData from "@/data/ServicePageData.json";
 
