@@ -15,7 +15,7 @@ export default function ContactGradientComponent() {
   return (
     <div className=" h-[25rem] sm:h-[25rem] md:h-[30rem] lg:h-[42rem] w-full overflow-hidden relative">
 
-     <div className="absolute h-full w-full z-10 bg-[#00000021] backdrop-blur-20">
+     <div className="absolute h-full w-full z-10 bg-[#00000021]">
  <div className="py-[50px] h-full w-full">
  <div className="w-full">
         <motion.p
@@ -23,7 +23,7 @@ export default function ContactGradientComponent() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.2 }}
-          className=" text-center md:text-left lg:text-left md:pl-5 lg:pl-8 font-audioWide font-bold text-white text-3xl sm:text-3xl md-1:text-5xl md:text-6xl lg-1:text-7xl lg:text-8xl uppercase"
+          className=" text-center md:text-left lg:text-left md:pl-5 lg:pl-8 font-audioWide font-bold text-purple-600 text-3xl sm:text-3xl md-1:text-5xl md:text-6xl lg-1:text-7xl lg:text-8xl uppercase"
         >
           Contact
         </motion.p>
