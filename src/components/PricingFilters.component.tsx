@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import pricingData from "../data/PricingData.json";
 import PricingCardComponent from "./PricingCard.component";
@@ -10,14 +10,10 @@ const PricingFilterComponent: React.FC = () => {
     "Basic" | "Content-Focused" | "Custom" | "Enterprise"
   >("Basic");
 
-  const handleFilterClick = (
-    level: "Basic" | "Content-Focused" | "Custom" | "Enterprise"
-  ) => {
-    setActiveLevel(level);
-  };
-
-  const filteredPackages = pricingData.filter(
-    (pkg) => pkg.level === activeLevel
+  // Memoize filtered packages to avoid unnecessary calculations
+  const filteredPackages = useMemo(
+    () => pricingData.filter((pkg) => pkg.level === activeLevel),
+    [activeLevel]
   );
 
   const cardVariants = {
@@ -26,8 +22,8 @@ const PricingFilterComponent: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: index * 0.2,
-        duration: 0.5,
+        delay: index * 0.1, // Reduced delay for smoother loading
+        duration: 0.4, // Optimized duration for faster animation
         ease: "easeOut",
       },
     }),
@@ -42,7 +38,7 @@ const PricingFilterComponent: React.FC = () => {
           <button
             key={level}
             onClick={() =>
-              handleFilterClick(
+              setActiveLevel(
                 level as "Basic" | "Content-Focused" | "Custom" | "Enterprise"
               )
             }
@@ -75,7 +71,6 @@ const PricingFilterComponent: React.FC = () => {
               custom={index}
             >
               <PricingCardComponent
-                key={pkg.id}
                 title={pkg.title}
                 price={pkg.price}
                 description={pkg.description}

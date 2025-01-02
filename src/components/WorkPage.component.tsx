@@ -1,29 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import WorkData from "@/data/WorkData.json";
 
 import Image from "next/image";
 import GradientTextComponent from "./GradientText.component";
- 
+
 import { CgArrowsExpandUpRight } from "react-icons/cg";
 
 // Variants for random fade directions
 const fadeInDirections = {
   top: { initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 } },
   bottom: { initial: { opacity: 0, y: 50 }, animate: { opacity: 1, y: 0 } },
-  left: { initial: { opacity: 0, x: -50 }, animate: { opacity: 1, x: 0 } },
-  right: { initial: { opacity: 0, x: 50 }, animate: { opacity: 1, x: 0 } },
 };
 
-const categories = [
-  "Show All",
-  "Websites",
-  "Social Media",
-  "Branding",
-  "Design",
-];
+const categories = ["Show All", "Websites", "Social Media", "Branding", "Design"];
 
 const itemVariants = {
   hidden: (index: number) => ({
@@ -49,15 +41,19 @@ const itemVariants = {
 };
 
 const WorkPage: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Show All");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Show All");
 
-  const filteredData =
-    selectedCategory === "Show All"
-      ? WorkData
-      : WorkData.filter((item) => item.category === selectedCategory);
+  // Memoize filtered data for optimized rendering
+  const filteredData = useMemo(
+    () =>
+      selectedCategory === "Show All"
+        ? WorkData
+        : WorkData.filter((item) => item.category === selectedCategory),
+    [selectedCategory]
+  );
 
   return (
-    <div className=" w-full min-h-screen">
+    <div className="w-full min-h-screen">
       {/* Main Content */}
       <div className="relative h-full z-10 w-full px-10 pb-20 pt-[100px]">
         {/* Title */}
@@ -87,7 +83,7 @@ const WorkPage: React.FC = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={` px-2 sm:px-5 md:px-5 lg:px-10 py-1 sm:py-2 md:py-2 lg:py-3 rounded-[50px] font-bold text-xs sm:text-sm md:text-lg lg:text-xl border border-white  text-white font-iceBerg transition duration-300 ease-in-out ${
+              className={`px-2 sm:px-5 md:px-5 lg:px-10 py-1 sm:py-2 md:py-2 lg:py-3 rounded-[50px] font-bold text-xs sm:text-sm md:text-lg lg:text-xl border border-white text-white font-iceBerg transition duration-300 ease-in-out ${
                 selectedCategory === category
                   ? "shadow-custom scale-[1.1] border-blue-600"
                   : "scale-[1]"
@@ -127,6 +123,7 @@ const WorkPage: React.FC = () => {
                   <a
                     href={item.link}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-[0.8] transition-opacity duration-500"
                   >
                     <button className="p-10 rounded-full bg-[#0000009f] shadow-lg">

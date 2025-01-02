@@ -1,6 +1,12 @@
 "use client";
 
-import React, { createContext, useContext, useRef, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useRef,
+  useState,
+  useEffect,
+} from "react";
 
 type AudioContextType = {
   isPlaying: boolean;
@@ -9,69 +15,82 @@ type AudioContextType = {
 
 const AudioContext = createContext<AudioContextType | undefined>(undefined);
 
-export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const fadeDuration = 1000; // Duration for fade in/out (in ms)
+  const fadeDuration = 1000; // Fade in/out duration in ms
+  const step = 0.01; // Volume adjustment step
 
+  // Initialize audio on mount
   useEffect(() => {
     const audio = new Audio("/music/audio.mp3");
     audio.volume = 0;
     audio.loop = true;
     audioRef.current = audio;
 
-    const playAudio = async () => {
-      try {
-        await audio.play();
-        fadeAudio(true); // Fade in the audio
-        setIsPlaying(true);
-      } catch (error) {
-        console.error("Audio playback failed:", error);
-      }
-    };
-
-    // Automatically attempt to play audio after 2 seconds
     const autoPlayTimeout = setTimeout(() => {
-      playAudio();
+      handleAudioPlayback(true); // Auto-play after 5 seconds
     }, 5000);
 
     return () => {
-      clearTimeout(autoPlayTimeout); // Cleanup timeout
-      audioRef.current?.pause(); // Stop playback on unmount
-      audioRef.current = null; // Release audio reference
+      clearTimeout(autoPlayTimeout); // Clear timeout on unmount
+      stopAudioPlayback(); // Stop audio and clean up
     };
   }, []);
 
+  // Handle audio fade in/out
   const fadeAudio = (fadeIn: boolean) => {
     const audio = audioRef.current;
-    if (audio) {
-      const step = 0.01; // Step for volume adjustment
-      const intervalTime = fadeDuration / (1.0 / step); // Time per step
+    if (!audio) return;
 
-      const fade = setInterval(() => {
-        if (fadeIn && audio.volume < 1.0) {
-          audio.volume = Math.min(audio.volume + step, 1.0); // Increase volume to 1.0
-        } else if (!fadeIn && audio.volume > 0) {
-          audio.volume = Math.max(audio.volume - step, 0); // Decrease volume to 0
-        } else {
+    const intervalTime = fadeDuration / (1.0 / step); // Time per volume step
+    const fade = setInterval(() => {
+      if (fadeIn) {
+        audio.volume = Math.min(audio.volume + step, 1.0); // Fade in
+        if (audio.volume >= 1.0) clearInterval(fade);
+      } else {
+        audio.volume = Math.max(audio.volume - step, 0); // Fade out
+        if (audio.volume <= 0) {
           clearInterval(fade);
-          if (!fadeIn) audio.pause(); // Pause audio after fade out
+          audio.pause(); // Pause after fading out
         }
-      }, intervalTime);
+      }
+    }, intervalTime);
+  };
+
+  // Handle play/pause with fade effect
+  const handleAudioPlayback = async (play: boolean) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    try {
+      if (play) {
+        await audio.play();
+        fadeAudio(true); // Fade in
+        setIsPlaying(true);
+      } else {
+        fadeAudio(false); // Fade out
+        setIsPlaying(false);
+      }
+    } catch (error) {
+      console.error("Audio playback error:", error);
     }
   };
 
-  const togglePlay = () => {
+  // Stop audio playback
+  const stopAudioPlayback = () => {
     const audio = audioRef.current;
     if (audio) {
-      if (isPlaying) {
-        fadeAudio(false); // Fade out and stop
-      } else {
-        audio.play().catch((error) => console.error("Audio playback error:", error));
-        fadeAudio(true); // Fade in and play
-      }
-      setIsPlaying(!isPlaying);
+      audio.pause();
+      audioRef.current = null; // Release audio reference
     }
+  };
+
+  // Toggle audio playback
+  const togglePlay = () => {
+    handleAudioPlayback(!isPlaying);
   };
 
   return (
