@@ -3,125 +3,112 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-
 import Image from "next/image";
-
-import { TiSocialFacebookCircular } from "react-icons/ti";
-import { TiSocialInstagramCircular } from "react-icons/ti";
-import { TiSocialTwitterCircular } from "react-icons/ti";
-import { TiSocialLinkedinCircular } from "react-icons/ti";
+import {
+  TiSocialFacebookCircular,
+  TiSocialInstagramCircular,
+  TiSocialTwitterCircular,
+  TiSocialLinkedinCircular,
+} from "react-icons/ti";
 
 const navVariants = {
   hidden: {
-    clipPath: "circle(0% at 100% 0%)", // Starts as a small circle at the top-right corner
+    clipPath: "circle(0% at 100% 0%)",
   },
   visible: {
-    clipPath: "circle(150% at 50% 50%)", // Expands to cover the entire screen
-    transition: {
-      duration: 1.5,
-      ease: [0.25, 0.8, 0.25, 1], // Easing for the circle expansion
-    },
+    clipPath: "circle(150% at 50% 50%)",
+    transition: { duration: 1.2, ease: [0.25, 0.8, 0.25, 1] },
   },
   exit: {
-    clipPath: "circle(0% at 100% 0%)", // Shrinks back to the top-right corner
-    transition: {
-      duration: 1.5,
-      ease: [0.25, 0.8, 0.25, 1], // Easing for the circle contraction
-    },
+    clipPath: "circle(0% at 100% 0%)",
+    transition: { duration: 1.2, ease: [0.25, 0.8, 0.25, 1] },
   },
 };
 
 const linkVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 const buttonTextVariants = {
   hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -10 },
 };
 
 const FullPageNav: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleLinkClick = () => {
-    setIsOpen(false); // Close the navigation menu when a link is clicked
-  };
+  const handleLinkClick = () => setIsOpen(false);
 
   return (
     <>
-    <div className="fixed top-0 left-0 w-[100vw] h-auto z-[700] flex justify-end p-5">
-      
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="text-black bg-white text-sm md:text-xl lg:text-xl font-iceBerg mix-blend-hard-light font-extrabold focus:outline-none h-[60px] w-[60px] md:h-[70px] md:w-[70px] lg-1:h-[80px] lg-1:w-[80px] lg:h-[80px] lg:w-[80px] rounded-[50%] flex justify-center items-center"
-        style={{ boxShadow: "inset 0 0 5px 5px black" }}
+      {/* Toggle Button */}
+      <div className="fixed top-0 right-0 w-auto p-3 z-[700] flex justify-end">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-black bg-white text-sm md:text-xl font-iceBerg font-extrabold focus:outline-none h-14 w-14 md:h-16 md:w-16 rounded-full flex justify-center items-center shadow-inner"
+          style={{
+            boxShadow: "inset 0 0 5px 5px black"
+          }}
         >
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={isOpen ? "Close" : "Menu"}
-            variants={buttonTextVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            transition={{ duration: 0.3 }}
-            className="block"
+          <AnimatePresence mode="wait">
+            <motion.span
+              key={isOpen ? "Close" : "Menu"}
+              variants={buttonTextVariants}
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              className="block"
             >
-            {isOpen ? "Close" : "Menu"}
-          </motion.span>
-        </AnimatePresence>
-      </button>
+              {isOpen ? "Close" : "Menu"}
+            </motion.span>
+          </AnimatePresence>
+        </button>
       </div>
-    
 
+      {/* Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          variants={navVariants}
-          className="fixed inset-0 z-[600] bg-[#00000062] shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] backdrop-blur-[20px]"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={navVariants}
+            className="fixed inset-0 z-[600] bg-black bg-opacity-40 backdrop-blur-md"
           >
-            <div className="logo p-5 w-full">
-              <Link href={"/"}  onClick={handleLinkClick}>
-              <Image
-                alt="logo image"
-                height={100}
-                width={100}
-                src={"/images/logo.png"}
-                className="mx-auto h-[70px] lg:h-[100px] w-auto"
-                priority={true}
+            {/* Logo */}
+            <div className="p-5">
+              <Link href="/" onClick={handleLinkClick}>
+                <Image
+                  alt="Logo"
+                  src="/images/logo.png"
+                  width={100}
+                  height={100}
+                  className="mx-auto h-20 w-auto"
+                  priority
                 />
-                </Link>
+              </Link>
             </div>
 
-            <div className="relative h-full w-full flex items-center">
+            {/* Links */}
+            <div className="flex flex-col items-center justify-center h-full">
               <motion.nav
-                className="flex flex-col gap-y-5 absolute left-[10%] top-[20%] transform -translate-y-1/2 p-10"
                 initial="hidden"
                 animate="visible"
-                exit="exit"
+                exit="hidden"
+                className="flex flex-col gap-6"
               >
                 {["Home", "About", "Services", "Work", "Contact"].map(
                   (label, index) => (
                     <motion.div
-                    key={index}
-                    variants={linkVariants}
-                    className="duration-1000 ease-in-out"
-                    transition={{
-                      delay: index * 0.3, // Staggered delay based on the index
-                      duration: 0.1,
-                    }}
+                      key={label}
+                      variants={linkVariants}
+                      transition={{ delay: index * 0.1 }}
                     >
                       <Link
-                        href={
-                          label === "Home" ? "/" : `/${label.toLowerCase()}`
-                        }
+                        href={label === "Home" ? "/" : `/${label.toLowerCase()}`}
                         onClick={handleLinkClick}
-                        className=" text-2xl cursor-pointer sm:text-3xl md:text-4xl lg:text-5xl font-eagleLake text-slate-300 hover:text-purple-700"
+                        className="text-2xl md:text-4xl font-eagleLake text-gray-300 hover:text-purple-600"
                       >
                         {label}
                       </Link>
@@ -130,40 +117,53 @@ const FullPageNav: React.FC = () => {
                 )}
               </motion.nav>
 
-              <div className="flex flex-wrap gap-10 justify-around items-center w-full  px-[100px] absolute bottom-[25%]">
-                <ul className="text-slate-300 flex flex-wrap gap-4 sm:gap-6 md:gap-8 lg:gap-10">
-                  <li>
-                    <a href="https://www.facebook.com/dipak.light.roshni.diyo" target="_blank">
-                      <TiSocialFacebookCircular className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl duration-300 ease-in-out hover:text-blue-700 transform hover:scale-[1.5]" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/diwakar_codess/" target="_blank">
-                      <TiSocialInstagramCircular className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl duration-300 ease-in-out hover:text-pink-500 transform hover:scale-[1.5]" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://x.com/DeepakP18273070" target="_blank">
-                      <TiSocialTwitterCircular className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl duration-300 ease-in-out hover:text-white transform hover:scale-[1.5]" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/dipak-developer/" target="_blank">
-                      <TiSocialLinkedinCircular className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl duration-300 ease-in-out hover:text-sky-500 transform hover:scale-[1.5]" />
-                    </a>
-                  </li>
+              {/* Social Links */}
+              <div className="mt-16 flex flex-col items-center gap-6">
+                <ul className="flex gap-8">
+                  {[
+                    {
+                      href: "https://www.facebook.com/dipak.light.roshni.diyo",
+                      icon: <TiSocialFacebookCircular />,
+                      color: "hover:text-blue-700",
+                    },
+                    {
+                      href: "https://www.instagram.com/diwakar_codess/",
+                      icon: <TiSocialInstagramCircular />,
+                      color: "hover:text-pink-500",
+                    },
+                    {
+                      href: "https://x.com/DeepakP18273070",
+                      icon: <TiSocialTwitterCircular />,
+                      color: "hover:text-blue-400",
+                    },
+                    {
+                      href: "https://www.linkedin.com/in/dipak-developer/",
+                      icon: <TiSocialLinkedinCircular />,
+                      color: "hover:text-sky-500",
+                    },
+                  ].map(({ href, icon, color }, idx) => (
+                    <li key={idx}>
+                      <a
+                        href={href}
+                        target="_blank"
+                        className={`text-4xl text-slate-400 md:text-5xl ${color} transform hover:scale-125 duration-200`}
+                        rel="noreferrer"
+                      >
+                        {icon}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
-                <div className="text-slate-300">
-                  <p className="text-sm font-audioWide">info@websero.com</p>
-                  <code>+977 - 986 721 663 0</code>
+                <div className="text-gray-300 text-center">
+                  <p className="text-sm">info@websero.com</p>
+                  <code>+977 - 986 721 6630</code>
                 </div>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-        </>
-   
+    </>
   );
 };
 

@@ -1,4 +1,5 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
@@ -60,39 +61,28 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
   useEffect(() => {
     const updateStars = () => {
-      if (canvasRef.current) {
-        const canvas = canvasRef.current;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return;
+      if (!canvasRef.current) return;
 
-        const { width, height } = canvas.getBoundingClientRect();
-        canvas.width = width;
-        canvas.height = height;
-        setStars(generateStars(width, height));
-      }
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      const { width, height } = canvas.getBoundingClientRect();
+      canvas.width = width;
+      canvas.height = height;
+
+      setStars(generateStars(width, height));
     };
 
     updateStars();
 
     const resizeObserver = new ResizeObserver(updateStars);
-    const currentCanvas = canvasRef.current; // Copy the current canvas ref
-    if (currentCanvas) {
-      resizeObserver.observe(currentCanvas);
-    }
+    if (canvasRef.current) resizeObserver.observe(canvasRef.current);
 
     return () => {
-      if (currentCanvas) {
-        resizeObserver.unobserve(currentCanvas); // Use the copied value
-      }
+      if (canvasRef.current) resizeObserver.unobserve(canvasRef.current);
     };
-  }, [
-    starDensity,
-    allStarsTwinkle,
-    twinkleProbability,
-    minTwinkleSpeed,
-    maxTwinkleSpeed,
-    generateStars,
-  ]);
+  }, [generateStars]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -102,11 +92,10 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     if (!ctx) return;
 
     let animationFrameId: number;
-    const currentCanvas = canvas; // Copy the canvas ref for consistent cleanup
 
     const render = () => {
-      if (!currentCanvas) return; // Ensure the canvas is still valid
-      ctx.clearRect(0, 0, currentCanvas.width, currentCanvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
       stars.forEach((star) => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
@@ -125,15 +114,13 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
     render();
 
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-    };
+    return () => cancelAnimationFrame(animationFrameId);
   }, [stars]);
 
   return (
     <canvas
       ref={canvasRef}
-      className={cn("h-[100%] w-[100%] absolute inset-0", className)}
+      className={cn("absolute inset-0 w-full h-full", className)}
     />
   );
 };

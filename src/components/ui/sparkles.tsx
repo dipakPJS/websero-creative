@@ -21,14 +21,16 @@ type ParticlesProps = {
 export const SparklesCore: React.FC<ParticlesProps> = ({
   id,
   className,
-  background,
-  minSize,
-  maxSize,
-  speed,
-  particleColor,
-  particleDensity,
+  background = "#0d47a1",
+  minSize = 1,
+  maxSize = 3,
+  speed = 4,
+  particleColor = "#ffffff",
+  particleDensity = 120,
 }) => {
   const [init, setInit] = useState(false);
+  const controls = useAnimation();
+  const generatedId = useId();
 
   // Initialize particles engine
   useEffect(() => {
@@ -39,21 +41,15 @@ export const SparklesCore: React.FC<ParticlesProps> = ({
     });
   }, []);
 
-  const controls = useAnimation();
-
   // Handle particles loaded
   const particlesLoaded = async (container?: Container) => {
     if (container) {
       controls.start({
         opacity: 1,
-        transition: {
-          duration: 1,
-        },
+        transition: { duration: 1 },
       });
     }
   };
-
-  const generatedId = useId();
 
   return (
     <motion.div animate={controls} className={cn("opacity-0", className)}>
@@ -64,9 +60,7 @@ export const SparklesCore: React.FC<ParticlesProps> = ({
           particlesLoaded={particlesLoaded}
           options={{
             background: {
-              color: {
-                value: background || "#0d47a1", // Default background color
-              },
+              color: { value: background },
             },
             fullScreen: {
               enable: false,
@@ -75,67 +69,37 @@ export const SparklesCore: React.FC<ParticlesProps> = ({
             fpsLimit: 120,
             interactivity: {
               events: {
-                onClick: {
-                  enable: true,
-                  mode: "push",
-                },
-                onHover: {
-                  enable: false,
-                  mode: "repulse",
-                },
-                resize: {
-                  enable: true,
-                },
+                onClick: { enable: true, mode: "push" },
+                onHover: { enable: false, mode: "repulse" },
+                resize: { enable: true },
               },
               modes: {
-                push: {
-                  quantity: 4,
-                },
-                repulse: {
-                  distance: 200,
-                  duration: 0.4,
-                },
+                push: { quantity: 4 },
+                repulse: { distance: 200, duration: 0.4 },
               },
             },
             particles: {
-              color: {
-                value: particleColor || "#ffffff", // Default particle color
-              },
+              color: { value: particleColor },
               number: {
-                density: {
-                  enable: true,
-                  width: 400,
-                  height: 400,
-                },
-                value: particleDensity || 120, // Default particle density
+                density: { enable: true, width: 400, height: 400 },
+                value: particleDensity,
               },
               opacity: {
-                value: {
-                  min: 0.1,
-                  max: 1,
-                },
+                value: { min: 0.1, max: 1 },
                 animation: {
                   enable: true,
-                  speed: speed || 4, // Default speed
+                  speed,
                   startValue: "random",
                   destroy: "none",
                 },
               },
               size: {
-                value: {
-                  min: minSize || 1,
-                  max: maxSize || 3, // Default size range
-                },
+                value: { min: minSize, max: maxSize },
               },
               move: {
                 enable: true,
-                speed: {
-                  min: 0.1,
-                  max: 1,
-                },
-                outModes: {
-                  default: "out",
-                },
+                speed: { min: 0.1, max: 1 },
+                outModes: { default: "out" },
               },
             },
             detectRetina: true,
