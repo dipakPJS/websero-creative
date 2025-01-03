@@ -10,6 +10,7 @@ import LogoComponent from "@/components/Logo.Component";
 // react-lenis
 
 import { ReactLenis } from "@/utils/lenis";
+import FullPageNav from "@/components/Navbar.component";
  
 
 const geistSans = Geist({
@@ -44,10 +45,9 @@ export default function RootLayout({
           <div className="min-h-screen relative">
             <CursorProvider>
               <AudioProvider>
-           
+                <FullPageNav />
                 <MouseCursorComponent />
-                <BackgroundAudioComponent />
-              
+                <BackgroundAudioComponent />      
                 <LogoComponent />
                 {children}
               </AudioProvider>

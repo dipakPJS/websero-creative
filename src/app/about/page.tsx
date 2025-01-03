@@ -16,12 +16,10 @@ export default function AboutPage() {
   return (
     <div className="h-full w-[100vw] relative bg-black">
      
-        <FullPageNav />
+        {/* <FullPageNav /> */}
       
       <div className="relative">
-        <div className="absolute inset-0">
-          <ShootingStarsComponent />
-        </div>
+       
       <AboutIntroComponent />
         <TextScrollComponent />
         <AboutIntroParaComponent />

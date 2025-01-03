@@ -1,38 +1,53 @@
 "use client";
-import "./HomePageComponent.styles.css";
-
-import VerticalText from "./VerticalText.component";
-import IntroComponent from "./Intro.component";
-import CurveComponent from "./Curve.component";
-import FeatureTextComponent from "./FeatureText.component";
+ 
 import dynamic from "next/dynamic";
-
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/variants";
 import { useCursor } from "@/context/CursorContext";
-import { ShootingStarsComponent } from "./ShootingStars.component";
 
- // loading lottie with no ssr issues
- 
-import ScrollDownLottieComponent from "./ScrollDownLottie.component";
- 
- const SphereAnimation = dynamic(() => import("./LottieFileComponents/SphereLottie.component"), { ssr: false });
- 
- 
+// Lazy-loaded components
+const VerticalText = dynamic(() => import("./VerticalText.component"), {
+  ssr: false,
+});
+const IntroComponent = dynamic(() => import("./Intro.component"), {
+  ssr: false,
+});
+const CurveComponent = dynamic(() => import("./Curve.component"), {
+  ssr: false,
+});
+const FeatureTextComponent = dynamic(() => import("./FeatureText.component"), {
+  ssr: false,
+});
+const ScrollDownLottieComponent = dynamic(
+  () => import("./ScrollDownLottie.component"),
+  { ssr: false }
+);
+const SphereAnimation = dynamic(
+  () => import("./LottieFileComponents/SphereLottie.component"),
+  { ssr: false }
+);
 
+// Animation Variants
+const fastLoadingVariants = {
+  hidden: { opacity: 0, scale: 0.8, y: 50 },
+  show: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0, 
+    transition: { duration: 0.5, ease: "easeOut" } 
+  },
+};
+
+
+ 
 export default function HomePageComponent() {
   const { textLeave } = useCursor();
- 
 
   return (
     <>
-      <div onMouseEnter={textLeave} className="homepage relative min-h-[120vh] bg-black">
-        {/* homepage first starts */}
-        <div className="homepage-first absolute h-full w-full">
-          <ShootingStarsComponent />
-        </div>
-        {/* homepage first ends */}
-
+      <div
+        onMouseEnter={textLeave}
+        className="homepage relative min-h-[120vh] bg-black"
+      >
         {/* homepage second starts */}
         <div className=" z-[10] homepage-second absolute h-full w-full flex justify-center items-end lg:items-center">
           <div className=" h-[250px] sm:h-[300px] md:h-[400px] lg-1:h-[500px] lg:h-[500px] w-auto">
@@ -45,10 +60,9 @@ export default function HomePageComponent() {
           <div className=" flex justify-center items-center h-full w-full">
             <div className="flex flex-col lg:flex-row justify-evenly h-[90%] w-full px-10 pt-[100px] ">
               <motion.div
-                variants={fadeIn("right", 0.1)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.2 }}
+                 variants={fastLoadingVariants}
+                 initial="hidden"
+                 animate="show"
                 className=" h-full w-full md:px-[50px] pt-10 md:text-center"
               >
                 <IntroComponent />
@@ -56,10 +70,7 @@ export default function HomePageComponent() {
               <div className="h-full w-full relative ">
                 <FeatureTextComponent />
               </div>
-           
-             </div>
-            
-              
+            </div>
           </div>
         </div>
         {/* homepage third ends */}
@@ -68,10 +79,9 @@ export default function HomePageComponent() {
           <div className="h-full w-full relative">
             <VerticalText />
             <div className="absolute top-[100%] md:top-[90%] lg:top-[73%] h-auto w-full flex lg:justify-end justify-center px-5">
-             <ScrollDownLottieComponent />
-             </div>
+              <ScrollDownLottieComponent />
+            </div>
           </div>
-
         </div>
         {/* homepage 4th ends */}
       </div>
