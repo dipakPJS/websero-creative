@@ -37,7 +37,7 @@ export const Cover = ({
       onMouseLeave={() => setHovered(false)}
       ref={ref}
       className={cn(
-        "relative hover:bg-black bg-[#6a066d79] mt-[-10px] overflow-hidden shadow-custom backdrop-blur-20 group/cover inline-block px-[50px] transition duration-200 rounded-tr-[50px] rounded-2xl rounded-bl-[50px]",
+        "relative hover:bg-black bg-[#00000000] mt-[-10px] overflow-hidden shadow-custom backdrop-blur-20 group/cover inline-block px-[50px] transition duration-200 rounded-[100px]",
         className
       )}
     >
@@ -100,7 +100,7 @@ export const Cover = ({
           x: { duration: 0.2, repeat: Infinity, repeatType: "loop" },
           y: { duration: 0.2, repeat: Infinity, repeatType: "loop" },
         }}
-        className="inline-block text-slate-200 relative z-20 transition duration-300"
+        className="inline-block text-white relative z-20 transition duration-300"
       >
         {children}
       </motion.span>
