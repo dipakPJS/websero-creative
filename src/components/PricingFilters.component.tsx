@@ -60,7 +60,7 @@ const PricingFilterComponent: React.FC = () => {
         animate="show"
         exit="hidden"
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence>
           {filteredPackages.map((pkg, index) => (
             <motion.div
               key={pkg.id}

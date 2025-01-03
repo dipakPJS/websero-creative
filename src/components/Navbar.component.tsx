@@ -51,7 +51,7 @@ const FullPageNav: React.FC = () => {
             boxShadow: "inset 0 0 5px 5px black"
           }}
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.span
               key={isOpen ? "Close" : "Menu"}
               variants={buttonTextVariants}
