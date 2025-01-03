@@ -1,7 +1,13 @@
 "use client";
+
+import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
-import GradientTextComponent from "./GradientText.component";
+
+// Lazy load GradientTextComponent
+const GradientTextComponent = dynamic(() => import("./GradientText.component"), {
+  ssr: false,
+});
 
 // Reusable animation variants
 const fadeInVariants = {

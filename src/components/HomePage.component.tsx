@@ -1,7 +1,6 @@
 "use client";
- 
+
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
 import { useCursor } from "@/context/CursorContext";
 
 // Lazy-loaded components
@@ -26,19 +25,6 @@ const SphereAnimation = dynamic(
   { ssr: false }
 );
 
-// Animation Variants
-const fastLoadingVariants = {
-  hidden: { opacity: 0, scale: 0.8, y: 50 },
-  show: { 
-    opacity: 1, 
-    scale: 1, 
-    y: 0, 
-    transition: { duration: 0.5, ease: "easeOut" } 
-  },
-};
-
-
- 
 export default function HomePageComponent() {
   const { textLeave } = useCursor();
 
@@ -59,14 +45,9 @@ export default function HomePageComponent() {
         <div className=" z-[20] homepage-third absolute h-full w-full ">
           <div className=" flex justify-center items-center h-full w-full">
             <div className="flex flex-col lg:flex-row justify-evenly h-[90%] w-full px-10 pt-[100px] ">
-              <motion.div
-                 variants={fastLoadingVariants}
-                 initial="hidden"
-                 animate="show"
-                className=" h-full w-full md:px-[50px] pt-10 md:text-center"
-              >
+              <div className=" h-full w-full md:px-[50px] pt-10 md:text-center">
                 <IntroComponent />
-              </motion.div>
+              </div>
               <div className="h-full w-full relative ">
                 <FeatureTextComponent />
               </div>

@@ -5,12 +5,10 @@ import AboutMarqueeComponent from "@/components/AboutMarquee.component";
 import TextScrollComponent from "@/components/TextScroll.component";
 import ContactGradientComponent from "@/components/ContactGradient.component";
 import FooterComponent from "@/components/Footer.component";
-import { ShootingStarsComponent } from "@/components/ShootingStars.component";
 import { AnimatedTestimonialsComponent } from "@/components/AnimatedTestimonials.component";
 import AboutIntroParaComponent from "@/components/AboutIntroPara.component";
 import AboutInfoTextHorizontalScrollComponent from "@/components/AboutInfoHorizontalScroll.component";
 import { WorldMapComponent } from "@/components/WorldMap.component";
-import FullPageNav from "@/components/Navbar.component";
 
 export default function AboutPage() {
   return (
