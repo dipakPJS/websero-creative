@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useId, useState, useMemo, useRef } from "react";
+import React, { useId, useState, useMemo, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { SparklesCore } from "@/components/ui/sparkles";
@@ -13,14 +13,17 @@ export const Cover = ({
   className?: string;
 }) => {
   const [hovered, setHovered] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
-  const containerSize = useMemo(() => {
-    const element = ref.current;
-    return element
-      ? { width: element.clientWidth, height: element.clientHeight }
-      : { width: 0, height: 0 };
-  }, [ref.current]);
+  // Use a callback ref to get the latest dimensions
+  const refCallback = useCallback((node: HTMLDivElement | null) => {
+    if (node) {
+      setContainerSize({
+        width: node.clientWidth,
+        height: node.clientHeight,
+      });
+    }
+  }, []);
 
   const beamPositions = useMemo(() => {
     const { height } = containerSize;
@@ -35,7 +38,7 @@ export const Cover = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      ref={ref}
+      ref={refCallback} // Use the callback ref here
       className={cn(
         "relative hover:bg-black bg-[#00000000] mt-[-10px] overflow-hidden shadow-custom backdrop-blur-20 group/cover inline-block px-[50px] transition duration-200 rounded-[100px]",
         className

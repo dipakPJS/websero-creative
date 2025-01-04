@@ -3,7 +3,18 @@ import GradientTextComponent from "./GradientText.component";
 import ServiceComponent from "./Services.component";
 
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/variants";
+ 
+// Animation Variants
+const fastLoadingVariants = {
+  hidden: { opacity: 0, scale: 0.8, y: 50 },
+  show: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0, 
+    transition: { duration: 0.5, ease: "easeOut" } 
+  },
+};
+
 
 export default function MainServicesComponent() {
   return (
@@ -11,10 +22,10 @@ export default function MainServicesComponent() {
       <div className=" h-full w-full p-0 lg:px-[100px] flex flex-col justify-around md:flex-row lg:flex-row items-center">
         {/* experience text starts */}
         <motion.div 
-         variants={fadeIn("right", 0.1)}
-         initial="hidden"
-         whileInView="show"
-         viewport={{ once: false, amount: 0.2 }}
+       variants={fastLoadingVariants}
+       initial="hidden"
+       whileInView="show"
+       viewport={{ once: false, amount: 0.2 }}
         className="experiences w-full">
           <p className="text-xl font-audioWide text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-blue-600 to-yellow-600 uppercase ">
             What we do

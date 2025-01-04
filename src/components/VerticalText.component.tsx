@@ -1,12 +1,24 @@
 "use client"
 import GradientTextComponent from "./GradientText.component";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/variants";
+ 
+// Animation Variants
+const fastLoadingVariants = {
+  hidden: { opacity: 0, scale: 0.8, x: 50, y: 50 },
+  show: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0,
+    x: 0, 
+    transition: { duration: 1, ease: "easeOut" } 
+  },
+};
+
 
 export default function VerticalText() {
     return (
         <motion.div
-        variants={fadeIn("down", 0.1)}
+        variants={fastLoadingVariants}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.2 }}

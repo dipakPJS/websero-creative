@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { fadeIn } from "@/utils/variants";
 
 import { LiaPlusSolid } from "react-icons/lia";
 import { LiaTimesSolid } from "react-icons/lia";
@@ -12,6 +11,18 @@ import ServicesData from "@/data/ServicesData.json";
 interface ServiceStyles {
   colors: string[];
 }
+
+// Animation Variants
+const fastLoadingVariants = {
+  hidden: { opacity: 0, scale: 0.8, y: 50 },
+  show: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0, 
+    transition: { duration: 0.5, ease: "easeOut" } 
+  },
+};
+
 
 export default function ServiceComponent({ colors }: ServiceStyles) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -25,10 +36,10 @@ export default function ServiceComponent({ colors }: ServiceStyles) {
 
   return (
     <motion.div
-      variants={fadeIn("left", 0.1)}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, amount: 0.2 }}
+    variants={fastLoadingVariants}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: false, amount: 0.2 }}
       className="services text-left w-full px-4 md:px-8 lg:px-12 py-6"
     >
       <div className="mt-2">

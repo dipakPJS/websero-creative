@@ -2,13 +2,24 @@
  
 import { useCursor } from "@/context/CursorContext";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/utils/variants";
+ 
 
 // loading lottie with no ssr issues
 
 import dynamic from "next/dynamic";
 
 const MarketingAnimation = dynamic(() => import("./LottieFileComponents/MarketingLottie.component"), { ssr: false });
+
+// Animation Variants
+const fastLoadingVariants = {
+  hidden: { opacity: 0, scale: 0.8, y: 50 },
+  show: { 
+    opacity: 1, 
+    scale: 1, 
+    y: 0, 
+    transition: { duration: 0.5, ease: "easeOut" } 
+  },
+};
 
 
 export default function ServiceIntroComponent() {
@@ -19,10 +30,10 @@ export default function ServiceIntroComponent() {
       <div className="w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center gap-8 ">
         {/* Intro Text */}
         <motion.div
-          variants={fadeIn("right", 0.1)}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+         variants={fastLoadingVariants}
+         initial="hidden"
+         whileInView="show"
+         viewport={{ once: false, amount: 0.2 }}
           className="flex-1 relative text-center lg:text-left"
         >
           <h2
@@ -39,7 +50,7 @@ export default function ServiceIntroComponent() {
         </motion.div>
         {/* Lottie Animation with Randomly Positioned Titles */}
         <motion.div
-          variants={fadeIn("left", 0.1)}
+           
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.2 }}

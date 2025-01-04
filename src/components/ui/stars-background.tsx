@@ -61,9 +61,9 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
   useEffect(() => {
     const updateStars = () => {
-      if (!canvasRef.current) return;
-
       const canvas = canvasRef.current;
+      if (!canvas) return;
+
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
@@ -77,10 +77,11 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     updateStars();
 
     const resizeObserver = new ResizeObserver(updateStars);
-    if (canvasRef.current) resizeObserver.observe(canvasRef.current);
+    const canvas = canvasRef.current;
+    if (canvas) resizeObserver.observe(canvas);
 
     return () => {
-      if (canvasRef.current) resizeObserver.unobserve(canvasRef.current);
+      if (canvas) resizeObserver.unobserve(canvas);
     };
   }, [generateStars]);
 
@@ -114,7 +115,9 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
 
     render();
 
-    return () => cancelAnimationFrame(animationFrameId);
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
   }, [stars]);
 
   return (
