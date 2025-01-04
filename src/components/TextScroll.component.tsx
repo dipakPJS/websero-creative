@@ -60,4 +60,7 @@ const TextScrollComponent = React.memo(() => {
   );
 });
 
+// Add display name for the memoized component
+TextScrollComponent.displayName = "TextScrollComponent";
+
 export default TextScrollComponent;

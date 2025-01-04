@@ -12,7 +12,7 @@ export default function AboutMarqueeComponent() {
   return (
     <div className="bg-black">
       <Marquee
-        speed={100}
+        speed={250}
         autoFill={true}
         pauseOnHover={false}
         loop={0}
