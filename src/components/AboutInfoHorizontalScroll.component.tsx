@@ -26,7 +26,7 @@ const AboutInfoTextHorizontalScrollComponent: React.FC = () => {
         <div className="sticky top-0 h-screen flex items-start pt-[200px] overflow-hidden">
           <motion.div
             style={{ x, skewX }}
-            className="flex gap-x-[50px]"
+            className="flex gap-5 mt-[-100px]"
           >
             {AboutData.map(({ title, description }, index) => (
               <div
