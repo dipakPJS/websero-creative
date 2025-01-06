@@ -32,7 +32,7 @@ const linkVariants = {
 
 const buttonTextVariants = {
   hidden: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 const FullPageNav: React.FC = () => {
@@ -43,15 +43,15 @@ const FullPageNav: React.FC = () => {
   return (
     <>
       {/* Toggle Button */}
-      <div className="fixed top-0 right-0 w-auto p-3 z-[700] flex justify-end">
+      <div className="fixed top-0 right-0 w-auto p-5 z-[700] flex justify-end">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-black bg-white text-sm md:text-xl font-iceBerg font-extrabold focus:outline-none h-14 w-14 md:h-16 md:w-16 rounded-full flex justify-center items-center shadow-inner"
+          className="text-black bg-white text-sm md:text-xl font-iceBerg font-extrabold focus:outline-none h-14 w-14 md:h-[70px] md:w-[70px] rounded-full flex justify-center items-center shadow-inner"
           style={{
-            boxShadow: "inset 0 0 5px 5px black"
+            boxShadow: "inset 0 0 10px 5px black",
           }}
         >
-          <AnimatePresence>
+          <AnimatePresence mode="wait" initial={false}>
             <motion.span
               key={isOpen ? "Close" : "Menu"}
               variants={buttonTextVariants}
