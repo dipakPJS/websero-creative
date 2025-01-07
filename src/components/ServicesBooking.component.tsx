@@ -68,13 +68,14 @@ export default function ServiceBookingComponent() {
                 Click here to catch the flow!
               </motion.p>
               <a
-                href="#"
+                href="https://calendly.com/webserocreative/30min"
                 className="font-audioWide text-black px-4 py-2 sm:px-5 sm:py-3 text-base sm:text-xl bg-white rounded-full duration-500 ease-in-out hover:shadow-[0_0_20px_white] hover:scale-110"
                 onMouseEnter={textEnter}
                 onMouseLeave={textLeave}
+                target="_blank"
               >
                 <div className="flex justify-between items-center gap-2">
-                  Book the Journey{" "}
+                  Book a Call!{" "}
                   <PiLinktreeLogoDuotone className="text-3xl sm:text-5xl text-purple-700" />
                 </div>
               </a>
