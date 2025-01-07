@@ -1,17 +1,19 @@
-// src/components/Preloader.tsx
-import React from 'react';
-import './Preloader.css'; // Assuming you will create a CSS file for styles
+"use client";
 
-const Preloader: React.FC<{ isLoading: boolean }> = ({ isLoading }) => {
-    return (
-        <div className={`preloader ${isLoading ? 'active' : ''} `}>
-            {/* You can add a spinner or loading animation here */}
-            <div className="h-[100vh] w-[100vw] bg-black flex justify-center items-center">
-                {/* preloader animation */}
-                
-            </div>
-        </div>
-    );
+import dynamic from "next/dynamic";
+
+// Lazy load the EyeLottieAnimation
+const EyeLottieAnimation = dynamic(
+  () => import("./LottieFileComponents/EyeLottie.component"),
+  { ssr: false }
+);
+
+const Preloader = () => {
+  return (
+    <div className="absolute inset-0 z-[99999] flex justify-center items-center bg-black">
+      <EyeLottieAnimation />
+    </div>
+  );
 };
 
 export default Preloader;

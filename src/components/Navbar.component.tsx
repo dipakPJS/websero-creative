@@ -10,6 +10,7 @@ import {
   TiSocialTwitterCircular,
   TiSocialLinkedinCircular,
 } from "react-icons/ti";
+ 
 
 const navVariants = {
   hidden: {
