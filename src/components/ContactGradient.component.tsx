@@ -4,13 +4,7 @@ import { motion } from "framer-motion";
 import { CoverComponent } from "./Cover.component";
 
 // loading lottie with no ssr issues
-
-import dynamic from "next/dynamic";
-
-const BackgroundAnimation = dynamic(
-  () => import("./LottieFileComponents/BackgroundLottie.component"),
-  { ssr: false }
-);
+ 
 
 // Animation Variants
 const fastLoadingVariants = {
@@ -44,11 +38,7 @@ export default function ContactGradientComponent() {
           </div>
         </div>
       </div>
-
-      {/* lottie background */}
-      <div className="absolute h-full w-full">
-        <BackgroundAnimation />
-      </div>
+ 
     </div>
   );
 }
