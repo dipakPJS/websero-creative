@@ -11,7 +11,8 @@ import LogoComponent from "@/components/Logo.Component";
 
 import { ReactLenis } from "@/utils/lenis";
 import FullPageNav from "@/components/Navbar.component";
- 
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,17 +43,20 @@ export default function RootLayout({
             overflowX: "hidden",
           }}
         >
-          <div className="min-h-screen relative">
-            <CursorProvider>
-              <AudioProvider>
-                <FullPageNav />
-                <MouseCursorComponent />
-                <BackgroundAudioComponent />      
-                <LogoComponent />
-                {children}
-              </AudioProvider>
-            </CursorProvider>
-          </div>
+          
+          <Suspense fallback={<Loading />}>
+            <div className="min-h-screen relative">
+              <CursorProvider>
+                <AudioProvider>
+                  <FullPageNav />
+                  <MouseCursorComponent />
+                  <BackgroundAudioComponent />
+                  <LogoComponent />
+                  {children}
+                </AudioProvider>
+              </CursorProvider>
+            </div>
+          </Suspense>
         </body>
       </ReactLenis>
     </html>

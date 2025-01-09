@@ -85,6 +85,10 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
         aurora: {
           from: {
             backgroundPosition: "50% 50%, 50% 50%",
@@ -133,6 +137,7 @@ module.exports = {
         },
       },
       animation: {
+        "fade-in": "fadeIn 0.5s ease-in-out",
         aurora: "aurora 60s linear infinite",
         "gradient-x": "gradient-x 10s ease-in-out infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
