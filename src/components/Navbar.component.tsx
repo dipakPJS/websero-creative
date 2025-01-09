@@ -10,7 +10,6 @@ import {
   TiSocialTwitterCircular,
   TiSocialLinkedinCircular,
 } from "react-icons/ti";
- 
 
 const navVariants = {
   hidden: {
@@ -47,9 +46,9 @@ const FullPageNav: React.FC = () => {
       <div className="fixed top-0 right-0 w-auto p-5 z-[700] flex justify-end">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-black border-2 border-[#9a3cff] bg-white text-sm md:text-xl lg:text-2xl font-iceBerg font-extrabold focus:outline-none h-14 w-14 md:h-[70px] md:w-[70px] lg:h-[90px] lg:w-[90px] rounded-full flex justify-center items-center shadow-inner"
+          className="text-black border-2 border-[#36125c] bg-white text-sm md:text-xl font-iceBerg font-extrabold focus:outline-none h-14 w-14 md:h-[70px] md:w-[70px] lg:h-[80px] lg:w-[80px] rounded-full flex justify-center items-center shadow-inner"
           style={{
-            boxShadow: "inset 0 0 5px 5px black",
+            boxShadow: "inset 0 0 5px 3px black",
           }}
         >
           <AnimatePresence mode="wait" initial={false}>
@@ -76,6 +75,7 @@ const FullPageNav: React.FC = () => {
             exit="exit"
             variants={navVariants}
             className="fixed inset-0 z-[600] bg-[#000000be] backdrop-blur-20"
+            style={{ overflow: "hidden" }}
           >
             {/* Logo */}
             <div className="p-5">

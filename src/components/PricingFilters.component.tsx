@@ -22,12 +22,12 @@ const PricingFilterComponent: React.FC = () => {
       opacity: 1,
       y: 0,
       transition: {
-        delay: index * 0.1, // Reduced delay for smoother loading
-        duration: 0.4, // Optimized duration for faster animation
+        delay: index * 0.3, // Reduced delay for smoother loading
+        duration: 0.5, // Optimized duration for faster animation
         ease: "easeOut",
       },
     }),
-    exit: { opacity: 0, y: 50, transition: { duration: 0.3 } },
+    exit: { opacity: 0, y: 50, transition: { duration: 0.5 } },
   };
 
   return (
