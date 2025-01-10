@@ -2,6 +2,7 @@
  
 import { motion } from "motion/react";
 import GradientTextComponent from "./GradientText.component";
+import Image from "next/image";
 
  
 
@@ -23,7 +24,16 @@ export function WorldMapComponent() {
         </motion.p>
         
       </div>
- 
+      <div className="flex justify-center items-center h-[40rem] w-full p-10">
+      <Image 
+      src="/images/world.svg"
+      width={1000}
+      height={1000}
+      alt="linear demo image"
+      className=" h-full w-full"
+      
+       />
+       </div>
     </div>
   );
 }
