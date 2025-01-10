@@ -1,10 +1,9 @@
 "use client";
+
 import dynamic from "next/dynamic";
 
-// Lazy load IntroTitleComponent
-const IntroTitleComponent = dynamic(() => import("./IntroTitle.component"), {
-  ssr: false,
-});
+// Pre-render IntroTitleComponent
+import IntroTitleComponent from "./IntroTitle.component";
 
 // Lazy load AboutBackgroundAnimation
 const AboutBackgroundAnimation = dynamic(

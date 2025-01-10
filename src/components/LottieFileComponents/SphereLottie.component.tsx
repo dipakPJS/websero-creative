@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from "../../../public/lottie/globe.json";
+import animationData from "../../../public/lottie/web.json";
 
 const lottieOptions = {
   loop: true,
