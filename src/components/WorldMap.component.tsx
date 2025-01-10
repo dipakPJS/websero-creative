@@ -1,14 +1,9 @@
 "use client";
  
-import dynamic from "next/dynamic";
 import { motion } from "motion/react";
 import GradientTextComponent from "./GradientText.component";
 
-// Lazy load GlobeLottie
-const GlobeLottie = dynamic(
-  () => import("./LottieFileComponents/GlobeLottie.component"),
-  { ssr: false }
-);
+ 
 
 const fadeInDirection = {
   top: { initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 } },
@@ -28,8 +23,7 @@ export function WorldMapComponent() {
         </motion.p>
         
       </div>
-       
-    <GlobeLottie />
+ 
     </div>
   );
 }
