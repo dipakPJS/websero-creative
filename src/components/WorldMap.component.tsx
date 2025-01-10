@@ -28,7 +28,8 @@ export function WorldMapComponent() {
         </motion.p>
         
       </div>
-       <GlobeLottie />
+       
+    <GlobeLottie />
     </div>
   );
 }
