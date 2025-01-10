@@ -1,5 +1,5 @@
 import Lottie from "react-lottie";
-import animationData from "../../../public/lottie/checkk.json";
+import animationData from "../../../public/lottie/map.json";
 
 const lottieOptions = {
   loop: true,
