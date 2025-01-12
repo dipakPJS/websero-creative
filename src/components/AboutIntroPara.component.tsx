@@ -59,7 +59,7 @@ export default function AboutIntroParaComponent() {
         <GradientTextComponent
           span={true}
           texts="What we do"
-          classNames="mb-[100px] uppercase font-audioWide text-4xl font-bold block md:hidden lg:hidden text-center"
+          classNames="mb-[100px] md:text-7xl uppercase font-audioWide text-4xl font-bold block lg:hidden text-center"
         />
       </motion.p>
 

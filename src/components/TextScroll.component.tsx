@@ -20,7 +20,7 @@ const TextScrollComponent = React.memo(() => {
   return (
     <div
       ref={targetRef}
-      className="h-[300vh] hidden sm:block md:block lg:block"
+      className="h-[300vh] hidden lg:block"
     >
       <div className="relative h-full w-full">
         <div className="sticky top-0 h-screen w-[100vw] items-center overflow-hidden ">
