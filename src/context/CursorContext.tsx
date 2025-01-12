@@ -32,8 +32,8 @@ export const CursorProvider: React.FC<CursorProviderProps> = ({ children }) => {
   // Cursor variants configuration
   const variants: Record<string, Variant> = {
     default: {
-      height: 40,
-      width: 40,
+      height: 30,
+      width: 30,
       transition: {
         type: "spring",
         stiffness: 300,
