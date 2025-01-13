@@ -50,7 +50,7 @@ export default function DesignersComponent() {
   };
 
   return (
-    <div className="min-h-[50vh] w-full py-[100px]">
+    <div className="min-h-[50vh] w-full pt-[50px]">
 <div className="relative h-full  w-full flex justify-center items-center flex-col">
 
       <motion.div
