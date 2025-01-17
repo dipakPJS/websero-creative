@@ -17,7 +17,7 @@ export default function ServiceParallaxComponent({
  
   return (
     <div
-      className="flex flex-col min-h-[40rem] items-center text-center gap-4 p-6 rounded-[40px] text-white
+      className="flex flex-col items-center text-center gap-4 p-6 rounded-[40px] text-white
          transition duration-300 w-full bg-black"
       style={{
         boxShadow: `0 0 10px 2px ${randomColor}`,
@@ -26,7 +26,7 @@ export default function ServiceParallaxComponent({
        
     >
       <h2 className=" text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-eagleLake">{title}</h2>
-      <p className=" text-lg sm:text-xl md:text-2xl lg:text-3xl">{description}</p>
+      <p className=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">{description}</p>
     </div>
   );
 }
