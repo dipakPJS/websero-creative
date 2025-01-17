@@ -48,7 +48,7 @@ const ServiceIndustriesComponent: React.FC = () => {
           style={{ y: topToBottom, opacity: textOpacity }}
           transition={{ ease: "easeInOut", duration: 1 }}
         >
-         Health & Wellness
+         Wellness
         </motion.p>
         <motion.p
           className="absolute top-[20%] lg:top-[15%] right-0 sm:right-[5%] md:right-[7%] font-iceBerg  border py-3 px-4 md:py-2 md:px-3 rounded-[50px] text-xl sm:text-xl md:text-2xl lg-1:text-3xl lg:text-4xl"
@@ -69,7 +69,7 @@ const ServiceIndustriesComponent: React.FC = () => {
           style={{ x: randomMove, opacity: textOpacity }}
           transition={{ ease: "easeInOut", duration: 1 }}
         >
-         Home Services & Maintenance
+         Home Maintenance
         </motion.p>
         <motion.p
           className="absolute top-[15%] left-[30%] sm:left-[35%] md:left-[40%] font-iceBerg border py-3 px-4 md:py-2 md:px-3 rounded-[50px] text-xl sm:text-xl md:text-2xl lg-1:text-3xl lg:text-4xl"
