@@ -10,6 +10,7 @@ import {
   TiSocialTwitterCircular,
   TiSocialLinkedinCircular,
 } from "react-icons/ti";
+import GradientTextComponent from "./GradientText.component";
 
 const navVariants = {
   hidden: {
@@ -74,7 +75,7 @@ const FullPageNav: React.FC = () => {
             animate="visible"
             exit="exit"
             variants={navVariants}
-            className="fixed inset-0 z-[600] bg-[#000000be] backdrop-blur-20"
+            className="fixed inset-0 z-[600] bg-[#00000069] backdrop-blur-20"
             style={{ overflow: "hidden" }}
           >
             {/* Logo */}
@@ -109,7 +110,7 @@ const FullPageNav: React.FC = () => {
                       <Link
                         href={label === "Home" ? "/" : `/${label.toLowerCase()}`}
                         onClick={handleLinkClick}
-                        className="text-2xl md:text-4xl font-eagleLake text-gray-300 hover:text-purple-600"
+                        className="text-2xl md:text-4xl font-eagleLake text-gray-200 hover:text-purple-600"
                       >
                         {label}
                       </Link>
@@ -147,7 +148,7 @@ const FullPageNav: React.FC = () => {
                       <a
                         href={href}
                         target="_blank"
-                        className={`text-4xl text-slate-400 md:text-5xl ${color} transform hover:scale-125 duration-200`}
+                        className={`text-4xl text-slate-200 md:text-5xl ${color} transform hover:scale-125 duration-200`}
                         rel="noreferrer"
                       >
                         {icon}
@@ -155,9 +156,9 @@ const FullPageNav: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="text-gray-300 text-center">
-                  <p className="text-sm">info@websero.com</p>
-                  <code>+977 - 986 721 6630</code>
+                <div className=" text-center">
+                   <GradientTextComponent span={false} texts="info@websero.com" classNames="text-md font-bold font-iceBerg" />
+                  <code><GradientTextComponent span={true} texts="+977 - 986 721 6630" /></code>
                 </div>
               </div>
             </div>
