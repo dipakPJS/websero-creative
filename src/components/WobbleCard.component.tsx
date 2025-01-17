@@ -44,7 +44,7 @@ export function WobbleCardComponent() {
           width={250}
           height={250}
           alt='linear demo image'
-          className='absolute z-0 -right-10  md:-right-[40%] lg:-right-[10%] grayscale -bottom-10 object-contain rounded-2xl'
+          className='absolute z-0 -right-10 md:-right-[10%] grayscale lg:-right-[0%] -bottom-10 object-contain rounded-2xl'
         />
       </WobbleCard>
 
