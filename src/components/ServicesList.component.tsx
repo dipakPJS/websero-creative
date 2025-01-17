@@ -23,7 +23,7 @@ export default function ServicesListComponent() {
         {ServiceData.map(({ id, title, description }, index) => (
           <motion.div
             key={id}
-            className="relative w-full md:w-[30rem] lg:w-[70rem] pt-[100px] px-2 sm:pt-[130px] mt:pt-[150px] lg:pt-[200px]"
+            className="relative w-full md:w-[30rem] lg:w-[50rem] pt-[100px] px-2 sm:pt-[80px] md:pt-[80px] lg:pt-[100px]"
             initial={fadeInDirections.top.initial}
             whileInView={fadeInDirections.top.animate}
             viewport={{ once: false, amount: 0.2 }}
