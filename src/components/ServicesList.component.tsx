@@ -23,7 +23,7 @@ export default function ServicesListComponent() {
         {ServiceData.map(({ id, title, description }, index) => (
           <motion.div
             key={id}
-            className="relative w-full md:w-[30rem] lg:w-[50rem] pt-[100px] px-2 sm:pt-[130px] mt:pt-[150px] lg:pt-[200px]"
+            className="relative w-full md:w-[30rem] lg:w-[70rem] pt-[100px] px-2 sm:pt-[130px] mt:pt-[150px] lg:pt-[200px]"
             initial={fadeInDirections.top.initial}
             whileInView={fadeInDirections.top.animate}
             viewport={{ once: false, amount: 0.2 }}
@@ -42,6 +42,7 @@ export default function ServicesListComponent() {
                 stiffness: 100,
                 damping: 10,
               }}
+              className="p-7 md:p-0 lg:p-0"
             >
               <ServiceParallaxComponent title={title} description={description} />
             </motion.div>
