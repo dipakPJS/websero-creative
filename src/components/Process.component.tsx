@@ -24,7 +24,7 @@ export default function ProcessComponent() {
          initial="hidden"
          whileInView="show"
          viewport={{ once: false, amount: 0.2 }}
-          className="font-audioWide text-center md:text-left lg:text-left md:pl-5 lg:pl-8 font-bold text-black text-3xl sm:text-3xl md-1:text-5xl md:text-6xl lg-1:text-7xl lg:text-8xl uppercase"
+          className="font-audioWide text-left pl-5 lg:pl-8 font-bold text-black text-3xl sm:text-3xl md-1:text-5xl md:text-6xl lg-1:text-7xl lg:text-8xl uppercase"
         >
           Process
         </motion.p>
