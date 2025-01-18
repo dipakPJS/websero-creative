@@ -25,14 +25,14 @@ export default function PricingComponent() {
        initial="hidden"
        whileInView="show"
        viewport={{ once: false, amount: 0.2 }}
-        className=" text-left pl-5 lg:pl-8 font-audioWide font-bold text-white text-3xl sm:text-3xl md-1:text-5xl md:text-6xl lg-1:text-7xl lg:text-8xl uppercase"
+        className=" text-left pl-5 lg:pl-8 font-iceBerg font-bold text-white text-5xl sm:text-6xl md-1:text-7xl md:text-7xl lg-1:text-8xl lg:text-8xl uppercase"
         >
         Pricing
       </motion.p>
       <br />
       <br />
       <div className="w-full text-center h-full">
-        <p className="text-white font-eagleLake text-xl sm:text-xl md:text-3xl lg:text-4xl font-bold uppercase w-full">
+        <p className="text-white font-audioWide text-xl sm:text-xl md:text-3xl lg:text-4xl font-bold uppercase w-full">
           Website <span className="text-purple-600">Packages</span>
         </p>
       </div>

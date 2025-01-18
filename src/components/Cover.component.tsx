@@ -8,7 +8,7 @@ export function CoverComponent() {
   const {textEnter, textLeave} = useCursor();
   return (
     <div className="pointer-events-auto">
-      <h1 className="text-white flex flex-col  text-[50px] sm:text-[70px] md:text-[90px] lg:text-[120px] font-iceBerg max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 ">
+      <h1 className="text-white flex flex-col  text-[40px] sm:text-[50px] md:text-[90px] lg:text-[120px] font-audioWide max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 ">
         Let&lsquo;s Get 
         <Link
         onMouseEnter={textEnter}
