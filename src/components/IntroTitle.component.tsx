@@ -29,7 +29,7 @@ export default function IntroTitleComponent() {
         {/* Title Section */}
         <div className="about-header h-full w-full flex justify-center items-center">
           <h1
-            className="font-eagleLake text-2xl sm:text-2xl md:text-3xl lg-1:text-4xl lg:text-6xl w-[60%] lg:w-[50%] text-center text-white"
+            className="font-audioWide text-2xl sm:text-2xl md:text-3xl lg-1:text-4xl lg:text-6xl w-[60%] lg:w-[50%] text-center text-white"
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
           >

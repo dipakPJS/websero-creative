@@ -33,7 +33,7 @@ const AboutInfoTextHorizontalScrollComponent: React.FC = () => {
                 key={index}
                 className="min-h-[100px] w-[300px] sm:w-[350px] md:w-[400px] lg:w-[500px] flex flex-col gap-2 lg:gap-5 p-5 rounded-[50px] border border-white bg-transparent transition-transform duration-500 ease-in-out hover:scale-[1.1]"
               >
-                <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-eagleLake w-full">
+                <h3 className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-audioWide w-full">
                   <GradientTextComponent span={true} texts={title} />
                 </h3>
                 <p className="text-xl md:text-xl lg:text-2xl text-gray-200">

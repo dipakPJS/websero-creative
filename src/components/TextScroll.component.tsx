@@ -35,7 +35,7 @@ const TextScrollComponent = React.memo(() => {
               {textArray.map((char, index) => (
                 <p
                   key={`layer1-${index}`}
-                  className="text-[70px] lg-1:text-[180px] lg:text-[200px] font-audioWide text-transparent bg-clip-text bg-gradient-to-bl from-[blue] via-[#ee00ff] to-[purple] bg-[length:200%] bg-left animate-gradient-x"
+                  className="text-[70px] lg-1:text-[180px] lg:text-[200px] font-iceBerg font-extrabold text-transparent bg-clip-text bg-gradient-to-bl from-[blue] via-[#ee00ff] to-[purple] bg-[length:200%] bg-left animate-gradient-x"
                 >
                   {char}
                 </p>
@@ -52,7 +52,7 @@ const TextScrollComponent = React.memo(() => {
               {textArray.map((char, index) => (
                 <p
                   key={`layer2-${index}`}
-                  className="text-[70px] lg-1:text-[180px] lg:text-[200px] font-audioWide text-transparent bg-clip-text bg-gradient-to-tr from-purple-700 via-[blue] to-pink-600 bg-[length:200%] bg-left animate-gradient-x"
+                  className="text-[70px] lg-1:text-[180px] lg:text-[200px] font-iceBerg font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-purple-700 via-[blue] to-pink-600 bg-[length:200%] bg-left animate-gradient-x"
                 >
                   {char}
                 </p>

@@ -32,7 +32,7 @@ export function AnimatedTestimonialsComponent({ bgColor }: AnimData) {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.2 }}
-            className="font-audioWide text-center font-bold text-white text-3xl sm:text-3xl md-1:text-3xl md:text-4xl lg-1:text-5xl lg:text-6xl uppercase"
+            className="font-iceBerg text-center font-bold text-white text-3xl sm:text-3xl md-1:text-3xl md:text-4xl lg-1:text-5xl lg:text-6xl uppercase"
           >
             What clients <GradientTextComponent span={true} texts="say!" />
           </motion.p>
