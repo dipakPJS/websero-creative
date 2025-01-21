@@ -17,7 +17,7 @@ const fastLoadingVariants = {
 
 export default function ProcessComponent() {
   return (
-    <div className="w-full min-h-[100vh] py-[50px] flex flex-col items-center text-left ">
+    <div className="w-full min-h-[100vh] pt-[50px] pb-[100px] flex flex-col items-center text-left ">
       <div className="w-full">
         <motion.p
          variants={fastLoadingVariants}
@@ -32,7 +32,7 @@ export default function ProcessComponent() {
 
       <br />
       <br />
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-5 lg:gap-10 p-2 lg:p-10 place-items-center w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-2 gap-5 lg:gap-10 p-2 lg:p-10 place-items-center w-full">
         {ProcessData.map((item, index) => {
           return (
             <MeteorsComponent
