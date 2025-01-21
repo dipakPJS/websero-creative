@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Websero-creative",
+  title: "Websero Creative",
   description: "A Creative Design And Development Agency",
 };
 
