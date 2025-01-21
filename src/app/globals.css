@@ -12,6 +12,11 @@
  
 }
 
+::selection{
+  background-color: rgb(79, 0, 136);
+  color: white;
+}
+
 ::-webkit-scrollbar{
  display: none;
 }
