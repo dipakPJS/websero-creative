@@ -11,21 +11,21 @@
         "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
       "name": "Dilip Pokharel",
       "designation": "CTO at Websero",
-      "src": "/images/beauty.png"
+      "src": "/images/client1.jpg"
     },
     {
       "quote":
         "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
       "name": "Santosh Pokharel",
       "designation": "Operations Director at CloudScale",
-      "src": "/images/robot.png"
+      "src": "/images/client2.jpg"
     },
     {
       "quote":
         "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
       "name": "Dipendra Pokharel",
       "designation": "Engineering Lead at DataPro",
-      "src": "/images/beautiful.png"
+      "src": "/images/client3.jpg"
     }
     
   ]
