@@ -25,7 +25,7 @@ export default function AchievementsComponent() {
         viewport={{ once: false, amount: 0.2 }}
           className=" text-left pl-5 lg:pl-8 font-audioWide z-[100] font-bold text-white text-5xl sm:text-6xl md-1:text-7xl md:text-7xl lg-1:text-8xl lg:text-8xl capitalize"
         >
-     Achievement
+     Success
         </motion.p>
         <div className="w-full mt-[100px]">
           <WobbleCardComponent />
