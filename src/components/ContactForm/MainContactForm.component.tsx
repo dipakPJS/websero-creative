@@ -135,6 +135,16 @@ export default function MainContactFormComponent() {
           >
             Let&apos;s collaborate & make good things together.
           </motion.p>
+          <motion.p
+            initial={fadeInDirections.left.initial}
+            whileInView={fadeInDirections.left.animate}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-3 text-xl lg:text-2xl font-bold font-iceBerg"
+          >
+          <GradientTextComponent span={true} texts="webserocreations@gmail.com" />
+          </motion.p>
+
         </div>
 
         <motion.form
