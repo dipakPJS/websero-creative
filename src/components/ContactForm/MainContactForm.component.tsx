@@ -142,7 +142,7 @@ export default function MainContactFormComponent() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-3 text-xl lg:text-2xl font-bold font-iceBerg"
           >
-          <GradientTextComponent span={true} texts="webserocreations@gmail.com" />
+          <GradientTextComponent span={true} texts="webserocreative@gmail.com" />
           </motion.p>
 
         </div>
