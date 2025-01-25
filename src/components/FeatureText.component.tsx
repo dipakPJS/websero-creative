@@ -40,7 +40,7 @@ export default function FeatureTextComponent() {
           whileInView={fadeInDirections.right.animate} 
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-        className="absolute bg-[#000000ab] top-[40%] left-[30%] sm:top-[40%] sm:left-[37.5%] md:top-[20%] md:left-[39%] lg:left-[56%] lg:top-[41%] lg-1:left-[50%] border
+        className="absolute bg-[#000000ab] top-[40%] left-[30%] sm:top-[40%] sm:left-[37.5%] md:top-[20%] md:left-[39%] lg:left-[56%] lg:top-[41%] lg-1:left-[51%] border
           border-white text-sm sm:text-lg md:font-bold md:text-xl lg:text-3xl 
           font-extralight text-slate-300 rounded-[100px] min-w-[100px] sm:w-[150px] md:w-[190px] lg:w-[200px] text-center backdrop-blur-20 p-1  py-2 md:p-2 lg:p-2">
        Web
