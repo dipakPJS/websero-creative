@@ -31,7 +31,7 @@ const EmblaControls: React.FC = () => {
             whileInView={fadeInDirections.bottom.animate}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-bold font-audioWide text-[80px] sm:text-[120px] md:text-[140px] lg-1:text-[250px] lg:text-[350px] work-font text-black"
+            className="font-bold font-audioWide text-[80px] sm:text-[120px] md:text-[140px] lg-1:text-[180px] lg:text-[200px] work-font text-black"
           >
             Work
           </motion.p>
@@ -46,7 +46,7 @@ const EmblaControls: React.FC = () => {
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.6, delay: 0.4 }}
       
-      className="flex flex-col justify-center items-center w-full h-auto p-3 gap-3 mb-5">
+      className="flex flex-col justify-center items-center w-full h-auto p-3 gap-3 mb-5 ">
         <Link
           href={"/work"}
           className=" text-xl md:text-xl lg-1:text-2xl lg:text-2xl py-2 px-10 sm:py-2 sm:px-10 md:py-2 md:px-5  lg:py-2 lg:px-5 rounded-[50px] border border-black font-semibold text-black duration-700 hover:bg-black hover:text-white"

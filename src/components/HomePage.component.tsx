@@ -36,7 +36,7 @@ export default function HomePageComponent() {
       >
         {/* homepage second starts */}
         <div className=" z-[10] homepage-second absolute h-full w-full flex justify-center items-end lg:items-center">
-          <div className=" h-[250px] sm:h-[300px] md:h-[400px] lg-1:h-[500px] lg:h-[500px] w-auto">
+          <div className=" h-[250px] sm:h-[300px] md:h-[300px] lg-1:h-[400px] lg:h-[400px] w-auto">
             <SphereAnimation />
           </div>
         </div>

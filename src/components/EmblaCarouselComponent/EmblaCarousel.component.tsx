@@ -56,13 +56,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
                   </a>
                 </div>
                  <div className="text-left ">
-                  <p className="text-3xl font-iceBerg font-extrabold py-5 pl-3">{item.title}</p>
+                  <p className="text-3xl font-audioWide font-extrabold py-5 pl-3">{item.title}</p>
                  </div>
                 <div className="tags flex flex-wrap gap-2 mt-5">
                   {item.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="py-1 px-3 border border-black rounded-full text-sm font-iceBerg"
+                      className="py-1 px-3 border border-black rounded-full text-sm font-audioWide"
                     >
                       {tag}
                     </span>
