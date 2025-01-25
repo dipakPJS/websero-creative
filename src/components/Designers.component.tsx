@@ -68,7 +68,7 @@ export default function DesignersComponent() {
           <GradientTextComponent
             span={true}
             texts="We are a ministry of designers & developers, who may not be genies but grant wishes too."
-            classNames="text-2xl sm:text-3xl md:text-4xl lg-1:text-5xl lg:text-6xl py-5 font-bold font-eagleLake"
+            classNames="text-2xl sm:text-3xl md:text-4xl lg-1:text-5xl lg:text-6xl py-5 font-bold font-audioWide"
           />
         </motion.p>
 

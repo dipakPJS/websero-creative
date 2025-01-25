@@ -20,7 +20,7 @@ export default function BrandsComponent() {
         gradientWidth={300}
         className="h-full w-full bg-gradient-to-r from-purple-600 via-blue-800 to-sky-700"
       >
-        <div className="text-center flex capitalize font-iceBerg ">
+        <div className="text-center flex uppercase font-bold">
           <p className=" mr-[30px] text-xl text-white">&#9679;</p>
           <p className=" mr-[30px] text-xl text-white tracking-widest font-bold">
             Founded in 2024

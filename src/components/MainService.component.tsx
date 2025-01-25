@@ -30,7 +30,7 @@ export default function MainServicesComponent() {
           <p className="text-xl font-audioWide text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-blue-600 to-yellow-600 uppercase ">
             What we do
           </p>
-          <div className="headings font-eagleLake text-4xl md:text-5xl lg-1:text-6xl lg:text-6xl">
+          <div className="headings font-audioWide text-4xl md:text-5xl lg-1:text-6xl lg:text-6xl">
             <p className=" mt-5"> We Create </p>
             <GradientTextComponent texts="meaningful" span={false} />
             <p className=" mt-2"> Experiences </p>

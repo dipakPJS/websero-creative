@@ -19,7 +19,7 @@ export default function PricingCardComponent(items: Prices) {
         texts={title}
         classNames="font-audioWide text-2xl"
       />
-      <p className="text-md font-audioWide text-gray-300 mt-4">{price}</p>
+      <p className="text-md  font-bold text-gray-300 mt-4">{price}</p>
       <p className="text-xl text-gray-400 mt-2">{description}</p>
       <p className="text-lg text-gray-500 mt-2">Pages: {pages}</p>
       <p className="text-lg text-gray-500 mt-2">Duration: {duration}</p>

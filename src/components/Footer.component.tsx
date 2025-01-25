@@ -29,10 +29,10 @@ export default function FooterComponent() {
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
             />
-            <p className="text-left w-full ml-5 text-slate-200 font-eagleLake text-2xl sm:text-3xl md-1:text-5xl md:text-6xl lg-1:text-4xl lg:text-4xl font-extrabold">
-              Thanks For ch<span className="text-purple-600">oooo</span>sing{" "}
+            <p className="text-left w-full ml-5 text-slate-200 font-hubballi  text-2xl sm:text-3xl md-1:text-5xl md:text-6xl lg-1:text-4xl lg:text-4xl font-extrabold">
+              Thank you for ch<span className="text-purple-600">oooo</span>sing{" "}
               <br />
-              US<span className="text-purple-600">!</span>
+              us<span className="text-purple-600">!</span>
             </p>
           </div>
           <div className="w-full min-h-[20rem] gap-y-10 grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 text-center pt-10">
@@ -42,13 +42,13 @@ export default function FooterComponent() {
               </p>
               <Link
                 href={"/"}
-                className="text-white text-left font-iceBerg text-lg pl-5"
+                className="text-white text-left font-hubballi text-lg pl-5"
               >
                 Home
               </Link>
               <Link
                 href={"/about"}
-                className="text-white text-left font-iceBerg text-lg pl-5 "
+                className="text-white text-left font-hubballi text-lg pl-5 "
               >
                 About Us
               </Link>
@@ -60,19 +60,19 @@ export default function FooterComponent() {
               </p>
               <Link
                 href={"/work"}
-                className="text-left text-white text-lg font-iceBerg pl-5"
+                className="text-left text-white text-lg font-hubballi pl-5"
               >
                 Our Work
               </Link>
               <Link
                 href={"/services"}
-                className="text-white text-left font-iceBerg text-lg pl-5 "
+                className="text-white text-left font-hubballi text-lg pl-5 "
               >
                 Services
               </Link>
               <Link
                 href={"/contact"}
-                className="text-left text-white text-lg font-iceBerg pl-5 "
+                className="text-left text-white text-lg font-hubballi pl-5 "
               >
                 Contact Us
               </Link>
@@ -84,28 +84,28 @@ export default function FooterComponent() {
               <a
                 href="https://www.instagram.com/diwakar_codess/"
                 target="_blank"
-                className="text-left flex gap-1 text-pink-500 text-xl font-iceBerg    pl-5"
+                className="text-left flex gap-1 text-pink-500 text-xl font-hubballi    pl-5"
               >
                 <RiInstagramFill className="text-2xl" /> Instagram
               </a>
               <a
                 href="https://www.facebook.com/dipak.light.roshni.diyo"
                 target="_blank"
-                className="text-left flex gap-1 text-blue-600 text-xl font-iceBerg pl-5 "
+                className="text-left flex gap-1 text-blue-600 text-xl font-hubballi pl-5 "
               >
                 <BsFacebook className="text-2xl" /> Facebook
               </a>
               <a
                 href="https://www.youtube.com/@WebseroCreations"
                 target="_blank"
-                className="text-left flex gap-1 text-[red] text-xl font-iceBerg pl-5 "
+                className="text-left flex gap-1 text-[red] text-xl font-hubballi pl-5 "
               >
                 <ImYoutube className="text-2xl" /> YouTube
               </a>
               <a
                 href="https://x.com/DeepakP18273070"
                 target="_blank"
-                className="text-left flex gap-1 text-white text-xl font-iceBerg pl-5 "
+                className="text-left flex gap-1 text-white text-xl font-hubballi pl-5 "
               >
                 <BsTwitterX className=" text-2xl " /> Twitter
               </a>
@@ -124,7 +124,7 @@ export default function FooterComponent() {
             className="h-full w-full"
           >
             <div className="w-full flex items-center">
-              <p className="text-white text-[200px] md:text-[250px] lg:text-[300px] font-iceBerg uppercase px-5">
+              <p className="text-white text-[200px] md:text-[250px] lg:text-[300px] font-audioWide uppercase px-5">
                 Let&apos;s make your vision a reality{" "}
                 <sub>
                   <GradientTextComponent span={true} texts="*" />
