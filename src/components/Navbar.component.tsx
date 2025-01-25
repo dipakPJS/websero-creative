@@ -110,7 +110,7 @@ const FullPageNav: React.FC = () => {
                       <Link
                         href={label === "Home" ? "/" : `/${label.toLowerCase()}`}
                         onClick={handleLinkClick}
-                        className="text-2xl md:text-4xl font-eagleLake text-gray-200 hover:text-purple-600"
+                        className="text-2xl md:text-4xl font-audioWide text-gray-200 hover:text-purple-600"
                       >
                         {label}
                       </Link>
@@ -148,7 +148,7 @@ const FullPageNav: React.FC = () => {
                       <a
                         href={href}
                         target="_blank"
-                        className={`text-4xl text-slate-200 md:text-5xl ${color} transform hover:scale-125 duration-200`}
+                        className={`text-4xl text-slate-200 md:text-5xl ${color} transform hover:scale-125 duration-200 font-`}
                         rel="noreferrer"
                       >
                         {icon}
@@ -157,7 +157,7 @@ const FullPageNav: React.FC = () => {
                   ))}
                 </ul>
                 <div className=" text-center">
-                   <GradientTextComponent span={false} texts="info@websero.com" classNames="text-md font-bold font-iceBerg" />
+                   <GradientTextComponent span={false} texts="info@websero.com" classNames="text-md font-bold font-hubballi" />
                   <code><GradientTextComponent span={true} texts="+977 - 986 721 6630" /></code>
                 </div>
               </div>
