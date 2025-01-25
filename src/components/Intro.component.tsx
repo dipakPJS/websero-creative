@@ -24,9 +24,9 @@ export default function IntroComponent() {
     whileInView="show"
     viewport={{ once: false, amount: 0.2 }}
     >
-      <div className="flex flex-col md:text-center w-full  ">
+      <div className="flex flex-col md:text-center w-[65%] ">
         <FlipWordsComponent />
-        <p className=" text-center lg-1:text-left lg:text-left mt-[30px] lg-1:mt-[20px] lg:mt-[20px] text-md md:text-4xl lg:text-3xl font-bold  text-slate-400 lg-1:w-[80%] lg:w-[80%]">
+        <p className=" text-center lg-1:text-left lg:text-left mt-[30px] lg-1:mt-[20px] lg:mt-[20px] text-md md:text-4xl lg:text-3xl font-bold  text-slate-400 w-full">
           Enhancing Your Online Presence – Distinguish Yourself on the Web and
           Attract Potential Clients
         </p>

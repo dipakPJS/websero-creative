@@ -35,8 +35,8 @@ export default function HomePageComponent() {
         className="homepage relative min-h-[120vh] bg-black"
       >
         {/* homepage second starts */}
-        <div className=" z-[10] homepage-second absolute h-full w-full flex justify-center items-end lg:items-center">
-          <div className=" h-[250px] sm:h-[300px] md:h-[300px] lg-1:h-[400px] lg:h-[400px] w-auto">
+        <div className=" z-[10] homepage-second absolute h-full w-full flex justify-center items-center lg:mt-[-42.5px] ">
+          <div className=" h-[250px] sm:h-[300px] md:h-[300px] lg-1:h-[400px] lg:h-[500px] w-auto">
             <SphereAnimation />
           </div>
         </div>
@@ -45,7 +45,7 @@ export default function HomePageComponent() {
         <div className=" z-[20] homepage-third absolute h-full w-full ">
           <div className=" flex justify-center items-center h-full w-full">
             <div className="flex flex-col lg:flex-row justify-evenly h-[90%] w-full px-10 pt-[100px] ">
-              <div className=" h-full w-full md:px-[50px] pt-10 md:text-center">
+              <div className=" h-full w-full md:px-[50px] md:text-center">
                 <IntroComponent />
               </div>
               <div className="h-full w-full relative ">
@@ -59,7 +59,7 @@ export default function HomePageComponent() {
         <div className="homepage-4th absolute h-full w-full z-10 ">
           <div className="h-full w-full relative">
             <VerticalText />
-            <div className="absolute top-[100%] md:top-[90%] lg:top-[73%] h-auto w-full flex lg:justify-end justify-center px-5">
+            <div className="absolute top-[100%] md:top-[90%] lg:top-[70%] h-auto w-full flex lg:justify-end justify-center px-5">
               <ScrollDownLottieComponent />
             </div>
           </div>

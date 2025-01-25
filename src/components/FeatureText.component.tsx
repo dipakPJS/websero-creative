@@ -11,7 +11,7 @@ const fadeInDirections = {
 
 export default function FeatureTextComponent() {
   return (
-    <div>
+    <div className="relative h-full w-full">
       
         <motion.p
         initial={fadeInDirections.top.initial}
@@ -19,7 +19,7 @@ export default function FeatureTextComponent() {
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className="absolute bg-[#000000ab] top-[20%] left-[0%] sm:top-[30%] sm:left-[10%]
-         md:top-[10%] md:left-[10%] lg:left-[30%] lg:top-[15%] lg-1:left-[25%] border
+         md:top-[10%] md:left-[10%] lg:left-[30%] lg:top-[0%] lg-1:left-[25%] border
           border-white text-sm sm:text-lg md:font-bold md:text-xl lg:text-3xl 
           font-extralight text-slate-300 rounded-[100px] min-w-[100px] sm:w-[150px] md:w-[190px] lg:w-[200px] text-center backdrop-blur-20 p-1 py-2 md:p-2 lg:p-2 ">
           UI/UX Design
@@ -30,7 +30,7 @@ export default function FeatureTextComponent() {
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.6, delay: 0.4 }}
         className="absolute bg-[#000000ab] top-[20%] right-[0%] sm:top-[30%] sm:left-[65%]
-         md:top-[10%] md:left-[65%] lg:left-[43%] lg:top-[28%] lg-1:left-[36%] border
+         md:top-[10%] md:left-[65%] lg:left-[43%] lg:top-[15%] lg-1:left-[36%] border
           border-white text-sm sm:text-lg md:font-bold md:text-xl lg:text-3xl 
           font-extralight text-slate-300 rounded-[100px] min-w-[100px] sm:w-[150px] md:w-[190px] lg:w-[200px] text-center backdrop-blur-20 p-1  py-2 md:p-2 lg:p-2">
          Branding
@@ -40,7 +40,7 @@ export default function FeatureTextComponent() {
           whileInView={fadeInDirections.right.animate} 
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-        className="absolute bg-[#000000ab] top-[40%] left-[30%] sm:top-[40%] sm:left-[37.5%] md:top-[20%] md:left-[39%] lg:left-[56%] lg:top-[41%] lg-1:left-[51%] border
+        className="absolute bg-[#000000ab] top-[40%] left-[30%] sm:top-[40%] sm:left-[37.5%] md:top-[20%] md:left-[39%] lg:left-[56%] lg:top-[30%] lg-1:left-[51%] border
           border-white text-sm sm:text-lg md:font-bold md:text-xl lg:text-3xl 
           font-extralight text-slate-300 rounded-[100px] min-w-[100px] sm:w-[150px] md:w-[190px] lg:w-[200px] text-center backdrop-blur-20 p-1  py-2 md:p-2 lg:p-2">
        Web
@@ -50,7 +50,7 @@ export default function FeatureTextComponent() {
           whileInView={fadeInDirections.left.animate}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-        className="absolute bg-[#000000ab] top-[60%] left-[0%] sm:top-[60%] sm:left-[10%] md:top-[60%] md:left-[10%] lg:left-[43%] lg:top-[54%] lg-1:left-[35%] border
+        className="absolute bg-[#000000ab] top-[60%] left-[0%] sm:top-[60%] sm:left-[10%] md:top-[60%] md:left-[10%] lg:left-[43%] lg:top-[45%] lg-1:left-[35%] border
           border-white text-sm sm:text-lg md:font-bold md:text-xl lg:text-3xl 
           font-extralight text-slate-300 rounded-[100px] min-w-[100px] sm:w-[150px] md:w-[190px] lg:w-[200px] text-center backdrop-blur-20 p-1  py-2 md:p-2 lg:p-2">
      SMM
@@ -60,7 +60,7 @@ export default function FeatureTextComponent() {
           whileInView={fadeInDirections.top.animate}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.6, delay: 1 }}
-        className="absolute bg-[#000000ab] top-[60%] right-[0%] sm:top-[60%] sm:left-[62%] md:top-[60%] md:left-[65%] lg:left-[30%] lg:top-[67%] lg-1:left-[25%] border
+        className="absolute bg-[#000000ab] top-[60%] right-[0%] sm:top-[60%] sm:left-[62%] md:top-[60%] md:left-[65%] lg:left-[30%] lg:top-[60%] lg-1:left-[25%] border
           border-white text-sm sm:text-lg md:font-bold md:text-xl lg:text-3xl 
           font-extralight text-slate-300 rounded-[100px] min-w-[100px] sm:w-[150px] md:w-[190px] lg:w-[200px] text-center backdrop-blur-20 p-1  py-2 md:p-2 lg:p-2">
      Chatbot

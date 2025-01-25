@@ -12,7 +12,7 @@ export function FlipWordsComponent() {
       <span onMouseEnter={textEnter} onMouseLeave={textLeave}>
         Build
         <FlipWords className="text-purple-700" words={words} /> <br />
-        websites with Websero
+        websites with <br></br> Websero
       </span>
     </div>
   );
