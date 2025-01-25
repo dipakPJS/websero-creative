@@ -47,7 +47,7 @@ const FullPageNav: React.FC = () => {
       <div className="fixed top-0 right-0 w-auto p-5 z-[700] flex justify-end">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-white border border-[#9430ff] text-sm md:text-lg font-audioWide font-extrabold focus:outline-none h-14 w-14 md:h-[70px] md:w-[70px] lg:h-[80px] lg:w-[80px] rounded-full flex justify-center items-center shadow-inner"
+          className="text-white bg-black border border-[#9430ff] text-sm md:text-lg font-audioWide font-extrabold focus:outline-none h-14 w-14 md:h-[70px] md:w-[70px] lg:h-[80px] lg:w-[80px] rounded-full flex justify-center items-center shadow-inner"
           style={{
             boxShadow: "inset 0 0 3px 2px #9430ff",
           }}
