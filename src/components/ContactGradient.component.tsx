@@ -1,21 +1,21 @@
 "use client";
 
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { CoverComponent } from "./Cover.component";
 
 // loading lottie with no ssr issues
  
 
 // Animation Variants
-const fastLoadingVariants = {
-  hidden: { opacity: 0, scale: 0.8, y: 50 },
-  show: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
+// const fastLoadingVariants = {
+//   hidden: { opacity: 0, scale: 0.8, y: 50 },
+//   show: {
+//     opacity: 1,
+//     scale: 1,
+//     y: 0,
+//     transition: { duration: 0.5, ease: "easeOut" },
+//   },
+// };
 
 export default function ContactGradientComponent() {
   return (
@@ -23,7 +23,7 @@ export default function ContactGradientComponent() {
       <div className="absolute h-full w-full z-10 bg-[#00000021]">
         <div className="py-[50px] h-full w-full">
           <div className="w-full">
-            <motion.p
+            {/* <motion.p
               variants={fastLoadingVariants}
               initial="hidden"
               whileInView="show"
@@ -31,7 +31,7 @@ export default function ContactGradientComponent() {
               className="text-left pl-5 lg:pl-8 font-audioWide font-bold text-white text-5xl sm:text-6xl md-1:text-7xl md:text-7xl lg-1:text-8xl lg:text-8xl capitalize"
             >
               Contact
-            </motion.p>
+            </motion.p> */}
           </div>
           <div className="h-full w-full flex items-start justify-center text-center">
             <CoverComponent />

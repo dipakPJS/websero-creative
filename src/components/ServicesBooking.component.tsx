@@ -1,6 +1,6 @@
 "use client"
 import VideoComponent from "./Video.component";
-import { PiLinktreeLogoDuotone } from "react-icons/pi";
+import { MdWifiCalling3 } from "react-icons/md";
 import { useCursor } from "@/context/CursorContext";
 import { motion } from "framer-motion";
 
@@ -76,7 +76,7 @@ export default function ServiceBookingComponent() {
               >
                 <div className="flex justify-between items-center gap-2">
                   Book a Call!{" "}
-                  <PiLinktreeLogoDuotone className="text-3xl sm:text-5xl text-purple-700" />
+                  <MdWifiCalling3 className="text-3xl sm:text-5xl text-purple-700" />
                 </div>
               </a>
             </div>

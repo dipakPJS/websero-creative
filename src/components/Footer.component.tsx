@@ -52,7 +52,6 @@ export default function FooterComponent() {
               >
                 About Us
               </Link>
-             
             </div>
             <div className="w-full flex flex-col gap-2">
               <p className="text-xl text-left  font-audioWide font-extrabold text-slate-600 ">
@@ -114,7 +113,7 @@ export default function FooterComponent() {
         </div>
         <div className="w-full h-[25vh] md:h-[30vh] lg:h-[40vh] items-center border-y-[0.5px] border-y-white">
           <Marquee
-            speed={300}
+            speed={500}
             autoFill={true}
             pauseOnHover={false}
             loop={0}
@@ -125,9 +124,14 @@ export default function FooterComponent() {
           >
             <div className="w-full flex items-center">
               <p className="text-white text-[200px] md:text-[250px] lg:text-[300px] font-audioWide uppercase px-5">
-                Let&apos;s make your vision a reality{" "}
+                Let&apos;s make your vision a reality
                 <sub>
-                  <GradientTextComponent span={true} texts="*" />
+                  {" "}
+                  <GradientTextComponent
+                    span={true}
+                    texts="*"
+                    classNames="font-iceBerg"
+                  />{" "}
                 </sub>
               </p>
             </div>
@@ -137,8 +141,8 @@ export default function FooterComponent() {
           <div className="w-full mt-5">
             <p className="text-gray-200 text-[16px] font-bold">
               &copy; {DATE}, Websero{" "}
-              <GradientTextComponent span={true} texts="Creative." /> All
-              Rights Reserved.
+              <GradientTextComponent span={true} texts="Creative." /> All Rights
+              Reserved.
             </p>
           </div>
           <div className=" w-full flex justify-between text-right mt-5">

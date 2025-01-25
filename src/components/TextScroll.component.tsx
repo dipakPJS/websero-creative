@@ -24,7 +24,7 @@ const TextScrollComponent = React.memo(() => {
     >
       <div className="relative h-full w-full">
         <div className="sticky top-0 h-screen w-[100vw] items-center overflow-hidden ">
-          <div className="w-full h-full flex rotate-[5deg]">
+          <div className="w-full h-full flex ">
             {/* First layer of text */}
             <motion.div
               style={{ x: x1 }}
@@ -35,7 +35,7 @@ const TextScrollComponent = React.memo(() => {
               {textArray.map((char, index) => (
                 <p
                   key={`layer1-${index}`}
-                  className="text-[70px] lg-1:text-[180px] lg:text-[200px] font-eagleLake font-extrabold text-transparent bg-clip-text bg-gradient-to-bl from-[blue] via-[#ee00ff] to-[purple] bg-[length:200%] bg-left animate-gradient-x"
+                  className="text-[70px] lg-1:text-[180px] lg:text-[150px] font-audioWide font-extrabold text-slate-300"
                 >
                   {char}
                 </p>
@@ -52,7 +52,7 @@ const TextScrollComponent = React.memo(() => {
               {textArray.map((char, index) => (
                 <p
                   key={`layer2-${index}`}
-                  className="text-[70px] lg-1:text-[180px] lg:text-[200px] font-eagleLake font-extrabold text-transparent bg-clip-text bg-gradient-to-tr from-purple-700 via-[blue] to-pink-600 bg-[length:200%] bg-left animate-gradient-x"
+                  className="text-[70px] lg-1:text-[180px] lg:text-[150px] font-audioWide font-extrabold text-slate-300 "
                 >
                   {char}
                 </p>

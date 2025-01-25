@@ -74,7 +74,7 @@ export default function AboutIntroParaComponent() {
             transition={{ ...sharedMotionProps.transition, delay }}
             className="shadow-[0_0_20px_blue] w-full md:w-[500px] lg:w-[700px] h-auto text-balance p-5 border border-white rounded-[50px]"
           >
-            <div className="text-white text-base sm:text-lg md:text-xl lg:text-2xl font-eagleLake">
+            <div className="text-white text-base sm:text-lg md:text-xl lg:text-3xl font-hubballi font-bold">
               <p dangerouslySetInnerHTML={{ __html: text }} />
             </div>
           </motion.div>
