@@ -12,7 +12,7 @@ export function HoverBorderGradientComponent() {
         className=" text-slate-300 flex items-center  px-5 py-1"
       >
         <div className="flex gap-x-2 h-full items-center">
-          <span className=" text-xs sm:text-sm md:text-md lg:text-lg font-audioWide">Get Started</span>
+          <span className=" text-md sm:text-md md:text-lg lg:text-xl font-bold font-hubballi">Get Started</span>
           <FaSquareArrowUpRight className="text-xl" />
         </div>
       </HoverBorderGradient>

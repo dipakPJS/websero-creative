@@ -25,7 +25,7 @@ export default function VerticalText() {
         className="h-full w-full flex justify-between items-center text-center px-5">
        <div className="w-full"></div>
        <div className="h-[500px] w-full  relative">
-       <p className="text-xs sm:text-xl md:text-xl lg-1:text-2xl lg:text-2xl text-white font-audioWide absolute top-[50%] left-[47%] w-full transform rotate-90">
+       <p className="text-xs sm:text-xl md:text-xl lg-1:text-2xl lg:text-2xl text-white font-audioWide absolute top-[46%] left-[47%] w-full transform rotate-90">
         Your Success, {" "}
           <GradientTextComponent span={true} texts="Our Mission"/>
         </p>

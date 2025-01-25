@@ -12,8 +12,8 @@ const lottieOptions = {
 
 const ScrollDownLottie: React.FC = () => (
   <div style={{ pointerEvents: "none",
-    height: "150px",
-    width: "150px"
+    height: "100px",
+    width: "100px"
    }}>
     <Lottie options={lottieOptions} />
   </div>
