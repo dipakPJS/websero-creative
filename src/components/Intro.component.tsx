@@ -18,13 +18,13 @@ const fastLoadingVariants = {
 
 export default function IntroComponent() {
   return (
-    <motion.div className="flex flex-col gap-[50px]"
+    <motion.div className="flex flex-col gap-[50px] bg-[red] text-center"
     variants={fastLoadingVariants}
     initial="hidden"
     whileInView="show"
     viewport={{ once: false, amount: 0.2 }}
     >
-      <div className="flex flex-col md:text-center w-[65%] ">
+      <div className="flex flex-col md:text-center w-full lg:w-[65%] bg-[blue] mx-auto lg:mx-0">
         <FlipWordsComponent />
         <p className=" text-center lg-1:text-left lg:text-left mt-[30px] lg-1:mt-[20px] lg:mt-[20px] text-md md:text-4xl lg:text-3xl font-bold  text-slate-400 w-full">
           Enhancing Your Online Presence – Distinguish Yourself on the Web and
