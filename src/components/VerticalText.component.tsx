@@ -24,7 +24,7 @@ export default function VerticalText() {
       viewport={{ once: false, amount: 0.2 }}
       className="h-full w-full relative p-0"
     >
-      <p className=" text-center text-xs sm:text-xl md:text-xl lg-1:text-xl lg:text-xl text-white font-audioWide absolute top-[39.5%] right-[-12%]  sm:right-[-15%] md-1:right-[-13%] md:right-[-13%] lg-1:right-[-12%] lg:right-[-8%] transform rotate-90">
+      <p className=" text-center text-xs sm:text-xl md:text-xl lg-1:text-xl lg:text-xl text-white font-audioWide absolute top-[39.5%] right-[-12%]  sm:right-[-15%] md-1:right-[-13%] md:right-[-13%] lg-1:right-[-11%] lg:right-[-8%] transform rotate-90">
         Your Success, <GradientTextComponent span={true} texts="Our Mission" />
       </p>
     </motion.div>
