@@ -43,7 +43,7 @@ const WorkPage: React.FC = () => {
           <GradientTextComponent
             span={false}
             texts="Our Works"
-            classNames="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-audioWide"
+            classNames="text-5xl lg:text-7xl font-audioWide"
           />
         </motion.div>
 
@@ -57,10 +57,10 @@ const WorkPage: React.FC = () => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-2 sm:px-5 md:px-5 lg:px-10 py-1 sm:py-2 md:py-2 lg:py-3 rounded-[50px] font-bold text-xs sm:text-sm md:text-lg lg:text-xl border border-white text-white font-iceBerg transition duration-300 ease-in-out ${
+              className={`px-2 sm:px-5 md:px-5 lg:px-10 py-1 sm:py-2 md:py-2 lg:py-3 rounded-full text-xs sm:text-sm md:text-lg lg:text-xl font-extrabold transition duration-300 ease-in-out ${
                 selectedCategory === category
-                  ? "shadow-custom scale-[1.1] border-blue-600"
-                  : "scale-[1]"
+                  ? "shadow-custom scale-[1.1] bg-[white] text-black"
+                  : "scale-[1] text-white border"
               }`}
             >
               {category}
