@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useCursor } from "@/context/CursorContext";
+import GradientTextComponent from "./GradientText.component";
 
 // Animation Variants
 const fastLoadingVariants = {
@@ -33,7 +34,7 @@ export default function IntroTitleComponent() {
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
           >
-            We are more than just a team
+            We are more than just a <GradientTextComponent texts="team" span={true} />
           </h1>
         </div>
 
