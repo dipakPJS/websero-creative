@@ -35,9 +35,14 @@ export default function HomePageComponent() {
         className="homepage relative min-h-[120vh] bg-black"
       >
         {/* homepage second starts */}
-        <div className=" z-[10] homepage-second h-full w-full flex justify-center items-center absolute  ">
-          <div className=" h-[250px] sm:h-[300px] md:h-[300px] lg-1:h-[400px] lg:h-[500px] w-auto">
-            <SphereAnimation />
+        <div className=" z-[10] homepage-second h-full w-full absolute ">
+          <div className="h-full w-full relative">
+            <div className=" absolute top-1/2 md:top-[70%] lg:top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2
+             h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]
+             md:h-[300px] md:w-[300px] lg-1:h-[400px] lg-1:w-[400px]
+              lg:h-[500px] lg:w-[500px]">
+              <SphereAnimation />
+            </div>
           </div>
         </div>
         {/* homepage second ends */}

@@ -8,7 +8,7 @@ export function FlipWordsComponent() {
   const { textEnter, textLeave } = useCursor();
 
   return (
-    <div className="text-2xl w-full text-center lg-1:text-left lg:text-left rounded-3xl sm:text-3xl md:text-6xl lg-1:text-5xl lg:text-5xl text-balance font-audioWide text-slate-300">
+    <div className="text-2xl w-full text-center lg-1:text-left lg:text-left rounded-3xl sm:text-3xl md:text-4xl lg-1:text-5xl lg:text-5xl text-balance font-audioWide text-slate-300">
       <span onMouseEnter={textEnter} onMouseLeave={textLeave}>
         Build
         <FlipWords className="text-purple-700" words={words} /> <br />
