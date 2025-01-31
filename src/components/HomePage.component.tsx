@@ -37,8 +37,8 @@ export default function HomePageComponent() {
         {/* homepage second starts */}
         <div className=" z-[10] homepage-second h-full w-full absolute ">
           <div className="h-full w-full relative">
-            <div className=" absolute top-[52%] sm:top-[55%] md:top-[60%] lg:top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2
-             h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]
+            <div className=" absolute top-[60%] lg:top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2
+             h-[300px] w-[300px] sm:h-[300px] sm:w-[300px]
              md:h-[300px] md:w-[300px] lg-1:h-[400px] lg-1:w-[400px]
               lg:h-[500px] lg:w-[500px]">
               <SphereAnimation />
