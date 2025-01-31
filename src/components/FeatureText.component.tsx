@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import GradientTextComponent from "./GradientText.component";
 
 // Variants for random fade directions
 const fadeInDirections = {
