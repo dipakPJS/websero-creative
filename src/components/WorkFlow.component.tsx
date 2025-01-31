@@ -34,7 +34,7 @@ export default function WorkflowComponent() {
           <GradientTextComponent
             span={false}
             texts=" Discipline is the key to success"
-            classNames="text-3xl md:text-4xl lg:text-5xl font-audioWide capitalize"
+            classNames="text-3xl md:text-4xl lg:text-7xl font-audioWide capitalize"
           />
         </motion.div>
       </div>

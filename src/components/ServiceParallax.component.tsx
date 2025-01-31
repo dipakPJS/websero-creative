@@ -20,7 +20,7 @@ export default function ServiceParallaxComponent({
  
   return (
     <div
-      className="flex flex-col items-center text-center gap-4 p-6 rounded-[40px] text-white
+      className="flex flex-col items-center text-center gap-4 p-6 rounded-[40px] text-slate-400
          transition duration-300 w-full bg-black"
       style={{
         boxShadow: `0 0 10px 2px ${randomColor}`,

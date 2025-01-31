@@ -57,7 +57,7 @@ export default function ServiceBookingComponent() {
             <div className="flex flex-col justify-center items-center text-center p-5 sm:p-10 gap-5 sm:gap-10 h-auto w-full sm:w-auto bg-transparent backdrop-blur-[10px] rounded-[2rem] sm:rounded-[5rem]">
               <motion.h2
                 variants={headingVariant}
-                className="text-2xl sm:text-4xl lg:text-6xl font-eagleLake"
+                className="text-2xl sm:text-4xl lg:text-6xl font-audioWide"
               >
                 It always starts with trust
               </motion.h2>

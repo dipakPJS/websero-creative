@@ -3,6 +3,7 @@
 import { useCursor } from "@/context/CursorContext";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import GradientTextComponent from "./GradientText.component";
 
 const MarketingAnimation = dynamic(() => import("./LottieFileComponents/MarketingLottie.component"), {
   ssr: false,
@@ -37,11 +38,11 @@ export default function ServiceIntroComponent() {
           <h2
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
-            className="font-audioWide text-4xl sm:text-5xl md:text-6xl lg-1:text-5xl lg:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-700 via-blue-600 to-pink-600 animate-gradient-x"
+            className="font-audioWide text-5xl lg:text-7xl "
           >
-            Our Services
+            Our <GradientTextComponent texts="Services" span={true} />
           </h2>
-          <p className="mt-4 text-base md:text-2xl lg-1:text-3xl lg:text-4xl font-audioWide text-slate-400">
+          <p className="mt-4 text-base md:text-3xl lg-1:text-4xl lg:text-4xl font-bold text-slate-400">
             Our creative team of branding, web design, web development, and marketing experts care about your project,
             almost as much as you do!
           </p>
