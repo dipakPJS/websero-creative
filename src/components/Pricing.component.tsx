@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "framer-motion";
 import PricingFilterComponent from "./PricingFilters.component";
+import GradientTextComponent from "./GradientText.component";
 
 // Animation Variants
 const fastLoadingVariants = {
@@ -25,9 +26,9 @@ export default function PricingComponent() {
        initial="hidden"
        whileInView="show"
        viewport={{ once: false, amount: 0.2 }}
-        className=" text-left pl-5 lg:pl-8 font-audioWide font-bold text-white text-5xl sm:text-6xl md-1:text-7xl md:text-7xl lg-1:text-8xl lg:text-8xl capitalize"
+        className=" text-left pl-5 lg:pl-8 font-audioWide text-white text-5xl lg:text-7xl"
         >
-        Pricing
+       <GradientTextComponent texts="Pricing" span={true} />
       </motion.p>
       <br />
       <br />

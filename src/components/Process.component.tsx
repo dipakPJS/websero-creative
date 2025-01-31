@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import ProcessData from "@/data/ProcessData.json";
 import { MeteorsComponent } from "./Meteors.component";
+import GradientTextComponent from "./GradientText.component";
 
 // Animation Variants
 const fastLoadingVariants = {
@@ -24,9 +25,9 @@ export default function ProcessComponent() {
          initial="hidden"
          whileInView="show"
          viewport={{ once: false, amount: 0.2 }}
-          className="font-audioWide text-left pl-5 lg:pl-8 font-bold text-black text-5xl sm:text-6xl md-1:text-7xl md:text-7xl lg-1:text-8xl lg:text-8xl capitalize"
+          className="font-audioWide text-left pl-5 lg:pl-8 text-5xl lg:text-7xl"
         >
-          Process
+          <GradientTextComponent texts="Process" span={true} />
         </motion.p>
       </div>
 

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { PrevButton, NextButton } from "./EmblaCarouselArrowButtons.component";
 import { useEmblaContext } from "../../context/EmblaContext";
 import Link from "next/link";
+import GradientTextComponent from "../GradientText.component";
 
 const fadeInDirections = {
   top: { initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 } },
@@ -31,9 +32,9 @@ const EmblaControls: React.FC = () => {
             whileInView={fadeInDirections.bottom.animate}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="font-bold font-audioWide text-[80px] sm:text-[120px] md:text-[140px] lg-1:text-[180px] lg:text-[200px] work-font text-black"
+            className="font-bold font-audioWide text-[80px] sm:text-[120px] md:text-[140px] lg-1:text-[180px] lg:text-[200px] work-font"
           >
-            Work
+            <GradientTextComponent texts="Work" span={true} />
           </motion.p>
        
       </div>
