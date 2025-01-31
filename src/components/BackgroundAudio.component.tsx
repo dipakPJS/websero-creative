@@ -14,7 +14,7 @@ const BackgroundAudioComponent: React.FC = () => {
   const { isPlaying, togglePlay } = useAudio();
 
   return (
-    <div className="absolute z-[800] top-[40px] right-[20%]">
+    <div className="absolute z-[800] top-[65px] right-[20%]">
       <div className="relative w-[50px] h-[50px] rounded-[50%]">
         <button
           className="bg-transparent rounded-[100px] backdrop-blur-[20px] h-full w-full border-none outline-none cursor-pointer flex items-center justify-center"
