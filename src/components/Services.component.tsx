@@ -40,11 +40,11 @@ export default function ServiceComponent({ colors }: ServiceStyles) {
     initial="hidden"
     whileInView="show"
     viewport={{ once: false, amount: 0.2 }}
-      className="services text-left w-full px-4 md:px-8 lg:px-12 py-6"
+      className="services text-left w-full md:px-8 lg:px-12 py-6"
     >
       <div className="mt-2">
         <p
-          className="text-4xl service-title font-semibold font-audioWide mb-4"
+          className="text-3xl font-bold service-title font-audioWide mb-4"
           style={{ color: colors[2] }}
         >
           Services:
@@ -59,7 +59,7 @@ export default function ServiceComponent({ colors }: ServiceStyles) {
             >
               <div className="flex justify-between items-center py-4">
                 <p
-                  className="text-2xl font-hubballi font-extrabold"
+                  className="text-3xl font-hubballi font-extrabold"
                   style={{ color: colors[2] }}
                 >
                   {service.title}
@@ -93,7 +93,7 @@ export default function ServiceComponent({ colors }: ServiceStyles) {
                     className="overflow-hidden"
                   >
                     <p
-                      className="text-xl text-semibold p-4"
+                      className="text-3xl text-semibold p-4"
                       style={{ color: colors[1] }}
                     >
                       {service.content}
