@@ -122,7 +122,7 @@ export default function MainContactFormComponent() {
             whileInView={fadeInDirections.left.animate}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className=" text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-eagleLake"
+            className=" text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-audioWide"
           >
             No need to be <GradientTextComponent span={true} texts="Shy" />
           </motion.h1>
@@ -140,7 +140,7 @@ export default function MainContactFormComponent() {
             whileInView={fadeInDirections.left.animate}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-3 text-xl lg:text-2xl font-bold font-iceBerg"
+            className="mt-3 text-lg lg:text-xl font-bold font-audioWide"
           >
           <GradientTextComponent span={true} texts="webserocreative@gmail.com" />
           </motion.p>
