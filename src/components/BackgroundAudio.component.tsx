@@ -14,8 +14,8 @@ const BackgroundAudioComponent: React.FC = () => {
   const { isPlaying, togglePlay } = useAudio();
 
   return (
-    <div className="absolute z-[800] top-[65px] right-[20%]">
-      <div className="relative w-[50px] h-[50px] rounded-[50%]">
+    <div className="absolute z-[800] top-[60px] lg:top-[40px] right-[30%] lg:right-[15%]">
+      <div className="relative h-[30px] md:h-[40px] lg:h-[50px] w-auto rounded-[50%]">
         <button
           className="bg-transparent rounded-[100px] backdrop-blur-[20px] h-full w-full border-none outline-none cursor-pointer flex items-center justify-center"
           onClick={togglePlay}
@@ -23,7 +23,7 @@ const BackgroundAudioComponent: React.FC = () => {
           {isPlaying ? (
         <WavyAnimation />
           ) : (
-            <IoVolumeMute size={30} color="white" />
+            <IoVolumeMute className="h-[80%] w-[80%]" color="white" />
           )}
         </button>
       </div>
