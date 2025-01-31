@@ -26,7 +26,7 @@ export function WorldMapComponent() {
       </div>
       <div className="flex justify-center items-center h-[15rem] sm:h-[25rem] md:h-[35rem] lg:h-[40rem] w-full p-2 md:p-5 lg:p-10">
       <Image 
-      src="/images/world.svg"
+      src="/images/location.svg"
       width={1000}
       height={1000}
       alt="linear demo image"
