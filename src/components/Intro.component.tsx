@@ -22,7 +22,7 @@ export default function IntroComponent() {
     variants={fastLoadingVariants}
     initial="hidden"
     whileInView="show"
-    viewport={{ once: false, amount: 0.2 }}
+    viewport={{ once: true, amount: 0.2 }}
     >
       <div className="flex flex-col md:text-center w-[80%] lg:w-[65%] mx-auto lg:mx-0">
         <FlipWordsComponent />
