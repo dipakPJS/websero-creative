@@ -24,7 +24,7 @@ export default function VerticalText() {
         viewport={{ once: false, amount: 0.2 }}
         className="h-full w-full flex justify-between items-center text-center">
        <div className="w-full"></div>
-       <div className="h-full w-full  relative pr-3">
+       <div className="h-full w-full  relative pr-5">
        <p className="text-xs sm:text-xl md:text-xl lg-1:text-xl lg:text-xl text-white font-audioWide absolute top-[40%] left-[47%] w-full transform rotate-90">
         Your Success, {" "}
           <GradientTextComponent span={true} texts="Our Mission"/>
