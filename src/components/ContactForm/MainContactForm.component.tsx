@@ -140,7 +140,7 @@ export default function MainContactFormComponent() {
             whileInView={fadeInDirections.left.animate}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-3 text-lg lg:text-xl font-bold font-audioWide"
+            className="mt-3 text-lg lg:text-xl font-bold"
           >
           <GradientTextComponent span={true} texts="webserocreative@gmail.com" />
           </motion.p>
