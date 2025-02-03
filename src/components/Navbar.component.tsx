@@ -4,12 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import {
-  TiSocialFacebookCircular,
-  TiSocialInstagramCircular,
-  TiSocialTwitterCircular,
-  TiSocialLinkedinCircular,
-} from "react-icons/ti";
+import { BsTwitterX } from "react-icons/bs";
+import { FiFacebook, FiLinkedin, FiInstagram  } from "react-icons/fi";
 import GradientTextComponent from "./GradientText.component";
 
 const navVariants = {
@@ -75,11 +71,11 @@ const FullPageNav: React.FC = () => {
             animate="visible"
             exit="exit"
             variants={navVariants}
-            className="fixed inset-0 z-[600] bg-[#00000069] backdrop-blur-20"
+            className="fixed inset-0 z-[600] bg-[#0000008e] backdrop-blur-20"
             style={{ overflow: "hidden" }}
           >
             {/* Logo */}
-            <div className="p-5">
+            <div className="p-5 flex lg:justify-center lg:items-center items-start ">
               <Link href="/" onClick={handleLinkClick}>
                 <Image
                   alt="Logo"
@@ -93,12 +89,12 @@ const FullPageNav: React.FC = () => {
             </div>
 
             {/* Links */}
-            <div className="flex flex-col items-center justify-center h-full">
+            <div className="flex flex-col items-center justify-center lg:justify-between lg:items-start h-full  ">
               <motion.nav
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                className="flex flex-col gap-6"
+                className="flex flex-col   w-full py-5"
               >
                 {["Home", "About", "Services", "Work", "Contact"].map(
                   (label, index) => (
@@ -106,11 +102,12 @@ const FullPageNav: React.FC = () => {
                       key={label}
                       variants={linkVariants}
                       transition={{ delay: index * 0.1 }}
+                      className=" p-2 px-10 w-full border-b-2 transition duration-1000 ease-in-out text-gray-200 border-white  hover:bg-white hover:text-black"
                     >
                       <Link
                         href={label === "Home" ? "/" : `/${label.toLowerCase()}`}
                         onClick={handleLinkClick}
-                        className="text-2xl md:text-4xl font-audioWide text-gray-200 hover:text-purple-600"
+                        className="text-5xl md:text-4xl lg:text-6xl font-audioWide "
                       >
                         {label}
                       </Link>
@@ -120,27 +117,27 @@ const FullPageNav: React.FC = () => {
               </motion.nav>
 
               {/* Social Links */}
-              <div className="mt-16 flex flex-col items-center gap-6">
+              <div className=" flex flex-col items-center gap-6  w-full h-full p-5">
                 <ul className="flex gap-8">
                   {[
                     {
                       href: "https://www.facebook.com/dipak.light.roshni.diyo",
-                      icon: <TiSocialFacebookCircular />,
+                      icon: <FiFacebook />,
                       color: "hover:text-blue-700",
                     },
                     {
                       href: "https://www.instagram.com/diwakar_codess/",
-                      icon: <TiSocialInstagramCircular />,
+                      icon: <FiInstagram />,
                       color: "hover:text-pink-500",
                     },
                     {
                       href: "https://x.com/DeepakP18273070",
-                      icon: <TiSocialTwitterCircular />,
+                      icon: <BsTwitterX />,
                       color: "hover:text-blue-400",
                     },
                     {
                       href: "https://www.linkedin.com/in/dipak-developer/",
-                      icon: <TiSocialLinkedinCircular />,
+                      icon: <FiLinkedin />,
                       color: "hover:text-sky-500",
                     },
                   ].map(({ href, icon, color }, idx) => (
@@ -157,8 +154,8 @@ const FullPageNav: React.FC = () => {
                   ))}
                 </ul>
                 <div className=" text-center">
-                   <GradientTextComponent span={false} texts="info@websero.com" classNames="text-md font-bold font-hubballi" />
-                  <code><GradientTextComponent span={true} texts="+977 - 986 721 6630" /></code>
+                   <GradientTextComponent span={false} texts="info@websero.com" classNames="text-xl" />
+                  <code><GradientTextComponent span={true} texts="+977 - 986 721 6630" classNames="text-xl" /></code>
                 </div>
               </div>
             </div>
