@@ -107,7 +107,7 @@ const FullPageNav: React.FC = () => {
                       <Link
                         href={label === "Home" ? "/" : `/${label.toLowerCase()}`}
                         onClick={handleLinkClick}
-                        className="text-5xl md:text-4xl lg:text-8xl font-audioWide "
+                        className="text-4xl sm:text-6xl md:text-7xl lg-1:text-7xl lg:text-8xl font-audioWide "
                       >
                         {label}
                       </Link>
