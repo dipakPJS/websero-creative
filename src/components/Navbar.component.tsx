@@ -126,29 +126,29 @@ const FullPageNav: React.FC = () => {
                     {
                       href: "https://www.facebook.com/dipak.light.roshni.diyo",
                       icon: <FiFacebook />,
-                      color: "hover:text-blue-700",
+                      color: "text-blue-700",
                     },
                     {
                       href: "https://www.instagram.com/diwakar_codess/",
                       icon: <FiInstagram />,
-                      color: "hover:text-pink-500",
+                      color: "text-[#d62976]",
                     },
                     {
                       href: "https://x.com/DeepakP18273070",
                       icon: <BsTwitterX />,
-                      color: "hover:text-blue-400",
+                      color: "text-white",
                     },
                     {
                       href: "https://www.linkedin.com/in/dipak-developer/",
                       icon: <FiLinkedin />,
-                      color: "hover:text-sky-500",
+                      color: "text-sky-500",
                     },
-                  ].map(({ href, icon, color }, idx) => (
+                  ].map(({ href, icon, color}, idx) => (
                     <li key={idx}>
                       <a
                         href={href}
                         target="_blank"
-                        className={`text-4xl text-white md:text-5xl ${color} transform hover:scale-125 duration-200 font-`}
+                        className={`text-4xl ${color} md:text-5xl duration-200`}
                         rel="noreferrer"
                       >
                         {icon}
