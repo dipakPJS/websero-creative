@@ -10,7 +10,7 @@ interface ParallaxText {
 }
  
 
-const colors: string[] = ["#FC427B", "#008cff", "#ffa502"]; 
+const colors: string[] = ["#706fd3", "#8e44ad", "#3498db"]; 
 
 export default function ServiceParallaxComponent({
   title,
