@@ -94,7 +94,7 @@ const FullPageNav: React.FC = () => {
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                className="flex flex-col   w-full py-5"
+                className="flex flex-wrap w-full lg:w-[90%] mx-auto lg:pt-[50px] py-5 items-center justify-center gap-5"
               >
                 {["Home", "About", "Services", "Work", "Contact"].map(
                   (label, index) => (
@@ -102,12 +102,12 @@ const FullPageNav: React.FC = () => {
                       key={label}
                       variants={linkVariants}
                       transition={{ delay: index * 0.1 }}
-                      className=" p-2 px-10 w-full border-b-2 transition duration-1000 ease-in-out text-gray-200 border-white  hover:bg-white hover:text-black"
+                      className=" p-2 px-10 border-2 rounded-full transition duration-1000 ease-in-out text-white border-white  hover:bg-white hover:text-black"
                     >
                       <Link
                         href={label === "Home" ? "/" : `/${label.toLowerCase()}`}
                         onClick={handleLinkClick}
-                        className="text-5xl md:text-4xl lg:text-6xl font-audioWide "
+                        className="text-5xl md:text-4xl lg:text-8xl font-audioWide "
                       >
                         {label}
                       </Link>
@@ -117,7 +117,7 @@ const FullPageNav: React.FC = () => {
               </motion.nav>
 
               {/* Social Links */}
-              <div className=" flex flex-col items-center gap-6  w-full h-full p-5">
+              <div className=" flex flex-col items-center gap-6  w-full h-full p-5 lg:pt-[50px]">
                 <ul className="flex gap-8">
                   {[
                     {
@@ -145,7 +145,7 @@ const FullPageNav: React.FC = () => {
                       <a
                         href={href}
                         target="_blank"
-                        className={`text-4xl text-slate-200 md:text-5xl ${color} transform hover:scale-125 duration-200 font-`}
+                        className={`text-4xl text-white md:text-5xl ${color} transform hover:scale-125 duration-200 font-`}
                         rel="noreferrer"
                       >
                         {icon}
