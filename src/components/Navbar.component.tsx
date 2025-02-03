@@ -7,6 +7,7 @@ import Image from "next/image";
 import { BsTwitterX } from "react-icons/bs";
 import { FiFacebook, FiLinkedin, FiInstagram  } from "react-icons/fi";
 import GradientTextComponent from "./GradientText.component";
+ 
 
 const navVariants = {
   hidden: {
@@ -36,8 +37,9 @@ const FullPageNav: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleLinkClick = () => setIsOpen(false);
-
+ 
   return (
+    
     <>
       {/* Toggle Button */}
       <div className="fixed top-0 right-0 w-auto p-5 z-[700] flex justify-end">
@@ -71,7 +73,7 @@ const FullPageNav: React.FC = () => {
             animate="visible"
             exit="exit"
             variants={navVariants}
-            className="fixed inset-0 z-[600] bg-[#0000008e] backdrop-blur-20"
+            className="fixed inset-0 z-[600] bg-[#000000cc] backdrop-blur-20"
             style={{ overflow: "hidden" }}
           >
             {/* Logo */}
@@ -105,6 +107,7 @@ const FullPageNav: React.FC = () => {
                       className=" p-2 px-10 border-2 rounded-full transition duration-1000 ease-in-out text-white border-white  hover:bg-white hover:text-black"
                     >
                       <Link
+                    
                         href={label === "Home" ? "/" : `/${label.toLowerCase()}`}
                         onClick={handleLinkClick}
                         className="text-4xl sm:text-6xl md:text-7xl lg-1:text-7xl lg:text-8xl font-audioWide "
