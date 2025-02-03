@@ -157,8 +157,8 @@ const FullPageNav: React.FC = () => {
                   ))}
                 </ul>
                 <div className=" text-center">
-                   <GradientTextComponent span={false} texts="info@websero.com" classNames="text-xl" />
-                  <code><GradientTextComponent span={true} texts="+977 - 986 721 6630" classNames="text-xl" /></code>
+                   <GradientTextComponent span={false} texts="info@webserocreative.com" classNames="text-2xl font-bold" />
+                 <GradientTextComponent span={true} texts="+977 - 98 666 555 71" classNames="text-2xl font-bold" />
                 </div>
               </div>
             </div>
