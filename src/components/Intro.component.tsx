@@ -26,7 +26,7 @@ export default function IntroComponent() {
     >
       <div className="flex flex-col md:text-center w-[80%] lg:w-[65%] mx-auto lg:mx-0">
         <FlipWordsComponent />
-        <p className=" text-center lg-1:text-left lg:text-left mt-[5px] lg-1:mt-[20px] lg:mt-[20px] text-sm md:text-xl lg:text-3xl font-bold  text-slate-400 w-full">
+        <p className=" text-center lg-1:text-left lg:text-left mt-[5px] lg-1:mt-[20px] lg:mt-[20px] text-sm md:text-xl lg-1:text-2xl lg:text-3xl font-bold  text-slate-400 w-full">
           Enhancing Your Online Presence – Distinguish Yourself on the Web and
           Attract Potential Clients
         </p>

@@ -21,7 +21,7 @@ export default function FeatureTextComponent() {
                 whileInView={fadeInDirections.top.animate}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="backdrop-blur-20 text-md font-audioWide text-white px-5 md:px-10 py-3 rounded-full border"
+                className="backdrop-blur-20 text-md font-audioWide text-white px-5 md:px-10 lg-1:py-2 py-3 rounded-full border"
               >
                 UI/UX Design
               </motion.p>
@@ -30,7 +30,7 @@ export default function FeatureTextComponent() {
                 whileInView={fadeInDirections.bottom.animate}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="backdrop-blur-20 text-md font-audioWide text-white px-10 py-3 rounded-full border"
+                className="backdrop-blur-20 text-md font-audioWide text-white px-10 lg-1:py-2 py-3 rounded-full border"
               >
                 Branding
               </motion.p>
@@ -41,7 +41,7 @@ export default function FeatureTextComponent() {
                 whileInView={fadeInDirections.right.animate}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="backdrop-blur-20 text-md font-audioWide text-white px-5 md:px-10 py-3 rounded-full border"
+                className="backdrop-blur-20 text-md font-audioWide text-white px-5 md:px-10 lg-1:py-2  py-3 rounded-full border"
               >
                 Web
               </motion.p>
@@ -52,7 +52,7 @@ export default function FeatureTextComponent() {
                 whileInView={fadeInDirections.left.animate}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="backdrop-blur-20 text-md font-audioWide text-white px-5 md:px-10 py-3 rounded-full border"
+                className="backdrop-blur-20 text-md font-audioWide text-white px-5 md:px-10 lg-1:py-2 py-3 rounded-full border"
               >
                 SMM
               </motion.p>
@@ -61,7 +61,7 @@ export default function FeatureTextComponent() {
                 whileInView={fadeInDirections.top.animate}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 1 }}
-                className="backdrop-blur-20 text-md font-audioWide text-white px-5 md:px-10 py-3 rounded-full border"
+                className="backdrop-blur-20 text-md font-audioWide text-white px-5 md:px-10 lg-1:py-2 py-3 rounded-full border"
               >
                 Chatbot
               </motion.p>
