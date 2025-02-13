@@ -96,7 +96,7 @@ const FullPageNav: React.FC = () => {
                 initial="hidden"
                 animate="visible"
                 exit="hidden"
-                className="flex flex-wrap w-full lg:w-[60%] mx-auto lg:pt-[50px] py-5 items-center justify-center gap-5"
+                className="flex flex-wrap w-full lg-1:w-[80%] lg:w-[60%] mx-auto lg:pt-[50px] py-5 items-center justify-center gap-5"
               >
                 {["Home", "About", "Services", "Work", "Contact"].map(
                   (label, index) => (
@@ -110,7 +110,7 @@ const FullPageNav: React.FC = () => {
                     
                         href={label === "Home" ? "/" : `/${label.toLowerCase()}`}
                         onClick={handleLinkClick}
-                        className="text-4xl sm:text-6xl md:text-5xl lg:text-5xl font-audioWide "
+                        className="text-4xl sm:text-6xl md:text-5xl lg-1:text-4xl lg:text-5xl font-audioWide "
                       >
                         {label}
                       </Link>
