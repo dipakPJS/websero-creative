@@ -6,17 +6,28 @@ import WorkData from "@/data/WorkData.json";
 import Image from "next/image";
 import GradientTextComponent from "./GradientText.component";
 import { CgArrowsExpandUpRight } from "react-icons/cg";
+import { TbExternalLink } from "react-icons/tb";
 
 const fadeInDirections = {
   top: { initial: { opacity: 0, y: -50 }, animate: { opacity: 1, y: 0 } },
   bottom: { initial: { opacity: 0, y: 50 }, animate: { opacity: 1, y: 0 } },
 };
 
-const categories = ["Show All", "Websites", "Social Media", "Branding", "Design"];
+const categories = [
+  "Show All",
+  "Websites",
+  "Social Media",
+  "Branding",
+  "Design",
+];
 
 const itemVariants = {
   hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 20, stiffness: 120 } },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring", damping: 20, stiffness: 120 },
+  },
   exit: { opacity: 0, y: -50, transition: { duration: 0.2 } },
 };
 
@@ -97,14 +108,20 @@ const WorkPage: React.FC = () => {
                     rel="noopener noreferrer"
                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-[0.8] transition-opacity duration-500"
                   >
-                    <button className="p-10 rounded-full bg-[#0000009f] shadow-lg">
-                      <CgArrowsExpandUpRight className="text-[yellow] scale-[2]" />
+                    <button className="p-10 rounded-full bg-[#8200cdce] shadow-lg">
+                      <CgArrowsExpandUpRight className="text-white scale-[2]" />
                     </button>
                   </a>
                 </div>
-                <h3 className="font-semibold text-lg md:text-xl lg:text-lg text-white font-audioWide">
-                  {item.title}
-                </h3>
+                <a href={item.link}
+                target="_blank">
+                  <div className="flex flex-wrap gap-5 ">
+                    <h3 className="font-semibold text-lg md:text-xl lg:text-lg text-white font-audioWide">
+                     {item.title}
+                    </h3>
+                   <TbExternalLink className="text-white text-2xl" />
+                  </div>
+                </a>
                 <div className="flex flex-wrap justify-start gap-2 mt-3 w-full">
                   {item.tags.map((tag, idx) => (
                     <p
