@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Websero Creative",
-  description: "A Creative Design And Development Agency",
+  description: "A Creative Web Design And Development Agency",
 };
 
 export default function RootLayout({
