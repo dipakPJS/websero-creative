@@ -39,7 +39,7 @@ export default function ServiceComponent({ colors }: ServiceStyles) {
     variants={fastLoadingVariants}
     initial="hidden"
     whileInView="show"
-    viewport={{ once: false, amount: 0.2 }}
+    viewport={{ once: true, amount: 0.2 }}
       className="services text-left w-full md:px-8 lg:px-12 py-6"
     >
       <div className="mt-2">

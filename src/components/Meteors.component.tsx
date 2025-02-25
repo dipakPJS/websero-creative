@@ -1,6 +1,5 @@
 "use client"
 import React from "react";
-import { Meteors } from "./ui/meteors";
 import Image from "next/image";
 
 interface MeteorsComponentProps {
@@ -35,8 +34,7 @@ export function MeteorsComponent({ id, title, description, image }: MeteorsCompo
             {description}
           </p>
 
-          {/* Meaty part - Meteor effect */}
-          <Meteors number={20} />
+          
         </div>
       </div>
     </div>

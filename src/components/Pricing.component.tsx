@@ -25,7 +25,7 @@ export default function PricingComponent() {
        variants={fastLoadingVariants}
        initial="hidden"
        whileInView="show"
-       viewport={{ once: false, amount: 0.2 }}
+       viewport={{ once: true, amount: 0.2 }}
         className=" text-left pl-5 lg:pl-8 font-audioWide text-white text-5xl lg:text-7xl"
         >
        <GradientTextComponent texts="Pricing" span={true} />

@@ -24,7 +24,7 @@ export default function ProcessComponent() {
          variants={fastLoadingVariants}
          initial="hidden"
          whileInView="show"
-         viewport={{ once: false, amount: 0.2 }}
+         viewport={{ once: true, amount: 0.2 }}
           className="font-audioWide text-left pl-5 lg:pl-8 text-5xl lg:text-7xl"
         >
           <GradientTextComponent texts="Process" span={true} />

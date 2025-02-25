@@ -17,7 +17,7 @@ export function WorldMapComponent() {
         <motion.p 
         initial={fadeInDirection.top.initial}
         whileInView={fadeInDirection.top.animate}
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className=" z-10 text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-audioWide text-white">
           We work with clients all over the <GradientTextComponent span={true} texts="World!" />

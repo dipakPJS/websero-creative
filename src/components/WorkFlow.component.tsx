@@ -28,7 +28,7 @@ export default function WorkflowComponent() {
         <motion.div
         initial={fadeInDirections.left.initial}
         whileInView={fadeInDirections.left.animate}
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, delay: 0.4 }}
         >
           <GradientTextComponent

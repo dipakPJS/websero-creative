@@ -31,7 +31,7 @@ export function AnimatedTestimonialsComponent({ bgColor }: AnimData) {
             variants={fastLoadingVariants}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
             className="font-audioWide text-center text-white text-5xl lg:text-7xl"
           >
             What clients <GradientTextComponent span={true} texts="say!" />

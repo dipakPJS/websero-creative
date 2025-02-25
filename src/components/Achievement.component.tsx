@@ -22,7 +22,7 @@ export default function AchievementsComponent() {
           variants={fastLoadingVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           className=" text-left pl-5 lg:pl-8 font-audioWide z-[100] text-5xl lg:text-7xl"
         >
           <GradientTextComponent texts="Success" span={true} />

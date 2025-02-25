@@ -32,7 +32,7 @@ export default function ServiceIntroComponent() {
           variants={fastLoadingVariants}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="flex-1 relative text-center lg:text-left"
         >
           <h2
